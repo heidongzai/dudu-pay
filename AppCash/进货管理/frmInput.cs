@@ -67,28 +67,26 @@ namespace AppCash
             {
                 string key = Maticsoft.Common.StringPlus.GetText(txtCode.Text);
                 strSql += " and PCode like '%" + key + "%'";
-                intPage = 1;
-                fillGVList(strSql, intPageSize, 1);
+                //intPage = 1;
+                //fillGVList(strSql, intPageSize, 1);
                 
             }
 
             string startTime = txtStart.Text.Trim();
             string endTime = txtEnd.Text.Trim();
-            if (!string.IsNullOrEmpty(startTime) && !string.IsNullOrEmpty(endTime))
-            {
-                strSql += " and IDate >= '" + startTime + "' and IDate<='" + endTime + "' ";
-            }
-            else
-            {
+
                 if (!string.IsNullOrEmpty(startTime))
                 {
-                    strSql += " and IDate >= '" + startTime + "' ";
+                    strSql += " and IDate >= #" + startTime + "# ";
                 }
-                else
+                if (!string.IsNullOrEmpty(endTime))
                 {
-                    strSql += "  and IDate<='" + endTime + "' ";
+                    strSql += "  and IDate<=#" + endTime + "# ";
                 }
-            }
+            
+
+            intPage = 1;
+            fillGVList(strSql, intPageSize, 1);
         }
         #endregion
 
@@ -223,6 +221,21 @@ namespace AppCash
             {
                 MessageBoxEx.Show("请选择要修改的行!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cbPageSize_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

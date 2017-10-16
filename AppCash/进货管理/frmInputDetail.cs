@@ -56,6 +56,11 @@ namespace AppCash
             this.Close();
         }
 
+        private void panelEx3_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 

@@ -1,0 +1,8 @@
+D:\winform\cash\cash\source\BN140\DAL\bin\Release\DAL.dll
+D:\winform\cash\cash\source\BN140\DAL\bin\Release\DAL.pdb
+D:\winform\cash\cash\source\BN140\DAL\bin\Release\Maticsoft.DBUtility.dll
+D:\winform\cash\cash\source\BN140\DAL\bin\Release\Model.dll
+D:\winform\cash\cash\source\BN140\DAL\bin\Release\Model.pdb
+D:\winform\cash\cash\source\BN140\DAL\obj\Release\DAL.csprojResolveAssemblyReference.cache
+D:\winform\cash\cash\source\BN140\DAL\obj\Release\DAL.dll
+D:\winform\cash\cash\source\BN140\DAL\obj\Release\DAL.pdb

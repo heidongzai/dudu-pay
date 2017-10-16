@@ -11,6 +11,8 @@ namespace AppCash
 {
     public partial class frmReport1 : Form
     {
+        private string categoryId = "";
+        private string categoryName = "";
         #region ------初始化变量------
         private string strSql = "";                 //查询条件
         private int intPage = 1;                    //当前页码
@@ -25,14 +27,44 @@ namespace AppCash
         #region ------搜索------
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //if (tbKey.Text.Trim() != "")
-            //{
-            //    string key = Maticsoft.Common.StringPlus.GetText(tbKey.Text);
-            //    strSql = "Name like '%" + key + "%'";
-            //    intPage = 1;
-            //    fillGVList(strSql, intPageSize, 1);
 
-            //}
+            strSql = "";
+            if (cbCasher.Text.Trim() != "")
+            {
+                string key = Maticsoft.Common.StringPlus.GetText(cbCasher.Text);
+                strSql += " and Oper = '" + key + "'";
+                //intPage = 1;
+                //fillGVList(strSql, intPageSize, 1);
+
+            }
+            if (tbCode.Text.Trim() != "")
+            {
+                string key = Maticsoft.Common.StringPlus.GetText(tbCode.Text);
+                strSql += "and  GoodsCode like '%" + key + "%'";
+
+
+            }
+            if (!string.IsNullOrEmpty(categoryId))
+            {
+
+                strSql += " and  Category =" + categoryId + " ";
+            }
+            
+            string startTime = txtStart.Text.Trim();
+            string endTime = txtEnd.Text.Trim();
+
+            if (!string.IsNullOrEmpty(startTime))
+            {
+                strSql += " and IDate >= #" + startTime + "# ";
+            }
+            if (!string.IsNullOrEmpty(endTime))
+            {
+                strSql += "  and IDate<=#" + endTime + " 23:59:59# ";
+            }
+
+
+            intPage = 1;
+            fillGVList(strSql, intPageSize, 1);
         }
         #endregion
 
@@ -62,7 +94,7 @@ namespace AppCash
         #region ------分页代码------
         private void intPages()
         {
-            Dong.BLL.Supplier bVip = new Dong.BLL.Supplier();
+            Dong.BLL.SaleInfo bVip = new Dong.BLL.SaleInfo();
             int counts = bVip.GetRecordCount(strSql);
             lblCounts.Text = counts.ToString();
             if (counts % intPageSize == 0)
@@ -141,11 +173,90 @@ namespace AppCash
 
         private void frmReport1_Load(object sender, EventArgs e)
         {
+
+            //绑定收银员
+            Dong.BLL.OperInfo bOper = new Dong.BLL.OperInfo();
+            //Dong.BLL.Category catebll = new Dong.BLL.Category();
+
+            DataTable dt = bOper.GetAllList().Tables[0];
+            DataRow dr = dt.NewRow();
+            dr[0] = "0";
+            //dr[1] = "全部";
+            //dr[4] = "全部";
+            dt.Rows.InsertAt(dr, 0);
+
+            cbCasher.DataSource = dt;
+            cbCasher.DisplayMember = "Code";
+            cbCasher.ValueMember = "Name";
             //设置DataGridView的显示样式
             gvList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gvList.AutoGenerateColumns = false;
             fillGVList("", intPageSize, intPage);
             intPage = 1;
+            //分页
+            //初始页面显示条数选择框
+            for (int i = 1; i < 6; i++)
+            {
+                int j = i * 10;
+                cbPageSize.Items.Add(j.ToString());
+            }
+            cbPageSize.Text = "20";                 //页面条数显示框默认显示为20条
+
+            //绑定页面显示条数设置控件的TextChanged事件
+            cbPageSize.TextChanged += new EventHandler(cbPageSize_TextChanged);
+        }
+
+        private void gvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNext_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPre_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLast_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbPageSize_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGoto_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFirst_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            //点击弹出方法
+            frmCategorySelected frmChild = new frmCategorySelected();
+            frmChild.ShowDialog();
+            if (frmChild.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                categoryId = frmChild.CategoryId;
+                categoryName = frmChild.CategoryName;
+                this.tbCategory.Text = categoryName;
+            }
         }
     }
 }

@@ -34,6 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCash));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblPreTime = new System.Windows.Forms.Label();
             this.lblPreBillCash = new System.Windows.Forms.Label();
             this.lblPreBillNo = new System.Windows.Forms.Label();
@@ -64,7 +65,6 @@
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.dGV = new System.Windows.Forms.DataGridView();
             this.t1 = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,48 +85,59 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1365, 44);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1536, 53);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(629, 22);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(476, 18);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "F1:结账   F2:会员   F3:修改数量   F4:删除   ESC:退出";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // lblPreTime
             // 
             this.lblPreTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPreTime.AutoSize = true;
-            this.lblPreTime.Location = new System.Drawing.Point(1199, 18);
+            this.lblPreTime.Location = new System.Drawing.Point(1349, 22);
             this.lblPreTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPreTime.Name = "lblPreTime";
-            this.lblPreTime.Size = new System.Drawing.Size(0, 15);
+            this.lblPreTime.Size = new System.Drawing.Size(0, 18);
             this.lblPreTime.TabIndex = 6;
             // 
             // lblPreBillCash
             // 
             this.lblPreBillCash.AutoSize = true;
-            this.lblPreBillCash.Location = new System.Drawing.Point(376, 18);
+            this.lblPreBillCash.Location = new System.Drawing.Point(423, 22);
             this.lblPreBillCash.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPreBillCash.Name = "lblPreBillCash";
-            this.lblPreBillCash.Size = new System.Drawing.Size(0, 15);
+            this.lblPreBillCash.Size = new System.Drawing.Size(0, 18);
             this.lblPreBillCash.TabIndex = 5;
             // 
             // lblPreBillNo
             // 
             this.lblPreBillNo.AutoSize = true;
-            this.lblPreBillNo.Location = new System.Drawing.Point(103, 18);
+            this.lblPreBillNo.Location = new System.Drawing.Point(116, 22);
             this.lblPreBillNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPreBillNo.Name = "lblPreBillNo";
-            this.lblPreBillNo.Size = new System.Drawing.Size(0, 15);
+            this.lblPreBillNo.Size = new System.Drawing.Size(0, 18);
             this.lblPreBillNo.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(293, 18);
+            this.label4.Location = new System.Drawing.Point(330, 22);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 15);
+            this.label4.Size = new System.Drawing.Size(107, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "消费金额:  ";
             // 
@@ -134,20 +145,20 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1119, 18);
+            this.label2.Location = new System.Drawing.Point(1259, 22);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 15);
+            this.label2.Size = new System.Drawing.Size(89, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "交易时间:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 18);
+            this.label1.Location = new System.Drawing.Point(18, 22);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 15);
+            this.label1.Size = new System.Drawing.Size(89, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "上笔单号:";
             // 
@@ -160,11 +171,11 @@
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 44);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Location = new System.Drawing.Point(0, 53);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(1365, 94);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(1536, 113);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -174,10 +185,10 @@
             this.lblSF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSF.AutoSize = true;
             this.lblSF.Font = new System.Drawing.Font("微软雅黑", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblSF.Location = new System.Drawing.Point(1101, 11);
+            this.lblSF.Location = new System.Drawing.Point(1239, 13);
             this.lblSF.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSF.Name = "lblSF";
-            this.lblSF.Size = new System.Drawing.Size(0, 80);
+            this.lblSF.Size = new System.Drawing.Size(0, 96);
             this.lblSF.TabIndex = 6;
             // 
             // label7
@@ -185,10 +196,10 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(952, 55);
+            this.label7.Location = new System.Drawing.Point(1071, 66);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(131, 36);
+            this.label7.Size = new System.Drawing.Size(155, 42);
             this.label7.TabIndex = 5;
             this.label7.Text = "实付金额:";
             // 
@@ -196,10 +207,10 @@
             // 
             this.lblBill.AutoSize = true;
             this.lblBill.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblBill.Location = new System.Drawing.Point(149, 55);
+            this.lblBill.Location = new System.Drawing.Point(168, 66);
             this.lblBill.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBill.Name = "lblBill";
-            this.lblBill.Size = new System.Drawing.Size(271, 36);
+            this.lblBill.Size = new System.Drawing.Size(320, 42);
             this.lblBill.TabIndex = 4;
             this.lblBill.Text = "B20131412271289";
             // 
@@ -208,10 +219,10 @@
             this.lblCash.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCash.AutoSize = true;
             this.lblCash.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCash.Location = new System.Drawing.Point(768, 36);
+            this.lblCash.Location = new System.Drawing.Point(864, 43);
             this.lblCash.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCash.Name = "lblCash";
-            this.lblCash.Size = new System.Drawing.Size(0, 50);
+            this.lblCash.Size = new System.Drawing.Size(0, 58);
             this.lblCash.TabIndex = 3;
             // 
             // label6
@@ -219,10 +230,10 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(624, 55);
+            this.label6.Location = new System.Drawing.Point(702, 66);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 36);
+            this.label6.Size = new System.Drawing.Size(155, 42);
             this.label6.TabIndex = 2;
             this.label6.Text = "应收金额:";
             // 
@@ -230,10 +241,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.Location = new System.Drawing.Point(12, 55);
+            this.label5.Location = new System.Drawing.Point(14, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(131, 36);
+            this.label5.Size = new System.Drawing.Size(155, 42);
             this.label5.TabIndex = 1;
             this.label5.Text = "当前单号:";
             // 
@@ -243,31 +254,31 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.lblTime);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(0, 870);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Location = new System.Drawing.Point(0, 1044);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(1365, 42);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Size = new System.Drawing.Size(1536, 50);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(95, 18);
+            this.lblUser.Location = new System.Drawing.Point(107, 22);
             this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(52, 15);
+            this.lblUser.Size = new System.Drawing.Size(62, 18);
             this.lblUser.TabIndex = 2;
             this.lblUser.Text = "董启亮";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(16, 18);
+            this.label9.Location = new System.Drawing.Point(18, 22);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 15);
+            this.label9.Size = new System.Drawing.Size(80, 18);
             this.label9.TabIndex = 1;
             this.label9.Text = "操作员: ";
             // 
@@ -275,10 +286,10 @@
             // 
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(1197, 18);
+            this.lblTime.Location = new System.Drawing.Point(1347, 22);
             this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(0, 15);
+            this.lblTime.Size = new System.Drawing.Size(0, 18);
             this.lblTime.TabIndex = 0;
             // 
             // groupBox4
@@ -290,11 +301,11 @@
             this.groupBox4.Controls.Add(this.tbCode);
             this.groupBox4.Controls.Add(this.label10);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox4.Location = new System.Drawing.Point(0, 795);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Location = new System.Drawing.Point(0, 954);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox4.Size = new System.Drawing.Size(1365, 75);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox4.Size = new System.Drawing.Size(1536, 90);
             this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             // 
@@ -303,10 +314,10 @@
             this.lblStock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblStock.Location = new System.Drawing.Point(1141, 26);
+            this.lblStock.Location = new System.Drawing.Point(1284, 31);
             this.lblStock.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStock.Name = "lblStock";
-            this.lblStock.Size = new System.Drawing.Size(0, 27);
+            this.lblStock.Size = new System.Drawing.Size(0, 31);
             this.lblStock.TabIndex = 7;
             // 
             // label17
@@ -314,10 +325,10 @@
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label17.Location = new System.Drawing.Point(1064, 26);
+            this.label17.Location = new System.Drawing.Point(1197, 31);
             this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(64, 27);
+            this.label17.Size = new System.Drawing.Size(76, 31);
             this.label17.TabIndex = 6;
             this.label17.Text = "库存: ";
             // 
@@ -326,10 +337,10 @@
             this.lblGoodsName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGoodsName.AutoSize = true;
             this.lblGoodsName.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblGoodsName.Location = new System.Drawing.Point(684, 26);
+            this.lblGoodsName.Location = new System.Drawing.Point(770, 31);
             this.lblGoodsName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGoodsName.Name = "lblGoodsName";
-            this.lblGoodsName.Size = new System.Drawing.Size(0, 27);
+            this.lblGoodsName.Size = new System.Drawing.Size(0, 31);
             this.lblGoodsName.TabIndex = 5;
             // 
             // label11
@@ -337,76 +348,79 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(587, 26);
+            this.label11.Location = new System.Drawing.Point(660, 31);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 27);
+            this.label11.Size = new System.Drawing.Size(124, 31);
             this.label11.TabIndex = 4;
             this.label11.Text = "当前商品: ";
             // 
             // tbCode
             // 
             this.tbCode.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.tbCode.Location = new System.Drawing.Point(156, 21);
-            this.tbCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCode.Location = new System.Drawing.Point(176, 25);
+            this.tbCode.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(424, 39);
+            this.tbCode.Size = new System.Drawing.Size(476, 45);
             this.tbCode.TabIndex = 3;
+            this.tbCode.TextChanged += new System.EventHandler(this.tbCode_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(12, 21);
+            this.label10.Location = new System.Drawing.Point(14, 25);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(131, 36);
+            this.label10.Size = new System.Drawing.Size(155, 42);
             this.label10.TabIndex = 2;
             this.label10.Text = "商品编码:";
             // 
             // groupBox5
             // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.ControlText;
             this.groupBox5.Controls.Add(this.lblVip);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox5.Location = new System.Drawing.Point(0, 743);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Location = new System.Drawing.Point(0, 892);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox5.Size = new System.Drawing.Size(1365, 52);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox5.Size = new System.Drawing.Size(1536, 62);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
             // 
             // lblVip
             // 
             this.lblVip.AutoSize = true;
             this.lblVip.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblVip.Location = new System.Drawing.Point(115, 19);
+            this.lblVip.Location = new System.Drawing.Point(129, 23);
             this.lblVip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVip.Name = "lblVip";
-            this.lblVip.Size = new System.Drawing.Size(0, 25);
+            this.lblVip.Size = new System.Drawing.Size(0, 28);
             this.lblVip.TabIndex = 6;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(16, 19);
+            this.label12.Location = new System.Drawing.Point(18, 23);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(89, 25);
+            this.label12.Size = new System.Drawing.Size(123, 28);
             this.label12.TabIndex = 5;
-            this.label12.Text = "会员卡号:";
+            this.label12.Text = "会员手机号:";
             // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.dGV);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(0, 138);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Location = new System.Drawing.Point(0, 166);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox6.Size = new System.Drawing.Size(1365, 605);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox6.Size = new System.Drawing.Size(1536, 726);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             // 
@@ -415,9 +429,9 @@
             this.dGV.AllowUserToAddRows = false;
             this.dGV.AllowUserToDeleteRows = false;
             this.dGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGV.BackgroundColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.dGV.BackgroundColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Info;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.HotTrack;
@@ -436,8 +450,8 @@
             this.dGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGV.EnableHeadersVisualStyles = false;
             this.dGV.GridColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dGV.Location = new System.Drawing.Point(4, 22);
-            this.dGV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dGV.Location = new System.Drawing.Point(4, 26);
+            this.dGV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dGV.MultiSelect = false;
             this.dGV.Name = "dGV";
             this.dGV.ReadOnly = true;
@@ -448,7 +462,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dGV.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dGV.RowTemplate.Height = 23;
-            this.dGV.Size = new System.Drawing.Size(1357, 579);
+            this.dGV.Size = new System.Drawing.Size(1528, 695);
             this.dGV.TabIndex = 0;
             this.dGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_CellContentClick);
             // 
@@ -458,22 +472,12 @@
             this.t1.Interval = 1000;
             this.t1.Tick += new System.EventHandler(this.t1_Tick);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(559, 18);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(395, 15);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "P:结账   V:会员   D:删除   End:修改数量   ESC:退出";
-            // 
             // frmCash
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(1365, 912);
+            this.BackColor = System.Drawing.SystemColors.ControlText;
+            this.ClientSize = new System.Drawing.Size(1536, 1094);
             this.ControlBox = false;
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -484,7 +488,7 @@
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCash";
@@ -538,7 +542,7 @@
         private System.Windows.Forms.Timer t1;
         private System.Windows.Forms.Label lblSF;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblVip;
+        public System.Windows.Forms.Label lblVip;
         private System.Windows.Forms.Label label3;
 
 

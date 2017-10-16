@@ -51,9 +51,9 @@ namespace Dong.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into SaleInfo(");
-            strSql.Append("Pid,GoodsCode,Counts,Price,PriceSum,VipCode,IDate,Oper)");
+            strSql.Append("Pid,GoodsCode,Counts,Price,PriceSum,VipCode,IDate,Oper,Cash,Weixin,Alipay,Mark1,Mark2,Mark3)");
 			strSql.Append(" values (");
-            strSql.Append("@Pid,@GoodsCode,@Counts,@Price,@PriceSum,@VipCode,@IDate,@Oper)");
+            strSql.Append("@Pid,@GoodsCode,@Counts,@Price,@PriceSum,@VipCode,@IDate,@Oper,@Cash,@Weixin,@Alipay,@Mark1,@Mark2,@Mark3)");
 			OleDbParameter[] parameters = {
 					new OleDbParameter("@Pid", OleDbType.VarChar,50),
 					new OleDbParameter("@GoodsCode", OleDbType.VarChar,50),
@@ -62,7 +62,13 @@ namespace Dong.DAL
                     new OleDbParameter("@PriceSum", OleDbType.Double,4),
                     new OleDbParameter("@VipCode", OleDbType.VarChar,50),
 					new OleDbParameter("@IDate", OleDbType.Date),
-					new OleDbParameter("@Oper", OleDbType.VarChar,50)};
+					new OleDbParameter("@Oper", OleDbType.VarChar,50),
+                    new OleDbParameter("@Cash", OleDbType.Double,4),
+                    new OleDbParameter("@Weixin", OleDbType.Double,4),
+                    new OleDbParameter("@Alipay", OleDbType.Double,4),
+                    new OleDbParameter("@Mark1", OleDbType.VarChar,50),
+                    new OleDbParameter("@Mark2", OleDbType.VarChar,50),
+                    new OleDbParameter("@Mark3", OleDbType.Double,4)};
 			parameters[0].Value = model.Pid;
 			parameters[1].Value = model.GoodsCode;
 			parameters[2].Value = model.Counts;
@@ -71,6 +77,13 @@ namespace Dong.DAL
             parameters[5].Value = model.VipCode;
 			parameters[6].Value = model.IDate;
 			parameters[7].Value = model.Oper;
+
+            parameters[8].Value = model.Cash;
+            parameters[9].Value = model.Weixin;
+            parameters[10].Value = model.Alipay;
+            parameters[11].Value = model.Mark1;
+            parameters[12].Value = model.Mark2;
+            parameters[13].Value = model.Mark3;
 
 			int rows=DbHelperOleDb.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -94,6 +107,13 @@ namespace Dong.DAL
 			strSql.Append("Price=@Price,");
 			strSql.Append("IDate=@IDate,");
 			strSql.Append("Oper=@Oper");
+
+            strSql.Append("Cash=@Cash,");
+            strSql.Append("Weixin=@Weixin,");
+            strSql.Append("Alipay=@Alipay,");
+            strSql.Append("Mark1=@Mark1,");
+            strSql.Append("Mark2=@Mark2,");
+            strSql.Append("Mark3=@Mark3,");
 			strSql.Append(" where Pid=@Pid ");
 			OleDbParameter[] parameters = {
 					new OleDbParameter("@GoodsCode", OleDbType.VarChar,50),
@@ -101,6 +121,14 @@ namespace Dong.DAL
 					new OleDbParameter("@Price", OleDbType.Integer,4),
 					new OleDbParameter("@IDate", OleDbType.Date),
 					new OleDbParameter("@Oper", OleDbType.VarChar,50),
+
+                    new OleDbParameter("@Cash", OleDbType.Double,4),
+                    new OleDbParameter("@Weixin", OleDbType.Double,4),
+                    new OleDbParameter("@Alipay", OleDbType.Double,4),
+                    new OleDbParameter("@Mark1", OleDbType.VarChar,50),
+                    new OleDbParameter("@Mark2", OleDbType.VarChar,50),
+                    new OleDbParameter("@Mark3", OleDbType.Double,4),
+
 					new OleDbParameter("@Id", OleDbType.Integer,4),
 					new OleDbParameter("@Pid", OleDbType.VarChar,50)};
 			parameters[0].Value = model.GoodsCode;
@@ -172,7 +200,7 @@ namespace Dong.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,Pid,GoodsCode,Counts,Price,IDate,Oper from SaleInfo ");
+			strSql.Append("select Id,Pid,GoodsCode,Counts,Price,IDate,Oper,Cash,Weixin,Alipay,Mark1,Mark2,Mark3 from SaleInfo ");
 			strSql.Append(" where Pid=@Pid ");
 			OleDbParameter[] parameters = {
 					new OleDbParameter("@Pid", OleDbType.VarChar,50)			};
@@ -235,6 +263,33 @@ namespace Dong.DAL
 				{
 					model.Oper=row["Oper"].ToString();
 				}
+
+                if (row["Cash"] != null && row["Cash"].ToString() != "")
+                {
+                    model.Cash = double.Parse(row["Cash"].ToString());
+                }
+                if (row["Weixin"] != null && row["Weixin"].ToString() != "")
+                {
+                    model.Weixin = double.Parse(row["Weixin"].ToString());
+                }
+                if (row["Alipay"] != null && row["Alipay"].ToString() != "")
+                {
+                    model.Alipay = double.Parse(row["Alipay"].ToString());
+                }
+
+                if (row["Mark1"] != null && row["Mark1"].ToString() != "")
+                {
+                    model.Mark1 = row["Mark1"].ToString();
+                }
+                if (row["Mark2"] != null && row["Mark2"].ToString() != "")
+                {
+                    model.Mark2 = row["Mark2"].ToString();
+                }
+                if (row["Mark3"] != null && row["Mark3"].ToString() != "")
+                {
+                    model.Mark3 = double.Parse(row["Mark3"].ToString());
+                }
+
 			}
 			return model;
 		}
@@ -260,12 +315,13 @@ namespace Dong.DAL
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) FROM SaleInfo ");
+            strSql.Append("select count(1) FROM v_SaleInfoDetail ");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" where 1=1 "+strWhere);
 			}
-			object obj = DbHelperSQL.GetSingle(strSql.ToString());
+            object obj = DbHelperOleDb.GetSingle(strSql.ToString());
+
 			if (obj == null)
 			{
 				return 0;

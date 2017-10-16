@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\Administrator.SC-201604071938\Desktop\</PublishUrl>
+    <PublishUrl>D:\winform\cash\产品\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,9 +23,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <WebPage>publish.htm</WebPage>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -54,6 +57,18 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>BA2424C426EDE75FDD03396E46A8FE438685CAE1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>AppCash_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2">
       <HintPath>..\..\..\..\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
@@ -72,6 +87,18 @@
   <ItemGroup>
     <Compile Include="CommonUtility.cs" />
     <Compile Include="Computer.cs" />
+    <Compile Include="frmHostConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHostConfig.Designer.cs">
+      <DependentUpon>frmHostConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdate.Designer.cs">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +125,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="SoftUpdate.cs" />
     <Compile Include="会员管理\frmAddVip.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,6 +204,18 @@
     <Compile Include="商品查询\frmGoodsSearch.Designer.cs">
       <DependentUpon>frmGoodsSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="商品档案\frmNoInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品档案\frmNoInput.Designer.cs">
+      <DependentUpon>frmNoInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品档案\frmCategorySelected.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品档案\frmCategorySelected.Designer.cs">
+      <DependentUpon>frmCategorySelected.cs</DependentUpon>
+    </Compile>
     <Compile Include="商品档案\frmAddGppds.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +246,12 @@
     <Compile Include="商品类别\frmAddCategory.Designer.cs">
       <DependentUpon>frmAddCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="商品类别\frmCategorytree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品类别\frmCategorytree.Designer.cs">
+      <DependentUpon>frmCategorytree.cs</DependentUpon>
+    </Compile>
     <Compile Include="商品类别\frmEditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +269,18 @@
     </Compile>
     <Compile Include="商品零售报表\frmReport1.Designer.cs">
       <DependentUpon>frmReport1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="关于\frmGY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="关于\frmGY.Designer.cs">
+      <DependentUpon>frmGY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="数据备份\frmDbBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="数据备份\frmDbBackup.Designer.cs">
+      <DependentUpon>frmDbBackup.cs</DependentUpon>
     </Compile>
     <Compile Include="软件注册\frmSafe.cs">
       <SubType>Form</SubType>
@@ -314,11 +372,18 @@
     <Compile Include="进货管理\frmInputDetail.Designer.cs">
       <DependentUpon>frmInputDetail.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmHostConfig.resx">
+      <DependentUpon>frmHostConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdate.resx">
+      <DependentUpon>frmUpdate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReg.resx">
       <DependentUpon>frmReg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -368,6 +433,12 @@
     <EmbeddedResource Include="商品查询\frmGoodsSearch.resx">
       <DependentUpon>frmGoodsSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="商品档案\frmNoInput.resx">
+      <DependentUpon>frmNoInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品档案\frmCategorySelected.resx">
+      <DependentUpon>frmCategorySelected.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="商品档案\frmAddGppds.resx">
       <DependentUpon>frmAddGppds.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,6 +454,9 @@
     <EmbeddedResource Include="商品类别\frmAddCategory.resx">
       <DependentUpon>frmAddCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="商品类别\frmCategorytree.resx">
+      <DependentUpon>frmCategorytree.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="商品类别\frmEditCategory.resx">
       <DependentUpon>frmEditCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +466,12 @@
     <EmbeddedResource Include="商品零售报表\frmReport1.resx">
       <DependentUpon>frmReport1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="关于\frmGY.resx">
+      <DependentUpon>frmGY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="数据备份\frmDbBackup.resx">
+      <DependentUpon>frmDbBackup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="软件注册\frmSafe.resx">
       <DependentUpon>frmSafe.cs</DependentUpon>
     </EmbeddedResource>
@@ -400,6 +480,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="开始收银\frmCash.resx">
       <DependentUpon>frmCash.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="开始收银\frmCounts.resx">
       <DependentUpon>frmCounts.cs</DependentUpon>
@@ -440,6 +521,7 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="AppCash_TemporaryKey.pfx" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

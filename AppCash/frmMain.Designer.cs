@@ -38,27 +38,27 @@
             this.btnUnit = new DevComponents.DotNetBar.ButtonItem();
             this.btnInput = new DevComponents.DotNetBar.ButtonItem();
             this.btnPD = new DevComponents.DotNetBar.ButtonItem();
-            this.btnGoodsSearch = new DevComponents.DotNetBar.ButtonItem();
             this.btnCash = new DevComponents.DotNetBar.ButtonItem();
             this.btnReport1 = new DevComponents.DotNetBar.ButtonItem();
             this.btnSys = new DevComponents.DotNetBar.ButtonItem();
             this.btnHotKey = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonControl1 = new DevComponents.DotNetBar.RibbonControl();
-            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar8 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnJB = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel4 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar7 = new DevComponents.DotNetBar.RibbonBar();
             this.btnReportToDay = new DevComponents.DotNetBar.ButtonItem();
             this.btnReportDay = new DevComponents.DotNetBar.ButtonItem();
             this.btnReportMonth = new DevComponents.DotNetBar.ButtonItem();
+            this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
+            this.ribbonBar8 = new DevComponents.DotNetBar.RibbonBar();
+            this.btnJB = new DevComponents.DotNetBar.ButtonItem();
+            this.btnGY = new DevComponents.DotNetBar.ButtonItem();
+            this.btnBF = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel3 = new DevComponents.DotNetBar.RibbonPanel();
-            this.ribbonBar4 = new DevComponents.DotNetBar.RibbonBar();
-            this.btnSupp = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonBar2 = new DevComponents.DotNetBar.RibbonBar();
             this.btnShop = new DevComponents.DotNetBar.ButtonItem();
             this.btnVip = new DevComponents.DotNetBar.ButtonItem();
             this.btnUsers = new DevComponents.DotNetBar.ButtonItem();
+            this.btnSupp = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonTabItem3 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem2 = new DevComponents.DotNetBar.RibbonTabItem();
             this.ribbonTabItem4 = new DevComponents.DotNetBar.RibbonTabItem();
@@ -76,8 +76,8 @@
             this.buttonItem2 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel2.SuspendLayout();
             this.ribbonControl1.SuspendLayout();
-            this.ribbonPanel5.SuspendLayout();
             this.ribbonPanel4.SuspendLayout();
+            this.ribbonPanel5.SuspendLayout();
             this.ribbonPanel3.SuspendLayout();
             this.cms.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -93,11 +93,11 @@
             this.ribbonPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel2.Controls.Add(this.ribbonBar3);
             this.ribbonPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel2.Location = new System.Drawing.Point(0, 29);
-            this.ribbonPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonPanel2.Location = new System.Drawing.Point(0, 33);
+            this.ribbonPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonPanel2.Name = "ribbonPanel2";
-            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
-            this.ribbonPanel2.Size = new System.Drawing.Size(923, 83);
+            this.ribbonPanel2.Padding = new System.Windows.Forms.Padding(4, 0, 4, 5);
+            this.ribbonPanel2.Size = new System.Drawing.Size(1038, 102);
             // 
             // 
             // 
@@ -111,7 +111,6 @@
             // 
             this.ribbonPanel2.StyleMouseOver.Class = "";
             this.ribbonPanel2.TabIndex = 2;
-            this.ribbonPanel2.Visible = false;
             this.ribbonPanel2.Click += new System.EventHandler(this.ribbonPanel2_Click);
             // 
             // ribbonBar3
@@ -133,13 +132,12 @@
             this.btnUnit,
             this.btnInput,
             this.btnPD,
-            this.btnGoodsSearch,
             this.btnCash,
             this.btnReport1});
             this.ribbonBar3.Location = new System.Drawing.Point(4, 0);
-            this.ribbonBar3.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonBar3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonBar3.Name = "ribbonBar3";
-            this.ribbonBar3.Size = new System.Drawing.Size(791, 79);
+            this.ribbonBar3.Size = new System.Drawing.Size(703, 97);
             this.ribbonBar3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar3.TabIndex = 0;
             this.ribbonBar3.Text = "ribbonBar3";
@@ -152,6 +150,7 @@
             // 
             this.ribbonBar3.TitleStyleMouseOver.Class = "";
             this.ribbonBar3.TitleVisible = false;
+            this.ribbonBar3.ItemClick += new System.EventHandler(this.ribbonBar3_ItemClick);
             // 
             // btnGoods
             // 
@@ -204,16 +203,6 @@
             this.btnPD.Text = "商品盘点";
             this.btnPD.Click += new System.EventHandler(this.btnPD_Click);
             // 
-            // btnGoodsSearch
-            // 
-            this.btnGoodsSearch.Image = global::AppCash.Properties.Resources.YouTube;
-            this.btnGoodsSearch.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnGoodsSearch.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnGoodsSearch.Name = "btnGoodsSearch";
-            this.btnGoodsSearch.SubItemsExpandWidth = 14;
-            this.btnGoodsSearch.Text = "商品查询";
-            this.btnGoodsSearch.Click += new System.EventHandler(this.btnGoodsSearch_Click);
-            // 
             // btnCash
             // 
             this.btnCash.Image = global::AppCash.Properties.Resources.Play;
@@ -256,9 +245,9 @@
             // 
             // 
             this.ribbonControl1.BackgroundStyle.Class = "";
-            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel2);
             this.ribbonControl1.Controls.Add(this.ribbonPanel4);
+            this.ribbonControl1.Controls.Add(this.ribbonPanel5);
             this.ribbonControl1.Controls.Add(this.ribbonPanel3);
             this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.ribbonControl1.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
@@ -268,91 +257,25 @@
             this.ribbonTabItem5});
             this.ribbonControl1.KeyTipsFont = new System.Drawing.Font("Tahoma", 7F);
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.ribbonControl1.Size = new System.Drawing.Size(923, 114);
+            this.ribbonControl1.Size = new System.Drawing.Size(1038, 137);
             this.ribbonControl1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonControl1.TabGroupHeight = 14;
             this.ribbonControl1.TabIndex = 0;
             this.ribbonControl1.Text = "ribbonControl1";
-            // 
-            // ribbonPanel5
-            // 
-            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel5.Controls.Add(this.ribbonBar8);
-            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel5.Location = new System.Drawing.Point(0, 29);
-            this.ribbonPanel5.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonPanel5.Name = "ribbonPanel5";
-            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
-            this.ribbonPanel5.Size = new System.Drawing.Size(923, 83);
-            // 
-            // 
-            // 
-            this.ribbonPanel5.Style.Class = "";
-            // 
-            // 
-            // 
-            this.ribbonPanel5.StyleMouseDown.Class = "";
-            // 
-            // 
-            // 
-            this.ribbonPanel5.StyleMouseOver.Class = "";
-            this.ribbonPanel5.TabIndex = 5;
-            // 
-            // ribbonBar8
-            // 
-            this.ribbonBar8.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar8.BackgroundMouseOverStyle.Class = "";
-            // 
-            // 
-            // 
-            this.ribbonBar8.BackgroundStyle.Class = "";
-            this.ribbonBar8.ContainerControlProcessDialogKey = true;
-            this.ribbonBar8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar8.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnJB});
-            this.ribbonBar8.Location = new System.Drawing.Point(4, 0);
-            this.ribbonBar8.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonBar8.Name = "ribbonBar8";
-            this.ribbonBar8.Size = new System.Drawing.Size(364, 79);
-            this.ribbonBar8.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar8.TabIndex = 1;
-            this.ribbonBar8.Text = "ribbonBar8";
-            // 
-            // 
-            // 
-            this.ribbonBar8.TitleStyle.Class = "";
-            // 
-            // 
-            // 
-            this.ribbonBar8.TitleStyleMouseOver.Class = "";
-            this.ribbonBar8.TitleVisible = false;
-            // 
-            // btnJB
-            // 
-            this.btnJB.Image = global::AppCash.Properties.Resources.Bluetooth;
-            this.btnJB.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnJB.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnJB.Name = "btnJB";
-            this.btnJB.SubItemsExpandWidth = 14;
-            this.btnJB.Text = "软件注册";
-            this.btnJB.Click += new System.EventHandler(this.btnJB_Click);
             // 
             // ribbonPanel4
             // 
             this.ribbonPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonPanel4.Controls.Add(this.ribbonBar7);
             this.ribbonPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel4.Location = new System.Drawing.Point(0, 29);
-            this.ribbonPanel4.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonPanel4.Location = new System.Drawing.Point(0, 33);
+            this.ribbonPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonPanel4.Name = "ribbonPanel4";
-            this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
-            this.ribbonPanel4.Size = new System.Drawing.Size(923, 83);
+            this.ribbonPanel4.Padding = new System.Windows.Forms.Padding(4, 0, 4, 5);
+            this.ribbonPanel4.Size = new System.Drawing.Size(1038, 102);
             // 
             // 
             // 
@@ -387,9 +310,9 @@
             this.btnReportDay,
             this.btnReportMonth});
             this.ribbonBar7.Location = new System.Drawing.Point(4, 0);
-            this.ribbonBar7.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonBar7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonBar7.Name = "ribbonBar7";
-            this.ribbonBar7.Size = new System.Drawing.Size(364, 79);
+            this.ribbonBar7.Size = new System.Drawing.Size(311, 97);
             this.ribbonBar7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar7.TabIndex = 1;
             this.ribbonBar7.Text = "ribbonBar7";
@@ -433,17 +356,106 @@
             this.btnReportMonth.Text = "营收月报";
             this.btnReportMonth.Click += new System.EventHandler(this.btnReportMonth_Click);
             // 
+            // ribbonPanel5
+            // 
+            this.ribbonPanel5.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonPanel5.Controls.Add(this.ribbonBar8);
+            this.ribbonPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ribbonPanel5.Location = new System.Drawing.Point(0, 33);
+            this.ribbonPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ribbonPanel5.Name = "ribbonPanel5";
+            this.ribbonPanel5.Padding = new System.Windows.Forms.Padding(4, 0, 4, 5);
+            this.ribbonPanel5.Size = new System.Drawing.Size(1038, 102);
+            // 
+            // 
+            // 
+            this.ribbonPanel5.Style.Class = "";
+            // 
+            // 
+            // 
+            this.ribbonPanel5.StyleMouseDown.Class = "";
+            // 
+            // 
+            // 
+            this.ribbonPanel5.StyleMouseOver.Class = "";
+            this.ribbonPanel5.TabIndex = 5;
+            this.ribbonPanel5.Visible = false;
+            this.ribbonPanel5.Click += new System.EventHandler(this.ribbonPanel5_Click);
+            // 
+            // ribbonBar8
+            // 
+            this.ribbonBar8.AutoOverflowEnabled = true;
+            // 
+            // 
+            // 
+            this.ribbonBar8.BackgroundMouseOverStyle.Class = "";
+            // 
+            // 
+            // 
+            this.ribbonBar8.BackgroundStyle.Class = "";
+            this.ribbonBar8.ContainerControlProcessDialogKey = true;
+            this.ribbonBar8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.ribbonBar8.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.btnJB,
+            this.btnGY,
+            this.btnBF});
+            this.ribbonBar8.Location = new System.Drawing.Point(4, 0);
+            this.ribbonBar8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ribbonBar8.Name = "ribbonBar8";
+            this.ribbonBar8.Size = new System.Drawing.Size(307, 97);
+            this.ribbonBar8.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.ribbonBar8.TabIndex = 1;
+            this.ribbonBar8.Text = "ribbonBar8";
+            // 
+            // 
+            // 
+            this.ribbonBar8.TitleStyle.Class = "";
+            // 
+            // 
+            // 
+            this.ribbonBar8.TitleStyleMouseOver.Class = "";
+            this.ribbonBar8.TitleVisible = false;
+            // 
+            // btnJB
+            // 
+            this.btnJB.Image = global::AppCash.Properties.Resources.Bluetooth;
+            this.btnJB.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnJB.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnJB.Name = "btnJB";
+            this.btnJB.SubItemsExpandWidth = 14;
+            this.btnJB.Text = "软件注册";
+            this.btnJB.Click += new System.EventHandler(this.btnJB_Click);
+            // 
+            // btnGY
+            // 
+            this.btnGY.Image = global::AppCash.Properties.Resources.CD;
+            this.btnGY.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnGY.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnGY.Name = "btnGY";
+            this.btnGY.SubItemsExpandWidth = 14;
+            this.btnGY.Text = "关于我们";
+            this.btnGY.Click += new System.EventHandler(this.btnGY_Click);
+            // 
+            // btnBF
+            // 
+            this.btnBF.Image = global::AppCash.Properties.Resources.Internet;
+            this.btnBF.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnBF.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnBF.Name = "btnBF";
+            this.btnBF.SubItemsExpandWidth = 14;
+            this.btnBF.Text = "备份数据";
+            this.btnBF.Click += new System.EventHandler(this.buttonItem3_Click);
+            // 
             // ribbonPanel3
             // 
             this.ribbonPanel3.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonPanel3.Controls.Add(this.ribbonBar4);
             this.ribbonPanel3.Controls.Add(this.ribbonBar2);
             this.ribbonPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ribbonPanel3.Location = new System.Drawing.Point(0, 29);
-            this.ribbonPanel3.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonPanel3.Location = new System.Drawing.Point(0, 0);
+            this.ribbonPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonPanel3.Name = "ribbonPanel3";
-            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(4, 0, 4, 4);
-            this.ribbonPanel3.Size = new System.Drawing.Size(923, 83);
+            this.ribbonPanel3.Padding = new System.Windows.Forms.Padding(4, 0, 4, 5);
+            this.ribbonPanel3.Size = new System.Drawing.Size(1038, 135);
             // 
             // 
             // 
@@ -458,48 +470,6 @@
             this.ribbonPanel3.StyleMouseOver.Class = "";
             this.ribbonPanel3.TabIndex = 3;
             this.ribbonPanel3.Visible = false;
-            // 
-            // ribbonBar4
-            // 
-            this.ribbonBar4.AutoOverflowEnabled = true;
-            // 
-            // 
-            // 
-            this.ribbonBar4.BackgroundMouseOverStyle.Class = "";
-            // 
-            // 
-            // 
-            this.ribbonBar4.BackgroundStyle.Class = "";
-            this.ribbonBar4.ContainerControlProcessDialogKey = true;
-            this.ribbonBar4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.ribbonBar4.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.btnSupp});
-            this.ribbonBar4.Location = new System.Drawing.Point(277, 0);
-            this.ribbonBar4.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonBar4.Name = "ribbonBar4";
-            this.ribbonBar4.Size = new System.Drawing.Size(115, 79);
-            this.ribbonBar4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.ribbonBar4.TabIndex = 1;
-            this.ribbonBar4.Text = "ribbonBar4";
-            // 
-            // 
-            // 
-            this.ribbonBar4.TitleStyle.Class = "";
-            // 
-            // 
-            // 
-            this.ribbonBar4.TitleStyleMouseOver.Class = "";
-            this.ribbonBar4.TitleVisible = false;
-            // 
-            // btnSupp
-            // 
-            this.btnSupp.Image = global::AppCash.Properties.Resources.Dropbox;
-            this.btnSupp.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
-            this.btnSupp.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
-            this.btnSupp.Name = "btnSupp";
-            this.btnSupp.SubItemsExpandWidth = 14;
-            this.btnSupp.Text = "供应商管理";
-            this.btnSupp.Click += new System.EventHandler(this.btnSupp_Click);
             // 
             // ribbonBar2
             // 
@@ -517,11 +487,12 @@
             this.ribbonBar2.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnShop,
             this.btnVip,
-            this.btnUsers});
+            this.btnUsers,
+            this.btnSupp});
             this.ribbonBar2.Location = new System.Drawing.Point(4, 0);
-            this.ribbonBar2.Margin = new System.Windows.Forms.Padding(4);
+            this.ribbonBar2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonBar2.Name = "ribbonBar2";
-            this.ribbonBar2.Size = new System.Drawing.Size(273, 79);
+            this.ribbonBar2.Size = new System.Drawing.Size(410, 130);
             this.ribbonBar2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar2.TabIndex = 0;
             this.ribbonBar2.Text = "ribbonBar2";
@@ -565,6 +536,16 @@
             this.btnUsers.Text = "员工管理";
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
+            // btnSupp
+            // 
+            this.btnSupp.Image = global::AppCash.Properties.Resources.Dropbox;
+            this.btnSupp.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.btnSupp.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.btnSupp.Name = "btnSupp";
+            this.btnSupp.SubItemsExpandWidth = 14;
+            this.btnSupp.Text = "供应商管理";
+            this.btnSupp.Click += new System.EventHandler(this.btnSupp_Click_1);
+            // 
             // ribbonTabItem3
             // 
             this.ribbonTabItem3.Name = "ribbonTabItem3";
@@ -573,9 +554,11 @@
             // 
             // ribbonTabItem2
             // 
+            this.ribbonTabItem2.Checked = true;
             this.ribbonTabItem2.Name = "ribbonTabItem2";
             this.ribbonTabItem2.Panel = this.ribbonPanel2;
             this.ribbonTabItem2.Text = "商品管理";
+            this.ribbonTabItem2.Click += new System.EventHandler(this.ribbonTabItem2_Click);
             // 
             // ribbonTabItem4
             // 
@@ -586,7 +569,6 @@
             // 
             // ribbonTabItem5
             // 
-            this.ribbonTabItem5.Checked = true;
             this.ribbonTabItem5.Name = "ribbonTabItem5";
             this.ribbonTabItem5.Panel = this.ribbonPanel5;
             this.ribbonTabItem5.Text = "产品中心";
@@ -599,19 +581,19 @@
             this.btnMCloseAll,
             this.btnMCloseOther});
             this.cms.Name = "cms";
-            this.cms.Size = new System.Drawing.Size(145, 56);
+            this.cms.Size = new System.Drawing.Size(153, 60);
             // 
             // btnMCloseAll
             // 
             this.btnMCloseAll.Name = "btnMCloseAll";
-            this.btnMCloseAll.Size = new System.Drawing.Size(144, 26);
+            this.btnMCloseAll.Size = new System.Drawing.Size(152, 28);
             this.btnMCloseAll.Text = "全部关闭";
             this.btnMCloseAll.Click += new System.EventHandler(this.btnMCloseAll_Click);
             // 
             // btnMCloseOther
             // 
             this.btnMCloseOther.Name = "btnMCloseOther";
-            this.btnMCloseOther.Size = new System.Drawing.Size(144, 26);
+            this.btnMCloseOther.Size = new System.Drawing.Size(152, 28);
             this.btnMCloseOther.Text = "关闭其它";
             this.btnMCloseOther.Click += new System.EventHandler(this.btnMCloseOther_Click);
             // 
@@ -624,10 +606,10 @@
             this.lblUser,
             this.lblAddr,
             this.lblDate});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 463);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 559);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(923, 26);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 21, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1038, 28);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -639,7 +621,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.lblShopName.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.lblShopName.Name = "lblShopName";
-            this.lblShopName.Size = new System.Drawing.Size(200, 21);
+            this.lblShopName.Size = new System.Drawing.Size(200, 23);
             // 
             // lblUser
             // 
@@ -649,7 +631,8 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.lblUser.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(100, 21);
+            this.lblUser.Size = new System.Drawing.Size(100, 23);
+            this.lblUser.Click += new System.EventHandler(this.lblUser_Click);
             // 
             // lblAddr
             // 
@@ -658,7 +641,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.lblAddr.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.lblAddr.Name = "lblAddr";
-            this.lblAddr.Size = new System.Drawing.Size(483, 21);
+            this.lblAddr.Size = new System.Drawing.Size(596, 23);
             this.lblAddr.Spring = true;
             // 
             // lblDate
@@ -669,7 +652,7 @@
             | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
             this.lblDate.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(120, 21);
+            this.lblDate.Size = new System.Drawing.Size(120, 23);
             // 
             // tabMain
             // 
@@ -677,12 +660,12 @@
             this.tabMain.CloseButtonOnTabsVisible = true;
             this.tabMain.CloseButtonPosition = DevComponents.DotNetBar.eTabCloseButtonPosition.Right;
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabMain.Location = new System.Drawing.Point(0, 114);
-            this.tabMain.Margin = new System.Windows.Forms.Padding(4);
+            this.tabMain.Location = new System.Drawing.Point(0, 137);
+            this.tabMain.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedTabFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold);
             this.tabMain.SelectedTabIndex = -1;
-            this.tabMain.Size = new System.Drawing.Size(923, 349);
+            this.tabMain.Size = new System.Drawing.Size(1038, 422);
             this.tabMain.Style = DevComponents.DotNetBar.eTabStripStyle.Office2007Dock;
             this.tabMain.TabIndex = 4;
             this.tabMain.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
@@ -710,24 +693,23 @@
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 489);
+            this.ClientSize = new System.Drawing.Size(1038, 587);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.ribbonControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmMain";
-            this.Text = "嘟嘟收银系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ribbonPanel2.ResumeLayout(false);
             this.ribbonControl1.ResumeLayout(false);
             this.ribbonControl1.PerformLayout();
-            this.ribbonPanel5.ResumeLayout(false);
             this.ribbonPanel4.ResumeLayout(false);
+            this.ribbonPanel5.ResumeLayout(false);
             this.ribbonPanel3.ResumeLayout(false);
             this.cms.ResumeLayout(false);
             this.statusStrip1.ResumeLayout(false);
@@ -757,8 +739,6 @@
         private DevComponents.DotNetBar.ButtonItem btnCategory;
         private DevComponents.DotNetBar.ButtonItem btnUnit;
         private DevComponents.DotNetBar.ButtonItem btnHotKey;
-        private DevComponents.DotNetBar.RibbonBar ribbonBar4;
-        private DevComponents.DotNetBar.ButtonItem btnSupp;
         private DevComponents.DotNetBar.RibbonBar ribbonBar2;
         private DevComponents.DotNetBar.ButtonItem btnShop;
         private DevComponents.DotNetBar.ButtonItem btnVip;
@@ -770,7 +750,6 @@
         private DevComponents.DotNetBar.ButtonItem btnReportMonth;
         private DevComponents.DotNetBar.ButtonItem btnInput;
         private DevComponents.DotNetBar.ButtonItem btnPD;
-        private DevComponents.DotNetBar.ButtonItem btnGoodsSearch;
         private DevComponents.DotNetBar.ButtonItem btnCash;
         private DevComponents.DotNetBar.ButtonItem btnReport1;
         private DevComponents.DotNetBar.ButtonItem btnJB;
@@ -785,5 +764,8 @@
         private System.Windows.Forms.ToolStripStatusLabel lblDate;
         private DevComponents.DotNetBar.ButtonItem buttonItem1;
         private DevComponents.DotNetBar.ButtonItem buttonItem2;
+        private DevComponents.DotNetBar.ButtonItem btnGY;
+        private DevComponents.DotNetBar.ButtonItem btnSupp;
+        private DevComponents.DotNetBar.ButtonItem btnBF;
     }
 }

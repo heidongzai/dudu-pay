@@ -19,8 +19,8 @@ namespace AppCash
         private void btnLogin_Click(object sender, EventArgs e)
         {
 
-            Dong.BLL.Dictionary bAccountNo = new Dong.BLL.Dictionary();
-            Dong.Model.Dictionary mAccountNo = new Dong.Model.Dictionary();
+            //Dong.BLL.Dictionary bAccountNo = new Dong.BLL.Dictionary();
+            //Dong.Model.Dictionary mAccountNo = new Dong.Model.Dictionary();
 
             Dong.BLL.Dictionary bPreBeginDate = new Dong.BLL.Dictionary();
             Dong.Model.Dictionary mPreBeginDate = new Dong.Model.Dictionary();
@@ -33,17 +33,7 @@ namespace AppCash
 
 
             //序列号
-            /*string strSql_AccountNo = "KeyStr = 'AccountNo'";
-            String AccountNo="";
-            List<Dong.Model.Dictionary> AccountNoList = bAccountNo.GetModelList(strSql_AccountNo);
-            if (AccountNoList.Count != 0)
-            {
-                mAccountNo = AccountNoList[0];
-                if (!string.IsNullOrEmpty(mAccountNo.ValueStr))
-                {
-                    AccountNo = mAccountNo.ValueStr;
-                }
-            }*/
+           
             //试用开始时间
             string strSql_PreBeginDate = "KeyStr = 'PreBeginDate'";
 
@@ -71,23 +61,14 @@ namespace AppCash
                 }
             }
             //试用次数
-            //string strSql_PreTimes = "KeyStr = 'PreTimes'";
-            //List<Dong.Model.Dictionary> PreTimesList = bPreTimes.GetModelList(strSql_PreTimes);
               String PreTimes="";
-            //  if (PreTimesList.Count != 0)
-            //{
-            //    mPreTimes = PreTimesList[0];
-            //    if (!string.IsNullOrEmpty(mPreTimes.ValueStr))
-            //    {
-            //        PreTimes = mPreTimes.ValueStr;
-            //    }
-            //}
+
 
             //获取授权密文s
-           string key=CommonUtility.ReadReader("hlx.dll");
+           string key=CommonUtility.ReadReader("duduCasherDB/hlx.dll","2");
            Dong.Model.GlobalsInfo.key = key;
             //试用次数
-            PreTimes = CommonUtility.ReadReader("sycs.dll");
+            PreTimes = CommonUtility.ReadReader("duduCasherDB/sycs.dll","2");
            // string jiqima = "cpuid:" + Computer.Instance().CpuID + "|diskId:" + Computer.Instance().DiskID + "|macAddress:" + Computer.Instance().MacAddress + "|LoginUserName:" + Computer.Instance().LoginUserName + "|IpAddress:" + Computer.Instance().IpAddress;
            //     string info = CommonUtility.TestDecry(key, null);
             //如果授权密文为空或者序列号为空或授权验证失败 ，说明该产品为试用版
@@ -116,9 +97,7 @@ namespace AppCash
                         if (Convert.ToInt32(PreTimes) >= 60 || DateTime.Compare(DateTime.ParseExact(PreEndDate, "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture),DateTime.Today)<0)
                         {
                             MessageBoxEx.Show("您的试用期已结束!", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            //frmReg frmReg = new frmReg();
-                            //frmReg.Show();
-                            //this.Visible = false;
+
                             return;
                         }
                         //未超试用期，将当前次数+1,计算客户到期日期和剩余使用次数
@@ -148,6 +127,20 @@ namespace AppCash
                 return;
             }
             Dong.BLL.OperInfo bOper = new Dong.BLL.OperInfo();
+            Dong.Model.OperInfo oi=bOper.GetModel(cbUserid.Text);
+            //当登录用户权限为营业员时，屏蔽高级别权限按钮
+            //默认为营业员权限
+            int r = 1;
+            if (oi != null)
+            {
+                if (oi.Role.Equals(0))
+                {
+                    r = 0;
+                }
+               
+
+            }
+            Dong.Model.GlobalsInfo.role = r;
             if (bOper.CheckUser(cbUserid.Text, tbPwd.Text))
             {
                 
@@ -168,7 +161,7 @@ namespace AppCash
                     bPreBeginDate.Update(mPreBeginDate);
                     bPreEndDate.Update(mPreEndDate);
                     bPreTimes.Update(mPreTimes);
-                    CommonUtility.WriteWriter("sycs.dll", PreTimes);
+                    CommonUtility.WriteWriter("duduCasherDB/sycs.dll", PreTimes,"2");
                 
                 }
                 frm.Show();
@@ -183,27 +176,66 @@ namespace AppCash
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            //从本地路径获取远程主机地址，如果远程主机地址存在，则用远程模式连接，否则用本地模式连接
 
-            //初始化界面信息
-            //提取用户列表
-            DataSet ds = new DataSet();
-            Dong.BLL.OperInfo mOper = new Dong.BLL.OperInfo();
-            ds = mOper.GetAllList();
-            cbUserid.ValueMember = "Code";
-            cbUserid.DisplayMember = "Code";
-            cbUserid.DataSource = ds.Tables[0];
-
-            //提取配置信息
-            Dong.BLL.ShopInfo bShop = new Dong.BLL.ShopInfo();
-            Dong.Model.ShopInfo mShop = new Dong.Model.ShopInfo();
-            mShop = bShop.GetModel(1);
-            Dong.Model.GlobalsInfo.shopName = mShop.Name;
-            //this.Text = this.Text + " --【" + mShop.Name + "】";
-
-            Dong.Model.GlobalsInfo.shopAddr = mShop.Addr;
-            if (CommonUtility.TestReg().Equals("1"))
+            String hostIp=CommonUtility.ReadReader("hostIp.dll","2");
+            if (string.IsNullOrEmpty(hostIp))
             {
-                this.labelX3.Visible=false;
+                string str = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/duduSoft/duduCasher/duduCasherDB/MarketDB.mdb";
+                CommonUtility.SetValue("ConnectionString", "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + str);
+
+            }
+            else
+            {
+                string str = "\\\\" + hostIp + "/duduCasherDB/MarketDB.mdb";
+                CommonUtility.SetValue("ConnectionString", "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + str);
+
+            }
+            
+            try
+            {
+                //初始化界面信息
+                //提取用户列表
+                DataSet ds = new DataSet();
+                Dong.BLL.OperInfo mOper = new Dong.BLL.OperInfo();
+                ds = mOper.GetAllList();
+                cbUserid.ValueMember = "Code";
+                cbUserid.DisplayMember = "Code";
+                cbUserid.DataSource = ds.Tables[0];
+
+                //提取配置信息
+                Dong.BLL.ShopInfo bShop = new Dong.BLL.ShopInfo();
+                Dong.Model.ShopInfo mShop = new Dong.Model.ShopInfo();
+                mShop = bShop.GetModel(1);
+                Dong.Model.GlobalsInfo.shopName = mShop.Name;
+                //this.Text = this.Text + " --【" + mShop.Name + "】";
+
+                Dong.Model.GlobalsInfo.shopAddr = mShop.Addr;
+
+
+                if (CommonUtility.TestReg().Equals("1"))
+                {
+                    this.labelX3.Visible = false;
+                }
+                //版本号
+                String ver = CommonUtility.ReadReader("ver.dll","0");
+                this.Text = "嘟嘟收银系统" + ver;
+
+
+                Dong.Model.GlobalsInfo.hostIp = hostIp;
+            }
+            catch (Exception e1)
+            {
+                
+           
+            if (string.IsNullOrEmpty(hostIp)) { 
+                MessageBoxEx.Show("您当前为单机模式，查询数据库出错，请联系管理员!", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBoxEx.Show("您当前为联机模式，查询数据库出错，请配置正确的主机ip地址!", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             }
         }
 
@@ -253,6 +285,20 @@ namespace AppCash
             this.Visible = false;
             return;
         
+        }
+
+        private void cbUserid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelX4_Click(object sender, EventArgs e)
+        {
+
+            frmHostConfig frmHostConfig = new frmHostConfig();
+            frmHostConfig.Show();
+            this.Visible = false;
+            return;
         }
     }
 }

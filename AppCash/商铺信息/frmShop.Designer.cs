@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShop));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.tbPhone = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -52,8 +53,9 @@
             this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(593, 350);
+            this.panelEx1.Size = new System.Drawing.Size(890, 525);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -62,15 +64,15 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
-            //this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
             // 
             // btnSave
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(12, 104);
+            this.btnSave.Location = new System.Drawing.Point(18, 156);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "保存";
@@ -82,9 +84,10 @@
             // 
             // 
             this.tbPhone.Border.Class = "TextBoxBorder";
-            this.tbPhone.Location = new System.Drawing.Point(79, 66);
+            this.tbPhone.Location = new System.Drawing.Point(118, 99);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(257, 21);
+            this.tbPhone.Size = new System.Drawing.Size(386, 28);
             this.tbPhone.TabIndex = 5;
             // 
             // labelX3
@@ -93,9 +96,10 @@
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Location = new System.Drawing.Point(12, 66);
+            this.labelX3.Location = new System.Drawing.Point(18, 99);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(61, 23);
+            this.labelX3.Size = new System.Drawing.Size(92, 34);
             this.labelX3.TabIndex = 4;
             this.labelX3.Text = "联系电话:";
             // 
@@ -105,9 +109,10 @@
             // 
             // 
             this.tbAddr.Border.Class = "TextBoxBorder";
-            this.tbAddr.Location = new System.Drawing.Point(79, 39);
+            this.tbAddr.Location = new System.Drawing.Point(118, 58);
+            this.tbAddr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbAddr.Name = "tbAddr";
-            this.tbAddr.Size = new System.Drawing.Size(257, 21);
+            this.tbAddr.Size = new System.Drawing.Size(386, 28);
             this.tbAddr.TabIndex = 3;
             // 
             // labelX2
@@ -116,9 +121,10 @@
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(12, 39);
+            this.labelX2.Location = new System.Drawing.Point(18, 58);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(61, 23);
+            this.labelX2.Size = new System.Drawing.Size(92, 34);
             this.labelX2.TabIndex = 2;
             this.labelX2.Text = "商铺地址:";
             // 
@@ -128,9 +134,10 @@
             // 
             // 
             this.tbShopName.Border.Class = "TextBoxBorder";
-            this.tbShopName.Location = new System.Drawing.Point(79, 12);
+            this.tbShopName.Location = new System.Drawing.Point(118, 18);
+            this.tbShopName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbShopName.Name = "tbShopName";
-            this.tbShopName.Size = new System.Drawing.Size(257, 21);
+            this.tbShopName.Size = new System.Drawing.Size(386, 28);
             this.tbShopName.TabIndex = 1;
             // 
             // labelX1
@@ -139,18 +146,21 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Location = new System.Drawing.Point(12, 12);
+            this.labelX1.Location = new System.Drawing.Point(18, 18);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(61, 23);
+            this.labelX1.Size = new System.Drawing.Size(92, 34);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "商铺名称:";
             // 
             // frmShop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 350);
+            this.ClientSize = new System.Drawing.Size(890, 525);
             this.Controls.Add(this.panelEx1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmShop";
             this.Text = "商铺信息";
             this.Load += new System.EventHandler(this.frmShop_Load);

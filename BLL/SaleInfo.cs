@@ -173,14 +173,14 @@ namespace Dong.BLL
         public DataSet getToday(string userid)
         {
             DataSet ds = new DataSet();
-            string strSql = "SELECT pid, priceSum, count(0) AS c, VipCode FROM SaleInfo where Oper='" + userid + "' and Idate>#" + DateTime.Now.Date + "# GROUP BY pid, priceSum, VipCode";
+            string strSql = "SELECT pid, priceSum, count(0) AS c, VipCode,Cash,Weixin,Alipay FROM SaleInfo where  Idate>#" + DateTime.Now.Date + "# GROUP BY pid, priceSum, VipCode,Cash,Alipay,Weixin";
             ds = Maticsoft.DBUtility.DbHelperOleDb.Query(strSql);
             return ds;
         }
         public DataTable getDayRePort(DateTime dt1, DateTime dt2)
         {
             DataTable dt = new DataTable();
-            dt = Maticsoft.DBUtility.DbHelperOleDb.Query("SELECT sum(Counts) as Counts1 ,sum(Price) as Price1,sum(SumGain1) as Gain,IdateT AS Idate1 FROM v_Gain where 1=1 and Idate>#" + dt1 + "# and Idate<=#" + dt2 + "# group by IdateT").Tables[0];
+            dt = Maticsoft.DBUtility.DbHelperOleDb.Query("SELECT sum(Counts) as Counts1 ,sum(priceSum) as Price1,sum(SumGain1) as Gain,sum(Cash) as Price_Cash,sum(Weixin) as Price_Weixin,sum(Alipay) as Price_Alipay, IdateT AS Idate1 FROM v_Gain where 1=1 and Idate>#" + dt1 + "# and Idate<=#" + dt2 + "# group by IdateT").Tables[0];
             
             return dt;
         }
@@ -189,7 +189,7 @@ namespace Dong.BLL
             DateTime dt1 = Convert.ToDateTime(strYear + "-01-01 00:00:00");
             DateTime dt2 = Convert.ToDateTime(strYear + "-12-31 23:59:59");
             DataTable dt = new DataTable();
-            dt = Maticsoft.DBUtility.DbHelperOleDb.Query("SELECT sum(Counts) as Counts1 ,sum(Price) as Price1,sum(SumGain1) as Gain,IdateM AS Idate1 FROM v_Gain where 1=1 and Idate>#" + dt1 + "# and Idate<=#" + dt2 + "# group by IdateM").Tables[0];
+            dt = Maticsoft.DBUtility.DbHelperOleDb.Query("SELECT sum(Counts) as Counts1 ,sum(priceSum) as Price1,sum(SumGain1) as Gain,sum(Cash) as Price_Cash,sum(Weixin) as Price_Weixin,sum(Alipay) as Price_Alipay,IdateM AS Idate1 FROM v_Gain where 1=1 and Idate>#" + dt1 + "# and Idate<=#" + dt2 + "# group by IdateM").Tables[0];
 
             return dt;
         }
@@ -199,7 +199,7 @@ namespace Dong.BLL
             string strSql = "";
             if (strWhere != "")
             {
-                strSql = "select top " + pageSize + " * from v_SaleInfoDetail where id >=(select top 1 max(id) from (select top " + (((page - 1) * pageSize) + 1).ToString() + " * from v_SaleInfoDetail where " + strWhere + " order by id)) and " + strWhere;
+                strSql = "select top " + pageSize + " * from v_SaleInfoDetail where id >=(select top 1 max(id) from (select top " + (((page - 1) * pageSize) + 1).ToString() + " * from v_SaleInfoDetail where 1=1 " + strWhere + " order by id)) " + strWhere;
             }
             else
             {
@@ -208,6 +208,7 @@ namespace Dong.BLL
             }
             ds = Maticsoft.DBUtility.DbHelperOleDb.Query(strSql);
             return ds;
+
         }
         #endregion  ExtensionMethod
     }

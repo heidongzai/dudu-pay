@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInputBill));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.txtJJ = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.txtSL = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
@@ -45,12 +47,10 @@
             this.txtName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtCB = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtSJ = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtJJ = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
@@ -90,6 +90,8 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.txtJJ);
+            this.panelEx1.Controls.Add(this.labelX3);
             this.panelEx1.Controls.Add(this.btnSearch);
             this.panelEx1.Controls.Add(this.txtSL);
             this.panelEx1.Controls.Add(this.labelX2);
@@ -104,12 +106,10 @@
             this.panelEx1.Controls.Add(this.txtName);
             this.panelEx1.Controls.Add(this.txtCB);
             this.panelEx1.Controls.Add(this.txtSJ);
-            this.panelEx1.Controls.Add(this.txtJJ);
             this.panelEx1.Controls.Add(this.labelX15);
             this.panelEx1.Controls.Add(this.labelX14);
             this.panelEx1.Controls.Add(this.labelX13);
             this.panelEx1.Controls.Add(this.labelX12);
-            this.panelEx1.Controls.Add(this.labelX11);
             this.panelEx1.Controls.Add(this.labelX10);
             this.panelEx1.Controls.Add(this.labelX9);
             this.panelEx1.Controls.Add(this.labelX8);
@@ -117,9 +117,10 @@
             this.panelEx1.Controls.Add(this.txtCode);
             this.panelEx1.Controls.Add(this.labelX6);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelEx1.Location = new System.Drawing.Point(623, 0);
+            this.panelEx1.Location = new System.Drawing.Point(934, 0);
+            this.panelEx1.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(265, 427);
+            this.panelEx1.Size = new System.Drawing.Size(398, 640);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -129,14 +130,42 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
+            this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // txtJJ
+            // 
+            // 
+            // 
+            // 
+            this.txtJJ.Border.Class = "TextBoxBorder";
+            this.txtJJ.Location = new System.Drawing.Point(81, 315);
+            this.txtJJ.Margin = new System.Windows.Forms.Padding(4);
+            this.txtJJ.Name = "txtJJ";
+            this.txtJJ.Size = new System.Drawing.Size(298, 28);
+            this.txtJJ.TabIndex = 27;
+            this.txtJJ.TextChanged += new System.EventHandler(this.txtJJ_TextChanged);
+            // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.Class = "";
+            this.labelX3.Location = new System.Drawing.Point(26, 316);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(60, 34);
+            this.labelX3.TabIndex = 26;
+            this.labelX3.Text = "进价:";
             // 
             // btnSearch
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(190, 46);
+            this.btnSearch.Location = new System.Drawing.Point(285, 69);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(63, 23);
+            this.btnSearch.Size = new System.Drawing.Size(94, 34);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSearch.TabIndex = 25;
             this.btnSearch.Text = "搜索";
@@ -148,9 +177,10 @@
             // 
             // 
             this.txtSL.Border.Class = "TextBoxBorder";
-            this.txtSL.Location = new System.Drawing.Point(54, 315);
+            this.txtSL.Location = new System.Drawing.Point(81, 479);
+            this.txtSL.Margin = new System.Windows.Forms.Padding(4);
             this.txtSL.Name = "txtSL";
-            this.txtSL.Size = new System.Drawing.Size(199, 21);
+            this.txtSL.Size = new System.Drawing.Size(298, 28);
             this.txtSL.TabIndex = 24;
             // 
             // labelX2
@@ -159,9 +189,10 @@
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(17, 317);
+            this.labelX2.Location = new System.Drawing.Point(26, 483);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(40, 23);
+            this.labelX2.Size = new System.Drawing.Size(60, 34);
             this.labelX2.TabIndex = 23;
             this.labelX2.Text = "数量:";
             // 
@@ -169,9 +200,10 @@
             // 
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(83, 342);
+            this.btnAdd.Location = new System.Drawing.Point(124, 520);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.Size = new System.Drawing.Size(112, 34);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAdd.TabIndex = 22;
             this.btnAdd.Text = "添加";
@@ -181,9 +213,10 @@
             // 
             this.btnClear.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClear.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClear.Location = new System.Drawing.Point(164, 342);
+            this.btnClear.Location = new System.Drawing.Point(246, 520);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.Size = new System.Drawing.Size(112, 34);
             this.btnClear.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnClear.TabIndex = 21;
             this.btnClear.Text = "清空";
@@ -195,9 +228,10 @@
             // 
             // 
             this.labelX16.BackgroundStyle.Class = "";
-            this.labelX16.Location = new System.Drawing.Point(111, 10);
+            this.labelX16.Location = new System.Drawing.Point(166, 15);
+            this.labelX16.Margin = new System.Windows.Forms.Padding(4);
             this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(61, 23);
+            this.labelX16.Size = new System.Drawing.Size(92, 34);
             this.labelX16.TabIndex = 20;
             this.labelX16.Text = "商品信息";
             // 
@@ -207,10 +241,11 @@
             // 
             // 
             this.txtKC.Border.Class = "TextBoxBorder";
-            this.txtKC.Location = new System.Drawing.Point(54, 288);
+            this.txtKC.Location = new System.Drawing.Point(81, 439);
+            this.txtKC.Margin = new System.Windows.Forms.Padding(4);
             this.txtKC.Name = "txtKC";
             this.txtKC.ReadOnly = true;
-            this.txtKC.Size = new System.Drawing.Size(199, 21);
+            this.txtKC.Size = new System.Drawing.Size(298, 28);
             this.txtKC.TabIndex = 19;
             // 
             // txtFactory
@@ -219,10 +254,11 @@
             // 
             // 
             this.txtFactory.Border.Class = "TextBoxBorder";
-            this.txtFactory.Location = new System.Drawing.Point(54, 181);
+            this.txtFactory.Location = new System.Drawing.Point(81, 272);
+            this.txtFactory.Margin = new System.Windows.Forms.Padding(4);
             this.txtFactory.Name = "txtFactory";
             this.txtFactory.ReadOnly = true;
-            this.txtFactory.Size = new System.Drawing.Size(199, 21);
+            this.txtFactory.Size = new System.Drawing.Size(298, 28);
             this.txtFactory.TabIndex = 18;
             // 
             // txtSuppier
@@ -231,10 +267,11 @@
             // 
             // 
             this.txtSuppier.Border.Class = "TextBoxBorder";
-            this.txtSuppier.Location = new System.Drawing.Point(54, 154);
+            this.txtSuppier.Location = new System.Drawing.Point(81, 231);
+            this.txtSuppier.Margin = new System.Windows.Forms.Padding(4);
             this.txtSuppier.Name = "txtSuppier";
             this.txtSuppier.ReadOnly = true;
-            this.txtSuppier.Size = new System.Drawing.Size(199, 21);
+            this.txtSuppier.Size = new System.Drawing.Size(298, 28);
             this.txtSuppier.TabIndex = 17;
             // 
             // txtCategory
@@ -243,10 +280,11 @@
             // 
             // 
             this.txtCategory.Border.Class = "TextBoxBorder";
-            this.txtCategory.Location = new System.Drawing.Point(54, 127);
+            this.txtCategory.Location = new System.Drawing.Point(81, 190);
+            this.txtCategory.Margin = new System.Windows.Forms.Padding(4);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
-            this.txtCategory.Size = new System.Drawing.Size(199, 21);
+            this.txtCategory.Size = new System.Drawing.Size(298, 28);
             this.txtCategory.TabIndex = 16;
             // 
             // txtUnit
@@ -255,10 +293,11 @@
             // 
             // 
             this.txtUnit.Border.Class = "TextBoxBorder";
-            this.txtUnit.Location = new System.Drawing.Point(54, 100);
+            this.txtUnit.Location = new System.Drawing.Point(81, 150);
+            this.txtUnit.Margin = new System.Windows.Forms.Padding(4);
             this.txtUnit.Name = "txtUnit";
             this.txtUnit.ReadOnly = true;
-            this.txtUnit.Size = new System.Drawing.Size(199, 21);
+            this.txtUnit.Size = new System.Drawing.Size(298, 28);
             this.txtUnit.TabIndex = 15;
             // 
             // txtName
@@ -267,10 +306,11 @@
             // 
             // 
             this.txtName.Border.Class = "TextBoxBorder";
-            this.txtName.Location = new System.Drawing.Point(54, 73);
+            this.txtName.Location = new System.Drawing.Point(81, 110);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.ReadOnly = true;
-            this.txtName.Size = new System.Drawing.Size(199, 21);
+            this.txtName.Size = new System.Drawing.Size(298, 28);
             this.txtName.TabIndex = 14;
             // 
             // txtCB
@@ -279,11 +319,13 @@
             // 
             // 
             this.txtCB.Border.Class = "TextBoxBorder";
-            this.txtCB.Location = new System.Drawing.Point(54, 261);
+            this.txtCB.Location = new System.Drawing.Point(81, 399);
+            this.txtCB.Margin = new System.Windows.Forms.Padding(4);
             this.txtCB.Name = "txtCB";
             this.txtCB.ReadOnly = true;
-            this.txtCB.Size = new System.Drawing.Size(199, 21);
+            this.txtCB.Size = new System.Drawing.Size(298, 28);
             this.txtCB.TabIndex = 13;
+            this.txtCB.TextChanged += new System.EventHandler(this.txtCB_TextChanged);
             // 
             // txtSJ
             // 
@@ -291,22 +333,13 @@
             // 
             // 
             this.txtSJ.Border.Class = "TextBoxBorder";
-            this.txtSJ.Location = new System.Drawing.Point(54, 234);
+            this.txtSJ.Location = new System.Drawing.Point(81, 358);
+            this.txtSJ.Margin = new System.Windows.Forms.Padding(4);
             this.txtSJ.Name = "txtSJ";
             this.txtSJ.ReadOnly = true;
-            this.txtSJ.Size = new System.Drawing.Size(199, 21);
+            this.txtSJ.Size = new System.Drawing.Size(298, 28);
             this.txtSJ.TabIndex = 12;
-            // 
-            // txtJJ
-            // 
-            // 
-            // 
-            // 
-            this.txtJJ.Border.Class = "TextBoxBorder";
-            this.txtJJ.Location = new System.Drawing.Point(54, 207);
-            this.txtJJ.Name = "txtJJ";
-            this.txtJJ.Size = new System.Drawing.Size(199, 21);
-            this.txtJJ.TabIndex = 11;
+            this.txtSJ.TextChanged += new System.EventHandler(this.txtSJ_TextChanged);
             // 
             // labelX15
             // 
@@ -314,9 +347,10 @@
             // 
             // 
             this.labelX15.BackgroundStyle.Class = "";
-            this.labelX15.Location = new System.Drawing.Point(17, 98);
+            this.labelX15.Location = new System.Drawing.Point(26, 147);
+            this.labelX15.Margin = new System.Windows.Forms.Padding(4);
             this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(40, 23);
+            this.labelX15.Size = new System.Drawing.Size(60, 34);
             this.labelX15.TabIndex = 10;
             this.labelX15.Text = "单位:";
             // 
@@ -326,9 +360,10 @@
             // 
             // 
             this.labelX14.BackgroundStyle.Class = "";
-            this.labelX14.Location = new System.Drawing.Point(17, 288);
+            this.labelX14.Location = new System.Drawing.Point(26, 439);
+            this.labelX14.Margin = new System.Windows.Forms.Padding(4);
             this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(40, 23);
+            this.labelX14.Size = new System.Drawing.Size(60, 34);
             this.labelX14.TabIndex = 9;
             this.labelX14.Text = "库存:";
             // 
@@ -338,9 +373,10 @@
             // 
             // 
             this.labelX13.BackgroundStyle.Class = "";
-            this.labelX13.Location = new System.Drawing.Point(17, 262);
+            this.labelX13.Location = new System.Drawing.Point(26, 400);
+            this.labelX13.Margin = new System.Windows.Forms.Padding(4);
             this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(40, 23);
+            this.labelX13.Size = new System.Drawing.Size(60, 34);
             this.labelX13.TabIndex = 8;
             this.labelX13.Text = "成本:";
             // 
@@ -350,23 +386,12 @@
             // 
             // 
             this.labelX12.BackgroundStyle.Class = "";
-            this.labelX12.Location = new System.Drawing.Point(17, 233);
+            this.labelX12.Location = new System.Drawing.Point(26, 357);
+            this.labelX12.Margin = new System.Windows.Forms.Padding(4);
             this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(40, 23);
+            this.labelX12.Size = new System.Drawing.Size(60, 34);
             this.labelX12.TabIndex = 7;
             this.labelX12.Text = "售价:";
-            // 
-            // labelX11
-            // 
-            // 
-            // 
-            // 
-            this.labelX11.BackgroundStyle.Class = "";
-            this.labelX11.Location = new System.Drawing.Point(17, 207);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(40, 23);
-            this.labelX11.TabIndex = 6;
-            this.labelX11.Text = "进价:";
             // 
             // labelX10
             // 
@@ -374,9 +399,10 @@
             // 
             // 
             this.labelX10.BackgroundStyle.Class = "";
-            this.labelX10.Location = new System.Drawing.Point(17, 180);
+            this.labelX10.Location = new System.Drawing.Point(26, 270);
+            this.labelX10.Margin = new System.Windows.Forms.Padding(4);
             this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(40, 23);
+            this.labelX10.Size = new System.Drawing.Size(60, 34);
             this.labelX10.TabIndex = 5;
             this.labelX10.Text = "厂家:";
             // 
@@ -386,9 +412,10 @@
             // 
             // 
             this.labelX9.BackgroundStyle.Class = "";
-            this.labelX9.Location = new System.Drawing.Point(6, 153);
+            this.labelX9.Location = new System.Drawing.Point(9, 230);
+            this.labelX9.Margin = new System.Windows.Forms.Padding(4);
             this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(51, 23);
+            this.labelX9.Size = new System.Drawing.Size(76, 34);
             this.labelX9.TabIndex = 4;
             this.labelX9.Text = "供应商:";
             // 
@@ -398,9 +425,10 @@
             // 
             // 
             this.labelX8.BackgroundStyle.Class = "";
-            this.labelX8.Location = new System.Drawing.Point(17, 124);
+            this.labelX8.Location = new System.Drawing.Point(26, 186);
+            this.labelX8.Margin = new System.Windows.Forms.Padding(4);
             this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(40, 23);
+            this.labelX8.Size = new System.Drawing.Size(60, 34);
             this.labelX8.TabIndex = 3;
             this.labelX8.Text = "类别:";
             // 
@@ -410,9 +438,10 @@
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
-            this.labelX7.Location = new System.Drawing.Point(17, 73);
+            this.labelX7.Location = new System.Drawing.Point(26, 110);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(40, 23);
+            this.labelX7.Size = new System.Drawing.Size(60, 34);
             this.labelX7.TabIndex = 2;
             this.labelX7.Text = "名称:";
             // 
@@ -422,10 +451,12 @@
             // 
             // 
             this.txtCode.Border.Class = "TextBoxBorder";
-            this.txtCode.Location = new System.Drawing.Point(54, 46);
+            this.txtCode.Location = new System.Drawing.Point(81, 69);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(130, 21);
+            this.txtCode.Size = new System.Drawing.Size(195, 28);
             this.txtCode.TabIndex = 1;
+            this.txtCode.TextChanged += new System.EventHandler(this.txtCode_TextChanged);
             // 
             // labelX6
             // 
@@ -433,9 +464,10 @@
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.Location = new System.Drawing.Point(17, 44);
+            this.labelX6.Location = new System.Drawing.Point(26, 66);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(4);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(38, 23);
+            this.labelX6.Size = new System.Drawing.Size(57, 34);
             this.labelX6.TabIndex = 0;
             this.labelX6.Text = "编码:";
             // 
@@ -448,8 +480,9 @@
             this.panelEx2.Controls.Add(this.panelEx3);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 0);
+            this.panelEx2.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(623, 427);
+            this.panelEx2.Size = new System.Drawing.Size(934, 640);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -483,13 +516,14 @@
             this.dGV.DefaultCellStyle = dataGridViewCellStyle1;
             this.dGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dGV.Location = new System.Drawing.Point(0, 52);
+            this.dGV.Location = new System.Drawing.Point(0, 78);
+            this.dGV.Margin = new System.Windows.Forms.Padding(4);
             this.dGV.MultiSelect = false;
             this.dGV.Name = "dGV";
             this.dGV.ReadOnly = true;
             this.dGV.RowTemplate.Height = 23;
             this.dGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV.Size = new System.Drawing.Size(623, 335);
+            this.dGV.Size = new System.Drawing.Size(934, 502);
             this.dGV.TabIndex = 2;
             this.dGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_CellClick);
             // 
@@ -547,9 +581,10 @@
             this.panelEx4.Controls.Add(this.labelX17);
             this.panelEx4.Controls.Add(this.btnSave);
             this.panelEx4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx4.Location = new System.Drawing.Point(0, 387);
+            this.panelEx4.Location = new System.Drawing.Point(0, 580);
+            this.panelEx4.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx4.Name = "panelEx4";
-            this.panelEx4.Size = new System.Drawing.Size(623, 40);
+            this.panelEx4.Size = new System.Drawing.Size(934, 60);
             this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx4.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -565,9 +600,10 @@
             this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDel.Location = new System.Drawing.Point(426, 9);
+            this.btnDel.Location = new System.Drawing.Point(639, 14);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.Size = new System.Drawing.Size(112, 34);
             this.btnDel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnDel.TabIndex = 5;
             this.btnDel.Text = "删除商品";
@@ -579,9 +615,10 @@
             // 
             // 
             this.lblJG.BackgroundStyle.Class = "";
-            this.lblJG.Location = new System.Drawing.Point(281, 9);
+            this.lblJG.Location = new System.Drawing.Point(422, 14);
+            this.lblJG.Margin = new System.Windows.Forms.Padding(4);
             this.lblJG.Name = "lblJG";
-            this.lblJG.Size = new System.Drawing.Size(118, 23);
+            this.lblJG.Size = new System.Drawing.Size(177, 34);
             this.lblJG.TabIndex = 4;
             // 
             // labelX20
@@ -590,9 +627,10 @@
             // 
             // 
             this.labelX20.BackgroundStyle.Class = "";
-            this.labelX20.Location = new System.Drawing.Point(208, 9);
+            this.labelX20.Location = new System.Drawing.Point(312, 14);
+            this.labelX20.Margin = new System.Windows.Forms.Padding(4);
             this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(62, 23);
+            this.labelX20.Size = new System.Drawing.Size(93, 34);
             this.labelX20.TabIndex = 3;
             this.labelX20.Text = "价格总计:";
             // 
@@ -602,9 +640,10 @@
             // 
             // 
             this.lblCount.BackgroundStyle.Class = "";
-            this.lblCount.Location = new System.Drawing.Point(73, 9);
+            this.lblCount.Location = new System.Drawing.Point(110, 14);
+            this.lblCount.Margin = new System.Windows.Forms.Padding(4);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(93, 23);
+            this.lblCount.Size = new System.Drawing.Size(140, 34);
             this.lblCount.TabIndex = 2;
             // 
             // labelX17
@@ -613,9 +652,10 @@
             // 
             // 
             this.labelX17.BackgroundStyle.Class = "";
-            this.labelX17.Location = new System.Drawing.Point(12, 9);
+            this.labelX17.Location = new System.Drawing.Point(18, 14);
+            this.labelX17.Margin = new System.Windows.Forms.Padding(4);
             this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(62, 23);
+            this.labelX17.Size = new System.Drawing.Size(93, 34);
             this.labelX17.TabIndex = 1;
             this.labelX17.Text = "数量总计:";
             // 
@@ -624,9 +664,10 @@
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(536, 9);
+            this.btnSave.Location = new System.Drawing.Point(804, 14);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "保存";
@@ -644,8 +685,9 @@
             this.panelEx3.Controls.Add(this.labelX1);
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx3.Location = new System.Drawing.Point(0, 0);
+            this.panelEx3.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(623, 52);
+            this.panelEx3.Size = new System.Drawing.Size(934, 78);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -655,6 +697,7 @@
             this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx3.Style.GradientAngle = 90;
             this.panelEx3.TabIndex = 0;
+            this.panelEx3.Click += new System.EventHandler(this.panelEx3_Click);
             // 
             // lblTime
             // 
@@ -664,9 +707,10 @@
             // 
             this.lblTime.BackgroundStyle.Class = "";
             this.lblTime.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTime.Location = new System.Drawing.Point(483, 16);
+            this.lblTime.Location = new System.Drawing.Point(724, 24);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(132, 17);
+            this.lblTime.Size = new System.Drawing.Size(198, 26);
             this.lblTime.TabIndex = 5;
             // 
             // labelX5
@@ -676,9 +720,10 @@
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(452, 15);
+            this.labelX5.Location = new System.Drawing.Point(678, 22);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(49, 20);
+            this.labelX5.Size = new System.Drawing.Size(74, 30);
             this.labelX5.TabIndex = 4;
             this.labelX5.Text = "时间:";
             // 
@@ -688,11 +733,13 @@
             // 
             // 
             this.txtOper.Border.Class = "TextBoxBorder";
-            this.txtOper.Location = new System.Drawing.Point(281, 14);
+            this.txtOper.Location = new System.Drawing.Point(422, 21);
+            this.txtOper.Margin = new System.Windows.Forms.Padding(4);
             this.txtOper.Name = "txtOper";
             this.txtOper.ReadOnly = true;
-            this.txtOper.Size = new System.Drawing.Size(102, 21);
+            this.txtOper.Size = new System.Drawing.Size(153, 28);
             this.txtOper.TabIndex = 3;
+            this.txtOper.TextChanged += new System.EventHandler(this.txtOper_TextChanged);
             // 
             // labelX4
             // 
@@ -700,11 +747,13 @@
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Location = new System.Drawing.Point(234, 15);
+            this.labelX4.Location = new System.Drawing.Point(351, 22);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(49, 18);
+            this.labelX4.Size = new System.Drawing.Size(74, 27);
             this.labelX4.TabIndex = 2;
             this.labelX4.Text = "经手人:";
+            this.labelX4.Click += new System.EventHandler(this.labelX4_Click);
             // 
             // lblCode
             // 
@@ -713,9 +762,10 @@
             // 
             this.lblCode.BackgroundStyle.Class = "";
             this.lblCode.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCode.Location = new System.Drawing.Point(67, 12);
+            this.lblCode.Location = new System.Drawing.Point(100, 18);
+            this.lblCode.Margin = new System.Windows.Forms.Padding(4);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(99, 21);
+            this.lblCode.Size = new System.Drawing.Size(148, 32);
             this.lblCode.TabIndex = 1;
             // 
             // labelX1
@@ -724,20 +774,22 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Location = new System.Drawing.Point(12, 14);
+            this.labelX1.Location = new System.Drawing.Point(18, 21);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 19);
+            this.labelX1.Size = new System.Drawing.Size(112, 28);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "订单编号:";
             // 
             // frmInputBill
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 427);
+            this.ClientSize = new System.Drawing.Size(1332, 640);
             this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.panelEx1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmInputBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "新增进货单";
@@ -776,12 +828,10 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtName;
         private DevComponents.DotNetBar.Controls.TextBoxX txtCB;
         private DevComponents.DotNetBar.Controls.TextBoxX txtSJ;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtJJ;
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.LabelX labelX13;
         private DevComponents.DotNetBar.LabelX labelX12;
-        private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX8;
@@ -802,6 +852,8 @@
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.ButtonX btnSearch;
         private DevComponents.DotNetBar.ButtonX btnDel;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtJJ;
+        private DevComponents.DotNetBar.LabelX labelX3;
 
 
     }

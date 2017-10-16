@@ -120,5 +120,15 @@ namespace AppCash
         }
         #endregion
 
+        private void gvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panelEx2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

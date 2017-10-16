@@ -71,8 +71,9 @@
             this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(489, 197);
+            this.panelEx1.Size = new System.Drawing.Size(734, 296);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -89,9 +90,10 @@
             // 
             this.txtaccount.Border.Class = "TextBoxBorder";
             this.txtaccount.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtaccount.Location = new System.Drawing.Point(316, 96);
+            this.txtaccount.Location = new System.Drawing.Point(474, 144);
+            this.txtaccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtaccount.Name = "txtaccount";
-            this.txtaccount.Size = new System.Drawing.Size(150, 21);
+            this.txtaccount.Size = new System.Drawing.Size(225, 28);
             this.txtaccount.TabIndex = 6;
             // 
             // labelX2
@@ -100,9 +102,10 @@
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(257, 96);
+            this.labelX2.Location = new System.Drawing.Point(386, 144);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(63, 23);
+            this.labelX2.Size = new System.Drawing.Size(94, 34);
             this.labelX2.TabIndex = 21;
             this.labelX2.Text = "银行账号";
             // 
@@ -113,9 +116,10 @@
             // 
             this.txtCode.Border.Class = "TextBoxBorder";
             this.txtCode.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtCode.Location = new System.Drawing.Point(71, 96);
+            this.txtCode.Location = new System.Drawing.Point(106, 144);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(150, 21);
+            this.txtCode.Size = new System.Drawing.Size(225, 28);
             this.txtCode.TabIndex = 5;
             // 
             // labelX4
@@ -124,9 +128,10 @@
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Location = new System.Drawing.Point(12, 96);
+            this.labelX4.Location = new System.Drawing.Point(18, 144);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(63, 23);
+            this.labelX4.Size = new System.Drawing.Size(94, 34);
             this.labelX4.TabIndex = 19;
             this.labelX4.Text = "税号:";
             // 
@@ -137,18 +142,20 @@
             // 
             this.txtPhone.Border.Class = "TextBoxBorder";
             this.txtPhone.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtPhone.Location = new System.Drawing.Point(316, 66);
+            this.txtPhone.Location = new System.Drawing.Point(474, 99);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(150, 21);
+            this.txtPhone.Size = new System.Drawing.Size(225, 28);
             this.txtPhone.TabIndex = 4;
             // 
             // btnExit
             // 
             this.btnExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExit.Location = new System.Drawing.Point(245, 160);
+            this.btnExit.Location = new System.Drawing.Point(368, 240);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(112, 34);
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "取消";
@@ -158,9 +165,10 @@
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(146, 160);
+            this.btnSave.Location = new System.Drawing.Point(219, 240);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "保存";
@@ -173,9 +181,10 @@
             // 
             this.txtbank.Border.Class = "TextBoxBorder";
             this.txtbank.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtbank.Location = new System.Drawing.Point(71, 126);
+            this.txtbank.Location = new System.Drawing.Point(106, 189);
+            this.txtbank.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtbank.Name = "txtbank";
-            this.txtbank.Size = new System.Drawing.Size(395, 21);
+            this.txtbank.Size = new System.Drawing.Size(592, 28);
             this.txtbank.TabIndex = 7;
             // 
             // labelX7
@@ -184,9 +193,10 @@
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
-            this.labelX7.Location = new System.Drawing.Point(12, 126);
+            this.labelX7.Location = new System.Drawing.Point(18, 189);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(63, 23);
+            this.labelX7.Size = new System.Drawing.Size(94, 34);
             this.labelX7.TabIndex = 12;
             this.labelX7.Text = "银行:";
             // 
@@ -196,9 +206,10 @@
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.Location = new System.Drawing.Point(257, 66);
+            this.labelX6.Location = new System.Drawing.Point(386, 99);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(63, 23);
+            this.labelX6.Size = new System.Drawing.Size(94, 34);
             this.labelX6.TabIndex = 10;
             this.labelX6.Text = "电话:";
             // 
@@ -209,9 +220,10 @@
             // 
             this.txtContact.Border.Class = "TextBoxBorder";
             this.txtContact.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtContact.Location = new System.Drawing.Point(71, 66);
+            this.txtContact.Location = new System.Drawing.Point(106, 99);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtContact.Name = "txtContact";
-            this.txtContact.Size = new System.Drawing.Size(150, 21);
+            this.txtContact.Size = new System.Drawing.Size(225, 28);
             this.txtContact.TabIndex = 3;
             // 
             // labelX5
@@ -220,9 +232,10 @@
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(12, 66);
+            this.labelX5.Location = new System.Drawing.Point(18, 99);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(63, 23);
+            this.labelX5.Size = new System.Drawing.Size(94, 34);
             this.labelX5.TabIndex = 8;
             this.labelX5.Text = "联系人:";
             // 
@@ -232,9 +245,10 @@
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Location = new System.Drawing.Point(12, 41);
+            this.labelX3.Location = new System.Drawing.Point(18, 62);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(53, 23);
+            this.labelX3.Size = new System.Drawing.Size(80, 34);
             this.labelX3.TabIndex = 4;
             this.labelX3.Text = "地址:";
             // 
@@ -245,9 +259,10 @@
             // 
             this.txtAdd.Border.Class = "TextBoxBorder";
             this.txtAdd.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtAdd.Location = new System.Drawing.Point(71, 39);
+            this.txtAdd.Location = new System.Drawing.Point(106, 58);
+            this.txtAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Size = new System.Drawing.Size(395, 21);
+            this.txtAdd.Size = new System.Drawing.Size(592, 28);
             this.txtAdd.TabIndex = 2;
             // 
             // txtName
@@ -257,9 +272,10 @@
             // 
             this.txtName.Border.Class = "TextBoxBorder";
             this.txtName.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtName.Location = new System.Drawing.Point(71, 12);
+            this.txtName.Location = new System.Drawing.Point(106, 18);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(395, 21);
+            this.txtName.Size = new System.Drawing.Size(592, 28);
             this.txtName.TabIndex = 1;
             // 
             // labelX1
@@ -268,20 +284,22 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Location = new System.Drawing.Point(12, 12);
+            this.labelX1.Location = new System.Drawing.Point(18, 18);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(63, 23);
+            this.labelX1.Size = new System.Drawing.Size(94, 34);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "商家名称:";
             // 
             // frmEditSup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 197);
+            this.ClientSize = new System.Drawing.Size(734, 296);
             this.Controls.Add(this.panelEx1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmEditSup";

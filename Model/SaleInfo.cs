@@ -35,6 +35,12 @@ namespace Dong.Model
         private string _vipcode;
 		private DateTime? _idate;
 		private string _oper;
+        private Double? _cash = 0;
+        private Double? _alipay = 0;
+        private Double? _weixin = 0;
+        private Double? _mark3 = 0;
+        private string _mark2;
+        private string _mark1;
 		/// <summary>
 		/// 
 		/// </summary>
@@ -101,6 +107,54 @@ namespace Dong.Model
 			set{ _oper=value;}
 			get{return _oper;}
 		}
+        /// <summary>
+        /// 
+        /// </summary>
+        public Double? Cash
+        {
+            set { _cash = value; }
+            get { return _cash; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Double? Weixin
+        {
+            set { _weixin = value; }
+            get { return _weixin; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Double? Alipay
+        {
+            set { _alipay = value; }
+            get { return _alipay; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Mark1
+        {
+            set { _mark1 = value; }
+            get { return _mark1; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Mark2
+        {
+            set { _mark2 = value; }
+            get { return _mark2; }
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Double? Mark3
+        {
+            set { _mark3 = value; }
+            get { return _mark3; }
+        }
 		#endregion Model
 
 	}

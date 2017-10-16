@@ -56,6 +56,12 @@ namespace AppCash
             }
 
             Dong.BLL.MemberInfo bMember = new Dong.BLL.MemberInfo();
+            /*if (bMember.GetModel(tbCode.Text) != null)
+            {
+                MessageBoxEx.Show("已存在改会员手机号，请更换!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbCode.Focus();
+                return;
+            }*/
             Dong.Model.MemberInfo mMember = new Dong.Model.MemberInfo();
             mMember = bMember.GetModel(int.Parse(this.Tag.ToString()));
             mMember.Id = int.Parse(this.Tag.ToString());
@@ -90,7 +96,11 @@ namespace AppCash
             mMember.Discount = double.Parse(tbDiscount.Text);
             mMember.Oper = Dong.Model.GlobalsInfo.UserName;
             mMember.OperDate = DateTime.Now;
-            mMember.Money = mMember.Money;
+            try { mMember.iMoney = double.Parse(tbIMoney.Text); }
+           catch(Exception e1){
+               MessageBoxEx.Show("请输入正确的积分值（数字）!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               return;
+           }
 
             if (bMember.Update(mMember))
             {
@@ -122,12 +132,18 @@ namespace AppCash
                 tbName.Text = mMember.Name;
                 cbStime.Text = mMember.Stime.ToString();
                 cbEtime.Text = mMember.Etime.ToString();
+                tbIMoney.Text = mMember.iMoney.ToString();
 
             }
         }
         #endregion
 
         private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbIMoney_TextChanged(object sender, EventArgs e)
         {
 
         }

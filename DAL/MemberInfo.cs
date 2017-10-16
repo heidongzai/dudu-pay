@@ -82,7 +82,7 @@ namespace Dong.DAL
             parameters[5].Value = model.Addr;
             parameters[6].Value = model.Birthday;
             parameters[7].Value = model.Discount;
-            parameters[8].Value = model.Money;
+            parameters[8].Value = model.iMoney;
             parameters[9].Value = model.Oper;
             parameters[10].Value = model.OperDate;
 
@@ -136,7 +136,7 @@ namespace Dong.DAL
 			parameters[5].Value = model.Addr;
 			parameters[6].Value = model.Birthday;
 			parameters[7].Value = model.Discount;
-			parameters[8].Value = model.Money;
+			parameters[8].Value = model.iMoney;
 			parameters[9].Value = model.Oper;
 			parameters[10].Value = model.OperDate;
 			parameters[11].Value = model.Id;
@@ -289,8 +289,10 @@ namespace Dong.DAL
                 {
                     model.Discount = double.Parse(row["Discount"].ToString());
                 }
-					//model.Discount=row["Discount"].ToString();
-					//model.Money=row["Money"].ToString();
+                if (row["iMoney"] != null && row["Discount"].ToString() != "")
+                {
+                    model.iMoney = double.Parse(row["iMoney"].ToString());
+                }
 				if(row["Oper"]!=null)
 				{
 					model.Oper=row["Oper"].ToString();
@@ -327,7 +329,7 @@ namespace Dong.DAL
 			strSql.Append("select count(1) FROM MemberInfo ");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" where 1=1 "+strWhere);
 			}
             object obj = DbHelperOleDb.GetSingle(strSql.ToString());
 			if (obj == null)

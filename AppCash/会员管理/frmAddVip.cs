@@ -26,6 +26,18 @@ namespace AppCash
         #region ------保存------
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //验证用户手机号
+            if (tbCode.Text.Trim() == "")
+            {
+                
+                MessageBoxEx.Show("请输入手机号!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbCode.Focus();
+                return;
+            }else if(!CommonUtility.IsMobile(tbCode.Text.Trim())){
+                MessageBoxEx.Show("请输入正确的手机号!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbCode.Focus();
+                return;
+            }
             //验证用户姓名
             if (tbName.Text.Trim() == "")
             {
@@ -34,19 +46,19 @@ namespace AppCash
                 return;
             }
 
-            if (cbStime.Text.Trim() == "")
-            {
-                MessageBoxEx.Show("请输入会员的开始时间!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cbStime.Focus();
-                return;
-            }
+            //if (cbStime.Text.Trim() == "")
+            //{
+            //    MessageBoxEx.Show("请输入会员的开始时间!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    cbStime.Focus();
+            //    return;
+            //}
 
-            if (cbEtime.Text.Trim() == "")
-            {
-                MessageBoxEx.Show("请输入会员的结束时间!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                cbEtime.Focus();
-                return;
-            }
+            //if (cbEtime.Text.Trim() == "")
+            //{
+            //    MessageBoxEx.Show("请输入会员的结束时间!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    cbEtime.Focus();
+            //    return;
+            //}
 
             if (tbDiscount.Text.Trim() == "")
             {
@@ -59,8 +71,23 @@ namespace AppCash
             Dong.Model.MemberInfo mMember = new Dong.Model.MemberInfo();
             mMember.IdCode = tbCode.Text;
             mMember.Name = tbName.Text;
-            mMember.Stime = DateTime.Parse(cbStime.Text);
-            mMember.Etime = DateTime.Parse(cbEtime.Text);
+
+            if (cbStime.Text != "")
+            {
+                mMember.Stime = DateTime.Parse(cbStime.Text);
+            }
+            else
+            {
+                mMember.Stime = DateTime.Parse("1900-1-1");
+            }
+            if (cbEtime.Text != "")
+            {
+                mMember.Etime = DateTime.Parse(cbEtime.Text);
+            }
+            else
+            {
+                mMember.Etime = DateTime.Parse("1900-1-1");
+            }
             if (tbEmail.Text != "")
             {
                 mMember.Email = tbEmail.Text;
@@ -88,7 +115,7 @@ namespace AppCash
             mMember.Discount = double.Parse(tbDiscount.Text);
             mMember.Oper = Dong.Model.GlobalsInfo.UserName;
             mMember.OperDate = DateTime.Now;
-            mMember.Money = 0;
+            mMember.iMoney = double.Parse(tbIMoney.Text);
 
             if (bMember.Add(mMember))
             {
@@ -107,9 +134,19 @@ namespace AppCash
         #region ------窗体加载------
         private void frmAddVip_Load(object sender, EventArgs e)
         {
-            tbCode.Text = DateTime.Now.ToString("yyyyMMddHHmmssfff");
+            //tbCode.Text = DateTime.Now.ToString("yyyyMMddHHmmssfff");
         }
         #endregion
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

@@ -24,6 +24,8 @@ namespace Dong.Model
         public static string vipCode="";
         public static double vipZK=1;
         public static string key;
+        public static int role;
+        public static string hostIp;
 
 	}
 }

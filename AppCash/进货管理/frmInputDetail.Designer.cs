@@ -52,6 +52,7 @@
             this.countCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jeCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SuppCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarkCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV)).BeginInit();
             this.panelEx4.SuspendLayout();
@@ -67,8 +68,9 @@
             this.panelEx2.Controls.Add(this.panelEx3);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 0);
+            this.panelEx2.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(888, 427);
+            this.panelEx2.Size = new System.Drawing.Size(1332, 640);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -92,7 +94,8 @@
             this.jjCol,
             this.countCount,
             this.jeCol,
-            this.SuppCol});
+            this.SuppCol,
+            this.remarkCol});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -103,13 +106,14 @@
             this.dGV.DefaultCellStyle = dataGridViewCellStyle1;
             this.dGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
-            this.dGV.Location = new System.Drawing.Point(0, 52);
+            this.dGV.Location = new System.Drawing.Point(0, 78);
+            this.dGV.Margin = new System.Windows.Forms.Padding(4);
             this.dGV.MultiSelect = false;
             this.dGV.Name = "dGV";
             this.dGV.ReadOnly = true;
             this.dGV.RowTemplate.Height = 23;
             this.dGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGV.Size = new System.Drawing.Size(888, 335);
+            this.dGV.Size = new System.Drawing.Size(1332, 502);
             this.dGV.TabIndex = 2;
             // 
             // panelEx4
@@ -122,9 +126,10 @@
             this.panelEx4.Controls.Add(this.labelX17);
             this.panelEx4.Controls.Add(this.btnClose);
             this.panelEx4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelEx4.Location = new System.Drawing.Point(0, 387);
+            this.panelEx4.Location = new System.Drawing.Point(0, 580);
+            this.panelEx4.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx4.Name = "panelEx4";
-            this.panelEx4.Size = new System.Drawing.Size(888, 40);
+            this.panelEx4.Size = new System.Drawing.Size(1332, 60);
             this.panelEx4.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx4.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx4.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -141,9 +146,10 @@
             // 
             // 
             this.lblJG.BackgroundStyle.Class = "";
-            this.lblJG.Location = new System.Drawing.Point(281, 9);
+            this.lblJG.Location = new System.Drawing.Point(422, 14);
+            this.lblJG.Margin = new System.Windows.Forms.Padding(4);
             this.lblJG.Name = "lblJG";
-            this.lblJG.Size = new System.Drawing.Size(118, 23);
+            this.lblJG.Size = new System.Drawing.Size(177, 34);
             this.lblJG.TabIndex = 4;
             // 
             // labelX20
@@ -152,9 +158,10 @@
             // 
             // 
             this.labelX20.BackgroundStyle.Class = "";
-            this.labelX20.Location = new System.Drawing.Point(208, 9);
+            this.labelX20.Location = new System.Drawing.Point(312, 14);
+            this.labelX20.Margin = new System.Windows.Forms.Padding(4);
             this.labelX20.Name = "labelX20";
-            this.labelX20.Size = new System.Drawing.Size(62, 23);
+            this.labelX20.Size = new System.Drawing.Size(93, 34);
             this.labelX20.TabIndex = 3;
             this.labelX20.Text = "价格总计:";
             // 
@@ -164,9 +171,10 @@
             // 
             // 
             this.lblCount.BackgroundStyle.Class = "";
-            this.lblCount.Location = new System.Drawing.Point(73, 9);
+            this.lblCount.Location = new System.Drawing.Point(110, 14);
+            this.lblCount.Margin = new System.Windows.Forms.Padding(4);
             this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(93, 23);
+            this.lblCount.Size = new System.Drawing.Size(140, 34);
             this.lblCount.TabIndex = 2;
             // 
             // labelX17
@@ -175,9 +183,10 @@
             // 
             // 
             this.labelX17.BackgroundStyle.Class = "";
-            this.labelX17.Location = new System.Drawing.Point(12, 9);
+            this.labelX17.Location = new System.Drawing.Point(18, 14);
+            this.labelX17.Margin = new System.Windows.Forms.Padding(4);
             this.labelX17.Name = "labelX17";
-            this.labelX17.Size = new System.Drawing.Size(62, 23);
+            this.labelX17.Size = new System.Drawing.Size(93, 34);
             this.labelX17.TabIndex = 1;
             this.labelX17.Text = "数量总计:";
             // 
@@ -186,9 +195,10 @@
             this.btnClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnClose.Location = new System.Drawing.Point(801, 9);
+            this.btnClose.Location = new System.Drawing.Point(1202, 14);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(112, 34);
             this.btnClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "关闭窗口";
@@ -206,8 +216,9 @@
             this.panelEx3.Controls.Add(this.labelX1);
             this.panelEx3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx3.Location = new System.Drawing.Point(0, 0);
+            this.panelEx3.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx3.Name = "panelEx3";
-            this.panelEx3.Size = new System.Drawing.Size(888, 52);
+            this.panelEx3.Size = new System.Drawing.Size(1332, 78);
             this.panelEx3.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx3.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx3.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -217,6 +228,7 @@
             this.panelEx3.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx3.Style.GradientAngle = 90;
             this.panelEx3.TabIndex = 0;
+            this.panelEx3.Click += new System.EventHandler(this.panelEx3_Click);
             // 
             // lblTime
             // 
@@ -226,9 +238,10 @@
             // 
             this.lblTime.BackgroundStyle.Class = "";
             this.lblTime.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTime.Location = new System.Drawing.Point(748, 16);
+            this.lblTime.Location = new System.Drawing.Point(1122, 24);
+            this.lblTime.Margin = new System.Windows.Forms.Padding(4);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(132, 17);
+            this.lblTime.Size = new System.Drawing.Size(198, 26);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "2013-11-22 17:12:38";
             // 
@@ -239,9 +252,10 @@
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(717, 15);
+            this.labelX5.Location = new System.Drawing.Point(1076, 22);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(49, 20);
+            this.labelX5.Size = new System.Drawing.Size(74, 30);
             this.labelX5.TabIndex = 4;
             this.labelX5.Text = "时间:";
             // 
@@ -252,10 +266,11 @@
             // 
             // 
             this.txtOper.Border.Class = "TextBoxBorder";
-            this.txtOper.Location = new System.Drawing.Point(587, 16);
+            this.txtOper.Location = new System.Drawing.Point(880, 24);
+            this.txtOper.Margin = new System.Windows.Forms.Padding(4);
             this.txtOper.Name = "txtOper";
             this.txtOper.ReadOnly = true;
-            this.txtOper.Size = new System.Drawing.Size(102, 21);
+            this.txtOper.Size = new System.Drawing.Size(153, 28);
             this.txtOper.TabIndex = 3;
             // 
             // labelX4
@@ -265,9 +280,10 @@
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Location = new System.Drawing.Point(540, 17);
+            this.labelX4.Location = new System.Drawing.Point(810, 26);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(49, 18);
+            this.labelX4.Size = new System.Drawing.Size(74, 27);
             this.labelX4.TabIndex = 2;
             this.labelX4.Text = "经手人:";
             // 
@@ -278,9 +294,10 @@
             // 
             this.lblCode.BackgroundStyle.Class = "";
             this.lblCode.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblCode.Location = new System.Drawing.Point(67, 12);
+            this.lblCode.Location = new System.Drawing.Point(100, 18);
+            this.lblCode.Margin = new System.Windows.Forms.Padding(4);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(99, 21);
+            this.lblCode.Size = new System.Drawing.Size(148, 32);
             this.lblCode.TabIndex = 1;
             // 
             // labelX1
@@ -289,9 +306,10 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Location = new System.Drawing.Point(12, 14);
+            this.labelX1.Location = new System.Drawing.Point(18, 21);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 19);
+            this.labelX1.Size = new System.Drawing.Size(112, 28);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "订单编号:";
             // 
@@ -345,13 +363,21 @@
             this.SuppCol.Name = "SuppCol";
             this.SuppCol.ReadOnly = true;
             // 
+            // remarkCol
+            // 
+            this.remarkCol.DataPropertyName = "Remark";
+            this.remarkCol.HeaderText = "备注";
+            this.remarkCol.Name = "remarkCol";
+            this.remarkCol.ReadOnly = true;
+            // 
             // frmInputDetail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 427);
+            this.ClientSize = new System.Drawing.Size(1332, 640);
             this.Controls.Add(this.panelEx2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmInputDetail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "进货单查看";
@@ -388,6 +414,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn countCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn jeCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn SuppCol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remarkCol;
 
 
     }

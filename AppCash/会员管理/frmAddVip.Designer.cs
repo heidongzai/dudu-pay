@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddVip));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.tbIMoney = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.btnExit = new DevComponents.DotNetBar.ButtonX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.tbDiscount = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -58,6 +60,8 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.tbIMoney);
+            this.panelEx1.Controls.Add(this.labelX9);
             this.panelEx1.Controls.Add(this.btnExit);
             this.panelEx1.Controls.Add(this.btnSave);
             this.panelEx1.Controls.Add(this.tbDiscount);
@@ -78,8 +82,9 @@
             this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(489, 206);
+            this.panelEx1.Size = new System.Drawing.Size(734, 309);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -88,14 +93,42 @@
             this.panelEx1.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
+            this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // tbIMoney
+            // 
+            // 
+            // 
+            // 
+            this.tbIMoney.Border.Class = "TextBoxBorder";
+            this.tbIMoney.Location = new System.Drawing.Point(474, 180);
+            this.tbIMoney.Margin = new System.Windows.Forms.Padding(4);
+            this.tbIMoney.Name = "tbIMoney";
+            this.tbIMoney.Size = new System.Drawing.Size(225, 28);
+            this.tbIMoney.TabIndex = 19;
+            this.tbIMoney.Text = "0";
+            // 
+            // labelX9
+            // 
+            // 
+            // 
+            // 
+            this.labelX9.BackgroundStyle.Class = "";
+            this.labelX9.Location = new System.Drawing.Point(386, 180);
+            this.labelX9.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(94, 34);
+            this.labelX9.TabIndex = 18;
+            this.labelX9.Text = "积    分:";
             // 
             // btnExit
             // 
             this.btnExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExit.Location = new System.Drawing.Point(245, 165);
+            this.btnExit.Location = new System.Drawing.Point(368, 248);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(112, 34);
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExit.TabIndex = 17;
             this.btnExit.Text = "取消";
@@ -105,9 +138,10 @@
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(146, 165);
+            this.btnSave.Location = new System.Drawing.Point(219, 248);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "保存";
@@ -119,10 +153,12 @@
             // 
             // 
             this.tbDiscount.Border.Class = "TextBoxBorder";
-            this.tbDiscount.Location = new System.Drawing.Point(71, 120);
+            this.tbDiscount.Location = new System.Drawing.Point(106, 180);
+            this.tbDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.tbDiscount.Name = "tbDiscount";
-            this.tbDiscount.Size = new System.Drawing.Size(150, 21);
+            this.tbDiscount.Size = new System.Drawing.Size(225, 28);
             this.tbDiscount.TabIndex = 15;
+            this.tbDiscount.Text = "1";
             // 
             // labelX8
             // 
@@ -130,9 +166,10 @@
             // 
             // 
             this.labelX8.BackgroundStyle.Class = "";
-            this.labelX8.Location = new System.Drawing.Point(12, 120);
+            this.labelX8.Location = new System.Drawing.Point(18, 180);
+            this.labelX8.Margin = new System.Windows.Forms.Padding(4);
             this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(63, 23);
+            this.labelX8.Size = new System.Drawing.Size(94, 34);
             this.labelX8.TabIndex = 14;
             this.labelX8.Text = "优惠折扣:";
             // 
@@ -142,9 +179,10 @@
             // 
             // 
             this.tbAddr.Border.Class = "TextBoxBorder";
-            this.tbAddr.Location = new System.Drawing.Point(71, 93);
+            this.tbAddr.Location = new System.Drawing.Point(106, 140);
+            this.tbAddr.Margin = new System.Windows.Forms.Padding(4);
             this.tbAddr.Name = "tbAddr";
-            this.tbAddr.Size = new System.Drawing.Size(395, 21);
+            this.tbAddr.Size = new System.Drawing.Size(592, 28);
             this.tbAddr.TabIndex = 13;
             // 
             // labelX7
@@ -153,9 +191,10 @@
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
-            this.labelX7.Location = new System.Drawing.Point(12, 93);
+            this.labelX7.Location = new System.Drawing.Point(18, 140);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(63, 23);
+            this.labelX7.Size = new System.Drawing.Size(94, 34);
             this.labelX7.TabIndex = 12;
             this.labelX7.Text = "家庭住址:";
             // 
@@ -167,7 +206,8 @@
             this.tbBirthday.BackgroundStyle.Class = "DateTimeInputBackground";
             this.tbBirthday.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.tbBirthday.ButtonDropDown.Visible = true;
-            this.tbBirthday.Location = new System.Drawing.Point(316, 66);
+            this.tbBirthday.Location = new System.Drawing.Point(474, 99);
+            this.tbBirthday.Margin = new System.Windows.Forms.Padding(4);
             // 
             // 
             // 
@@ -201,7 +241,7 @@
             this.tbBirthday.MonthCalendar.TodayButtonVisible = true;
             this.tbBirthday.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.tbBirthday.Name = "tbBirthday";
-            this.tbBirthday.Size = new System.Drawing.Size(150, 21);
+            this.tbBirthday.Size = new System.Drawing.Size(225, 28);
             this.tbBirthday.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.tbBirthday.TabIndex = 11;
             // 
@@ -211,9 +251,10 @@
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.Location = new System.Drawing.Point(257, 66);
+            this.labelX6.Location = new System.Drawing.Point(386, 99);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(4);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(63, 23);
+            this.labelX6.Size = new System.Drawing.Size(94, 34);
             this.labelX6.TabIndex = 10;
             this.labelX6.Text = "出生日期:";
             // 
@@ -223,9 +264,10 @@
             // 
             // 
             this.tbEmail.Border.Class = "TextBoxBorder";
-            this.tbEmail.Location = new System.Drawing.Point(71, 66);
+            this.tbEmail.Location = new System.Drawing.Point(106, 99);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(150, 21);
+            this.tbEmail.Size = new System.Drawing.Size(225, 28);
             this.tbEmail.TabIndex = 9;
             // 
             // labelX5
@@ -234,9 +276,10 @@
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(12, 66);
+            this.labelX5.Location = new System.Drawing.Point(18, 99);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(63, 23);
+            this.labelX5.Size = new System.Drawing.Size(94, 34);
             this.labelX5.TabIndex = 8;
             this.labelX5.Text = "电子邮件:";
             // 
@@ -248,7 +291,8 @@
             this.cbEtime.BackgroundStyle.Class = "DateTimeInputBackground";
             this.cbEtime.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.cbEtime.ButtonDropDown.Visible = true;
-            this.cbEtime.Location = new System.Drawing.Point(316, 39);
+            this.cbEtime.Location = new System.Drawing.Point(474, 58);
+            this.cbEtime.Margin = new System.Windows.Forms.Padding(4);
             // 
             // 
             // 
@@ -282,7 +326,7 @@
             this.cbEtime.MonthCalendar.TodayButtonVisible = true;
             this.cbEtime.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.cbEtime.Name = "cbEtime";
-            this.cbEtime.Size = new System.Drawing.Size(150, 21);
+            this.cbEtime.Size = new System.Drawing.Size(225, 28);
             this.cbEtime.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbEtime.TabIndex = 7;
             // 
@@ -292,9 +336,10 @@
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Location = new System.Drawing.Point(257, 41);
+            this.labelX4.Location = new System.Drawing.Point(386, 62);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(63, 23);
+            this.labelX4.Size = new System.Drawing.Size(94, 34);
             this.labelX4.TabIndex = 6;
             this.labelX4.Text = "结束时间:";
             // 
@@ -306,7 +351,8 @@
             this.cbStime.BackgroundStyle.Class = "DateTimeInputBackground";
             this.cbStime.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.cbStime.ButtonDropDown.Visible = true;
-            this.cbStime.Location = new System.Drawing.Point(71, 39);
+            this.cbStime.Location = new System.Drawing.Point(106, 58);
+            this.cbStime.Margin = new System.Windows.Forms.Padding(4);
             // 
             // 
             // 
@@ -340,7 +386,7 @@
             this.cbStime.MonthCalendar.TodayButtonVisible = true;
             this.cbStime.MonthCalendar.WeeklyMarkedDays = new System.DayOfWeek[0];
             this.cbStime.Name = "cbStime";
-            this.cbStime.Size = new System.Drawing.Size(150, 21);
+            this.cbStime.Size = new System.Drawing.Size(225, 28);
             this.cbStime.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbStime.TabIndex = 5;
             // 
@@ -350,9 +396,10 @@
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Location = new System.Drawing.Point(12, 41);
+            this.labelX3.Location = new System.Drawing.Point(18, 62);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(63, 23);
+            this.labelX3.Size = new System.Drawing.Size(94, 34);
             this.labelX3.TabIndex = 4;
             this.labelX3.Text = "开始时间:";
             // 
@@ -362,9 +409,10 @@
             // 
             // 
             this.tbName.Border.Class = "TextBoxBorder";
-            this.tbName.Location = new System.Drawing.Point(316, 12);
+            this.tbName.Location = new System.Drawing.Point(474, 18);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(150, 21);
+            this.tbName.Size = new System.Drawing.Size(225, 28);
             this.tbName.TabIndex = 3;
             // 
             // labelX2
@@ -373,9 +421,10 @@
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(257, 12);
+            this.labelX2.Location = new System.Drawing.Point(386, 18);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(63, 23);
+            this.labelX2.Size = new System.Drawing.Size(94, 34);
             this.labelX2.TabIndex = 2;
             this.labelX2.Text = "会员姓名:";
             // 
@@ -386,11 +435,12 @@
             // 
             this.tbCode.Border.Class = "TextBoxBorder";
             this.tbCode.ForeColor = System.Drawing.Color.DarkBlue;
-            this.tbCode.Location = new System.Drawing.Point(71, 12);
+            this.tbCode.Location = new System.Drawing.Point(106, 18);
+            this.tbCode.Margin = new System.Windows.Forms.Padding(4);
             this.tbCode.Name = "tbCode";
-            this.tbCode.ReadOnly = true;
-            this.tbCode.Size = new System.Drawing.Size(150, 21);
+            this.tbCode.Size = new System.Drawing.Size(225, 28);
             this.tbCode.TabIndex = 1;
+            this.tbCode.TextChanged += new System.EventHandler(this.tbCode_TextChanged);
             // 
             // labelX1
             // 
@@ -398,20 +448,22 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Location = new System.Drawing.Point(12, 12);
+            this.labelX1.Location = new System.Drawing.Point(18, 18);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(63, 23);
+            this.labelX1.Size = new System.Drawing.Size(94, 34);
             this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "会员编号:";
+            this.labelX1.Text = "手机号:";
             // 
             // frmAddVip
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 206);
+            this.ClientSize = new System.Drawing.Size(734, 309);
             this.Controls.Add(this.panelEx1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddVip";
@@ -447,5 +499,7 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX tbEmail;
         private DevComponents.DotNetBar.LabelX labelX5;
+        private DevComponents.DotNetBar.Controls.TextBoxX tbIMoney;
+        private DevComponents.DotNetBar.LabelX labelX9;
     }
 }

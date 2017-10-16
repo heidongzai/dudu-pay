@@ -261,7 +261,7 @@ namespace AppCash
         public String GetHardWareInfo()
         {
 
-            return "cpuid:" + Computer.Instance().CpuID + "|diskId:" + Computer.Instance().DiskID + "|macAddress:" + Computer.Instance().MacAddress;
+            return "cpuid_" + Computer.Instance().CpuID + "_diskId_" + Computer.Instance().DiskID;
         }
 
     }

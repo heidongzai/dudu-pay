@@ -11,6 +11,8 @@ namespace AppCash
 {
     public partial class frmEditGoods : Form
     {
+        String categoryName = "";
+        String categoryId = "";
         public frmEditGoods()
         {
             InitializeComponent();
@@ -24,9 +26,7 @@ namespace AppCash
         private void frmEditGoods_Load(object sender, EventArgs e)
         {
             Dong.BLL.Category catebll = new Dong.BLL.Category();
-            ddlCategory.DataSource = catebll.GetAllList().Tables[0];
-            ddlCategory.DisplayMember = "Name";
-            ddlCategory.ValueMember = "Id";
+            
             //绑定单位
             Dong.BLL.Unit unitbll = new Dong.BLL.Unit();
             ddlUnit.DataSource = unitbll.GetAllList().Tables[0];
@@ -46,13 +46,15 @@ namespace AppCash
                 tbCode.Text = model.Code;
                 tbName.Text = model.GoodsName;
                 tbFactory.Text = model.Factory;
-                ddlCategory.SelectedValue = model.Category;
+              
                 ddlUnit.SelectedValue = model.Unit;
                 ddlSupper.SelectedValue = model.Supplier;
                 txtPrice0.Text = model.Price0 == null ? "" : model.Price0.ToString();
                 txtPrice1.Text = model.Price1 == null ? "" : model.Price1.ToString();
                 txtPrice2.Text = model.Price2 == null ? "" : model.Price2.ToString();
+                this.tbCategory.Text = model.CategoryName;
             }
+
 
         }
 
@@ -74,12 +76,12 @@ namespace AppCash
                 tbName.Focus();
                 return;
             }
-            if (tbFactory.Text.Trim() == "")
-            {
-                MessageBoxEx.Show("请输入商品生产厂家!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tbFactory.Focus();
-                return;
-            }
+            //if (tbFactory.Text.Trim() == "")
+            //{
+            //    MessageBoxEx.Show("请输入商品生产厂家!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    tbFactory.Focus();
+            //    return;
+            //}
 
             if (txtPrice0.Text.Trim() == "")
             {
@@ -98,7 +100,7 @@ namespace AppCash
 
             if (txtPrice1.Text.Trim() == "")
             {
-                MessageBoxEx.Show("请输入进货价!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               MessageBoxEx.Show("请输入进货价!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPrice1.Focus();
                 return;
             }
@@ -110,7 +112,7 @@ namespace AppCash
                 return;
             }
 
-            if (txtPrice2.Text.Trim() == "")
+            /*if (txtPrice2.Text.Trim() == "")
             {
                 MessageBoxEx.Show("请输入成本价!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPrice2.Focus();
@@ -122,7 +124,7 @@ namespace AppCash
                 MessageBoxEx.Show("成本价必须为数字!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPrice2.Focus();
                 return;
-            }
+            }*/
 
             Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
             Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
@@ -130,10 +132,10 @@ namespace AppCash
             model.Id = int.Parse(this.Tag.ToString());
             model.Code = tbCode.Text;
             model.GoodsName = tbName.Text;
-            if (ddlCategory.SelectedValue != null && !string.IsNullOrEmpty(ddlCategory.SelectedValue.ToString()))
+            if (!string.IsNullOrEmpty(categoryId) && !string.IsNullOrEmpty(categoryName) && !string.IsNullOrEmpty(this.tbCategory.Text))
             {
-                model.Category = Int32.Parse(ddlCategory.SelectedValue.ToString());
-                model.CategoryName = ddlCategory.Text;
+                model.Category = Int32.Parse(categoryId);
+                model.CategoryName = categoryName;
             }
             else
             {
@@ -162,7 +164,7 @@ namespace AppCash
             model.Counts = model.Counts;
             model.Price0 = price0;
             model.Price1 = price1;
-            model.Price2 = price2;
+            //model.Price2 = price2;
             if (bll.Update(model))
             {
                 MessageBoxEx.Show("修改成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -174,6 +176,39 @@ namespace AppCash
             {
                 MessageBoxEx.Show("修改失败!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            //点击弹出方法
+            frmCategorySelected frmChild = new frmCategorySelected();
+            frmChild.ShowDialog();
+            if (frmChild.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                categoryId = frmChild.CategoryId;
+                categoryName = frmChild.CategoryName;
+                this.tbCategory.Text = categoryName;
+            }
+        }
+
+        private void tbCategory_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPrice1_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
 

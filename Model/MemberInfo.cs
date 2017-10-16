@@ -34,10 +34,11 @@ namespace Dong.Model
 		private string _email;
 		private string _addr;
 		private DateTime? _birthday;
-		private double _discount=0;
-		private double? _money=0;
+		private double _discount;
+		private double _imoney;
 		private string _oper;
 		private DateTime? _operdate;
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -113,10 +114,10 @@ namespace Dong.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public double? Money
+		public double iMoney
 		{
-			set{ _money=value;}
-			get{return _money;}
+			set{ _imoney=value;}
+			get{return _imoney;}
 		}
 		/// <summary>
 		/// 

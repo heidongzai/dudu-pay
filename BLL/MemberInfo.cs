@@ -168,7 +168,7 @@ namespace Dong.BLL
             string strSql = "";
             if (strWhere != "")
             {
-                strSql = "select top " + pageSize + " * from MemberInfo where id >=(select top 1 max(id) from (select top " + (((page - 1) * pageSize) + 1).ToString() + " * from MemberInfo where " + strWhere + " order by id)) and " + strWhere;
+                strSql = "select top " + pageSize + " * from MemberInfo where id >=(select top 1 max(id) from (select top " + (((page - 1) * pageSize) + 1).ToString() + " * from MemberInfo where 1=1  " + strWhere + " order by id))  " + strWhere;
             }
             else
             {
@@ -188,7 +188,7 @@ namespace Dong.BLL
             DataSet ds = new DataSet();
             ds = GetListPage(strWhere, pageSize, page);
             ds.Tables[0].Columns["Id"].ColumnName = "编号";
-            ds.Tables[0].Columns["IdCode"].ColumnName = "会员卡号";
+            ds.Tables[0].Columns["IdCode"].ColumnName = "手机号";
             ds.Tables[0].Columns["UserName"].ColumnName = "姓名";
             ds.Tables[0].Columns["Stime"].ColumnName = "开始时间";
             ds.Tables[0].Columns["Etime"].ColumnName = "结束时间";
@@ -196,7 +196,7 @@ namespace Dong.BLL
             ds.Tables[0].Columns["Addr"].ColumnName = "地址";
             ds.Tables[0].Columns["Birthday"].ColumnName = "生日";
             ds.Tables[0].Columns["Discount"].ColumnName = "折扣";
-            ds.Tables[0].Columns["iMoney"].ColumnName = "消费金额";
+            ds.Tables[0].Columns["iMoney"].ColumnName = "积分";
             ds.Tables[0].Columns["Oper"].ColumnName = "添加人";
             ds.Tables[0].Columns["OperDate"].ColumnName = "添加时间";
             return ds;

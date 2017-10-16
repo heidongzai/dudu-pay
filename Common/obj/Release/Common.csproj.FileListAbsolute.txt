@@ -1,0 +1,8 @@
+D:\winform\cash\cash\source\BN140\Common\bin\Release\Maticsoft.Common.dll
+D:\winform\cash\cash\source\BN140\Common\bin\Release\COM.Excel.dll
+D:\winform\cash\cash\source\BN140\Common\bin\Release\Excel.dll
+D:\winform\cash\cash\source\BN140\Common\bin\Release\OpenSmtp.dll
+D:\winform\cash\cash\source\BN140\Common\bin\Release\office.dll
+D:\winform\cash\cash\source\BN140\Common\bin\Release\Microsoft.Vbe.Interop.dll
+D:\winform\cash\cash\source\BN140\Common\obj\Release\Common.csprojResolveAssemblyReference.cache
+D:\winform\cash\cash\source\BN140\Common\obj\Release\Maticsoft.Common.dll

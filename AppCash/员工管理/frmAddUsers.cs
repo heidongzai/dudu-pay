@@ -106,5 +106,10 @@ namespace AppCash
             cbRoles.Items.Add(new ComboBoxItem("1", "收银员"));
             cbRoles.SelectedIndex = 1;
         }
+
+        private void cbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -56,22 +56,22 @@ namespace AppCash
                         this.Close();
                     }
                     return true;
-                case Keys.P:
+                case Keys.F1:
                     Cash();
                     return true;
                 case Keys.Enter:
 
                     addGoods();
                     return true;
-                case Keys.D:
+                case Keys.F4:
                     delGoods();
                     return true;
-                case Keys.V:
+                case Keys.F2:
                     frmCVip fVip = new frmCVip();
                     fVip.Owner = this;
                     fVip.ShowDialog();
                     return true;
-                case Keys.End:
+                case Keys.F3:
                     frmCounts fCounts = new frmCounts();
                     fCounts.Owner = this;
                     fCounts.ShowDialog();
@@ -122,10 +122,14 @@ namespace AppCash
 
         protected void Cash()
         {
+            String tag = lblSF.Text;
+            Console.Write("tag:" + tag);
+            if (!string.IsNullOrEmpty(tag)) { 
             frmMoney frmCash = new frmMoney();
             frmCash.Owner = this;
             frmCash.Tag = lblSF.Text;
             frmCash.ShowDialog();
+            }
         }
 
         public void ClearForm()
@@ -145,9 +149,11 @@ namespace AppCash
             Dong.BLL.SaleInfo bSaleInfo = new Dong.BLL.SaleInfo();
             Dong.Model.SaleInfo mSaleInfo = new Dong.Model.SaleInfo();
             mSaleInfo = bSaleInfo.GetPreModel(Dong.Model.GlobalsInfo.UserName);
+            if (mSaleInfo != null) { 
             lblPreBillNo.Text = mSaleInfo.Pid;
             lblPreBillCash.Text = string.Format("{0:F2}", mSaleInfo.Price.ToString());
             lblPreTime.Text = mSaleInfo.IDate.ToString();
+            }
         }
 
         public void sumCash()
@@ -159,8 +165,22 @@ namespace AppCash
                 cash = cash + price;
             }
             lblCash.Text = string.Format("{0:F2}", cash);
-            Dong.Model.GlobalsInfo.vipZK =0.99;
+            //Dong.Model.GlobalsInfo.vipZK =0.99;
+            //Dong.Model.GlobalsInfo.vipZK = 1;
+            if (Dong.Model.GlobalsInfo.vipZK==null)
+            {
+                Dong.Model.GlobalsInfo.vipZK = 1;
+            }
+            else
+            {
+                if (Dong.Model.GlobalsInfo.vipZK > 1 || Dong.Model.GlobalsInfo.vipZK <= 0)
+                {
+                    Dong.Model.GlobalsInfo.vipZK = 1;
+                }
+            }
+            
             lblSF.Text = string.Format("{0:F2}", cash * Dong.Model.GlobalsInfo.vipZK);
+            Console.Write(lblSF.Text);
             lblVip.Text = Dong.Model.GlobalsInfo.vipCode;
         }
 
@@ -196,6 +216,21 @@ namespace AppCash
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCode_TextChanged(object sender, EventArgs e)
         {
 
         }

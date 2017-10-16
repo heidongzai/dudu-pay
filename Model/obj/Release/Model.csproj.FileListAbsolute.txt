@@ -1,0 +1,5 @@
+D:\winform\cash\cash\source\BN140\Model\bin\Release\Model.dll
+D:\winform\cash\cash\source\BN140\Model\bin\Release\Model.pdb
+D:\winform\cash\cash\source\BN140\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+D:\winform\cash\cash\source\BN140\Model\obj\Release\Model.dll
+D:\winform\cash\cash\source\BN140\Model\obj\Release\Model.pdb

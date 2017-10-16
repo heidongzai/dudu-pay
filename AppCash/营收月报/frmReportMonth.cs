@@ -46,17 +46,46 @@ namespace AppCash
             gvList.DataSource = dt;
             int count = 0;
             double price = 0;
+            double priceCash = 0;
+            double priceWeixin = 0;
+            double priceAlipay = 0;
             double gain = 0;
             foreach (DataRow dr in dt.Rows)
             {
                 count += int.Parse(dr[0].ToString());
                 price += double.Parse(dr[1].ToString());
                 gain += double.Parse(dr[2].ToString());
+                priceCash += double.Parse(dr[3].ToString());
+                priceWeixin += double.Parse(dr[4].ToString());
+                priceAlipay += double.Parse(dr[5].ToString());
             }
             lblCount.Text = count.ToString();
-            lblXSZE.Text = price.ToString();
-            lblGain.Text = gain.ToString();
+            lblXSZE.Text = string.Format("{0:F2}",price);
+            lblGain.Text = string.Format("{0:F2}",gain);
+            lblCash.Text = string.Format("{0:F2}",priceCash);
+            lblWeixin.Text = string.Format("{0:F2}",priceWeixin);
+            lblAlipay.Text = string.Format("{0:F2}",priceAlipay);
         }
         #endregion
+
+        private void gvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblXSZE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblWeixin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

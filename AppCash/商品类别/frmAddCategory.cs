@@ -15,7 +15,13 @@ namespace AppCash
         {
             InitializeComponent();
         }
+        public int Pid;
 
+        public frmAddCategory(int parentValue)
+        {  
+            InitializeComponent();
+            Pid = parentValue;  
+        }  
         /// <summary>
         /// 保存
         /// </summary>
@@ -37,18 +43,20 @@ namespace AppCash
             Dong.BLL.Category bll = new Dong.BLL.Category();
             Dong.Model.Category model = new Dong.Model.Category();
             model.Name = txtName.Text;
+            model.Pid = Pid;
 
             if (bll.Add(model))
             {
                 MessageBoxEx.Show("添加成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmCategory frm = (frmCategory)this.Owner;
-                frm.refreshData();
+                //frmCategorytree frm = (frmCategorytree)this.Owner;
+                //frm.fresh_();
                 this.Close();
             }
             else
             {
                 MessageBoxEx.Show("保存失败!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            this.Close();
         }
         /// <summary>
         /// 关闭
@@ -58,6 +66,11 @@ namespace AppCash
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

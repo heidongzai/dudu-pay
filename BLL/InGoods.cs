@@ -161,6 +161,10 @@ namespace Dong.BLL
             {
                 strSql = "select top " + pageSize + " * from v_inGoods where nid >=(select top 1 max(nid) from (select top " + (((page - 1) * pageSize) + 1).ToString() + " * from v_inGoods order by nid)) order by nid";
             }
+
+            
+
+
             ds = Maticsoft.DBUtility.DbHelperOleDb.Query(strSql);
             return ds;
         }

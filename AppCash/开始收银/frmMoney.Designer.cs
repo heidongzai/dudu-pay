@@ -42,7 +42,7 @@
             // 
             // tbYS
             // 
-            this.tbYS.BackColor = System.Drawing.SystemColors.Highlight;
+            this.tbYS.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.tbYS.Font = new System.Drawing.Font("微软雅黑", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.tbYS.Location = new System.Drawing.Point(194, 35);
             this.tbYS.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -106,7 +106,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(155, 42);
             this.label2.TabIndex = 8;
-            this.label2.Text = "找回金额:";
+            this.label2.Text = "找零金额:";
             // 
             // label3
             // 
@@ -167,7 +167,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(530, 469);
             this.ControlBox = false;
             this.Controls.Add(this.tbYS);
@@ -207,5 +207,12 @@
 
         private System.Windows.Forms.TextBox tbPayCode;
         private System.Windows.Forms.Label label4;
+
+        private double yishou=0;
+        private double syyf = 0;
+        private double Weixin_=0;
+        private double Alipay_=0;
+        private double Cash_ = 0;
+        private int payTimes = 0;
     }
 }

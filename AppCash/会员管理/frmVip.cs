@@ -62,17 +62,40 @@ namespace AppCash
         #region ------搜索------
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            strSql = "";
             if (tbKey.Text.Trim() != "")
             {
                 string key = Maticsoft.Common.StringPlus.GetText(tbKey.Text);
-                strSql = "UserName like '%" + key + "%'";
-                intPage = 1;
-                fillGVList(strSql, intPageSize, 1);
+                strSql = " and UserName like '%" + key + "%'";
+                
                 
             }
+            if (tbCode.Text.Trim() != "")
+            {
+                string key = Maticsoft.Common.StringPlus.GetText(tbCode.Text);
+                strSql += " and IdCode like '%" + key + "%'";
+                
+            }
+            intPage = 1;
+            fillGVList(strSql, intPageSize, 1);
         }
         #endregion
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        { 
+            string jdkj= this.ActiveControl.Name;
+            switch (keyData)
+            {
+                
+                case Keys.Enter:
+                    if (jdkj.Equals(tbCode.Name) || jdkj.Equals(tbKey.Name)) {
+                        btnSearch_Click(null, null);
+                    }
+                    return true;
 
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
         #region ------共用刷新方法------
         public void refreshData()
         {
@@ -247,6 +270,11 @@ namespace AppCash
         }
 
         #endregion
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

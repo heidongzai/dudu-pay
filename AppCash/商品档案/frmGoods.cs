@@ -11,6 +11,8 @@ namespace AppCash
 {
     public partial class frmGoods : Form
     {
+        private string categoryId="";
+        private string categoryName = "";
         #region ------初始化变量------
         private string strSql = "";                 //查询条件
         private int intPage = 1;                    //当前页码
@@ -44,6 +46,17 @@ namespace AppCash
 
             //绑定页面显示条数设置控件的TextChanged事件
             cbPageSize.TextChanged += new EventHandler(cbPageSize_TextChanged);
+            //权限控制 商品增加删除修改功能对普通营业员不可见
+            if (Dong.Model.GlobalsInfo.role.Equals(1))
+            {
+                this.btnAdd.Visible = false;
+                this.btnDel.Visible = false;
+                this.btnEdit.Visible = false;
+                this.price2Col.DataPropertyName = "";
+                this.price3Col.DataPropertyName = "";
+            }
+
+            
 
         }
         #endregion
@@ -61,17 +74,49 @@ namespace AppCash
         #region ------搜索------
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            strSql = "";
             if (tbKey.Text.Trim() != "")
             {
                 string key = Maticsoft.Common.StringPlus.GetText(tbKey.Text);
-                strSql = " and GoodName like '%" + key + "%'";
-                intPage = 1;
-                fillGVList(strSql, intPageSize, 1);
+                strSql = " and  GoodName like '%" + key + "%'";
+               
 
             }
+            if (tbCode.Text.Trim() != "")
+            {
+                string key = Maticsoft.Common.StringPlus.GetText(tbCode.Text);
+                strSql += "and  Code like '%" + key + "%'";
+                
+
+            }
+            if (!string.IsNullOrEmpty(categoryId))
+            {
+                
+                strSql += " and  Category =" + categoryId + " ";
+            }
+            intPage = 1;
+            fillGVList(strSql, intPageSize, 1);
         }
         #endregion
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            string jdkj= this.ActiveControl.Name;
+            switch (keyData)
+            {
+              
+                case Keys.Enter:
+                    if (jdkj.Equals(tbCode.Name) || jdkj.Equals(tbKey.Name))
+                    {
+                        btnSearch_Click(null, null);
+                    }
+                    
+                    return true;
+
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
         #region ------共用刷新方法------
         public void refreshData()
         {
@@ -133,6 +178,7 @@ namespace AppCash
         #region ------弹出编辑窗口------
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            
             string id = gvList.SelectedRows[0].Cells[0].Value.ToString();
             if (id != "")
             {
@@ -152,6 +198,11 @@ namespace AppCash
         #region ------双击行弹出编辑界面------
         private void gvList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            //如果是普通用户，双击没有反应。
+            if (Dong.Model.GlobalsInfo.role.Equals(1))
+            {
+                return;
+            }
             string id = gvList.SelectedRows[0].Cells[0].Value.ToString();
             if (id != "")
             {
@@ -242,6 +293,34 @@ namespace AppCash
         }
 
         #endregion
+
+        private void tbCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            //点击弹出方法
+            frmCategorySelected frmChild = new frmCategorySelected();
+            frmChild.ShowDialog();
+            if (frmChild.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                categoryId = frmChild.CategoryId;
+                categoryName = frmChild.CategoryName;
+                this.tbCategory.Text = categoryName;
+            }
+        }
+
+        private void gvList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }

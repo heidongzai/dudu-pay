@@ -260,10 +260,10 @@ namespace Dong.DAL
 		public int GetRecordCount(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select count(1) FROM InGoods ");
+            strSql.Append("select count(1) FROM v_inGoods ");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+                strSql.Append(" where 1=1" + strWhere);
 			}
             object obj = DbHelperOleDb.GetSingle(strSql.ToString());
 			if (obj == null)

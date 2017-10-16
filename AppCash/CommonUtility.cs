@@ -7,7 +7,9 @@ using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Xml;
 
 
 
@@ -135,15 +137,36 @@ namespace AppCash
 
             return new string(id);
         }
+        public static String localPathToHostIp(String localPath){
+            if(string.IsNullOrEmpty(Dong.Model.GlobalsInfo.hostIp)){
+                return localPath;
+            }else{
+                return "\\\\" + Dong.Model.GlobalsInfo.hostIp + "/" + localPath;
+            }
+            
+        }
+        public static String localPathToDocumentPath(String localPath)
+        {
+            if (string.IsNullOrEmpty(Environment.GetFolderPath(Environment.SpecialFolder.Personal)))
+            {
+                return localPath;
+            }
+            else
+            {
+                return Environment.GetFolderPath(Environment.SpecialFolder.Personal) + "/duduSoft/duduCasher/" + localPath;
+            }
 
+        }
         //该方法有bug，待修改20170413echo
         public static void ReadStream(string filePath)
         {
+            filePath = localPathToHostIp(filePath);
             byte[] byData = new byte[100];
             char[] charData = new char[1000];
             try
             {
                 FileStream file = new FileStream(filePath, FileMode.Open);
+                
                 file.Seek(0, SeekOrigin.Begin);
                 file.Read(byData, 0, 100); //byData传进来的字节数组,用以接受FileStream对象中的数据,第2个参数是字节数组中开始写入数据的位置,它通常是0,表示从数组的开端文件中向数组写数据,最后一个参数规定从文件读多少字符.
                 Decoder d = Encoding.Default.GetDecoder();
@@ -157,8 +180,15 @@ namespace AppCash
             }
         }
 
-        public static string ReadReader(string filePath)
+        public static string ReadReader(string filePath,String isRemote)
         {
+            if (isRemote.Equals("1")) { 
+            filePath = localPathToHostIp(filePath);
+            }
+            if (isRemote.Equals("2"))
+            {
+                filePath = localPathToDocumentPath(filePath);
+            }
             String result = "";
             if (File.Exists(filePath)) { 
             StreamReader sr = new StreamReader(filePath, Encoding.Default);
@@ -177,6 +207,7 @@ namespace AppCash
 
         public static void WriteStream(string filePath,string content)
         {
+            filePath = localPathToHostIp(filePath);
             FileStream fs = new FileStream(filePath, FileMode.Create);
             //获得字节数组
             byte[] data = System.Text.Encoding.Default.GetBytes(content);
@@ -187,8 +218,15 @@ namespace AppCash
             fs.Close();
         }
 
-        public static void WriteWriter(string filePath, string content)
+        public static void WriteWriter(string filePath, string content,string isRemote)
         {
+            if (isRemote.Equals("1")) { 
+            filePath = localPathToHostIp(filePath);
+            }
+            if (isRemote.Equals("2"))
+            {
+                filePath = localPathToDocumentPath(filePath);
+            }
             FileStream fs = new FileStream(filePath, FileMode.Create);
             StreamWriter sw = new StreamWriter(fs);
             //开始写入
@@ -199,7 +237,23 @@ namespace AppCash
             sw.Close();
             fs.Close();
         }
-
+        public static void deleteFile(string filePath,string isRemote)
+        {
+            if (isRemote.Equals("1"))
+            {
+                filePath = localPathToHostIp(filePath);
+            }
+            if (isRemote.Equals("2"))
+            {
+                filePath = localPathToDocumentPath(filePath);
+            }
+            filePath = localPathToHostIp(filePath);
+            System.IO.FileInfo file = new System.IO.FileInfo(filePath);
+            if (file.Exists)//文件是否存在，存在则执行删除  
+            {
+                file.Delete();
+            }  
+        }
 
         /// <summary>  
         /// 生成公钥、私钥  
@@ -223,7 +277,7 @@ namespace AppCash
         {
             //java端的密文
             if (string.IsNullOrEmpty(pwd)) { 
-            pwd = "Uye5dkFjGRU3R4mc/eIzVSp3YyNnCz7ZfgJNzJ5sDKtubQzXMi9frP1IQ/eFapDvj3lrURtphBF//+zjjhHreKe9EfGXAFygAHZMxtc7GWxbz4rOQcFLenmK44kQy/DwdRCw4IajNVZeus70eFBYvj7VtqufltzFF0ZZeoItdyI=";
+            //pwd = "Uye5dkFjGRU3R4mc/eIzVSp3YyNnCz7ZfgJNzJ5sDKtubQzXMi9frP1IQ/eFapDvj3lrURtphBF//+zjjhHreKe9EfGXAFygAHZMxtc7GWxbz4rOQcFLenmK44kQy/DwdRCw4IajNVZeus70eFBYvj7VtqufltzFF0ZZeoItdyI=";
             }
             //服务端私钥 由 createKeyPair 创建PRIVATE，
             if (string.IsNullOrEmpty(privateKey)) { 
@@ -239,24 +293,26 @@ namespace AppCash
         //
         public static string TestReg()
         {
-            Dong.BLL.Dictionary bAccountNo = new Dong.BLL.Dictionary();
-            Dong.Model.Dictionary mAccountNo = new Dong.Model.Dictionary();
-            //序列号
-            string strSql_AccountNo = "KeyStr = 'AccountNo'";
-            String AccountNo = "";
-            List<Dong.Model.Dictionary> AccountNoList = bAccountNo.GetModelList(strSql_AccountNo);
-            if (AccountNoList.Count != 0)
-            {
-                mAccountNo = AccountNoList[0];
-                if (!string.IsNullOrEmpty(mAccountNo.ValueStr))
-                {
-                    AccountNo = mAccountNo.ValueStr;
-                }
-            }
+            //Dong.BLL.Dictionary bAccountNo = new Dong.BLL.Dictionary();
+            //Dong.Model.Dictionary mAccountNo = new Dong.Model.Dictionary();
+            ////序列号
+            //string strSql_AccountNo = "KeyStr = 'AccountNo'";
+            //String AccountNo = "";
+            //List<Dong.Model.Dictionary> AccountNoList = bAccountNo.GetModelList(strSql_AccountNo);
+            //if (AccountNoList.Count != 0)
+            //{
+            //    mAccountNo = AccountNoList[0];
+            //    if (!string.IsNullOrEmpty(mAccountNo.ValueStr))
+            //    {
+            //        AccountNo = mAccountNo.ValueStr;
+            //    }
+            //}
+            String AccountNo = CommonUtility.ReadReader("duduCasherDB/an.dll", "2"); ;
             //获取授权密文s
-            string key = CommonUtility.ReadReader("hlx.dll");
+            string key = CommonUtility.ReadReader("duduCasherDB/hlx.dll","2");
 
-            string jiqima = "cpuid:" + Computer.Instance().CpuID + "|diskId:" + Computer.Instance().DiskID + "|macAddress:" + Computer.Instance().MacAddress  ;
+            //string jiqima = "cpuid_" + Computer.Instance().CpuID + "_macAddress_" + Computer.Instance().MacAddress  ;
+            string jiqima = "cpuid_" + Computer.Instance().CpuID + "_diskId_" + Computer.Instance().DiskID;
             string info = CommonUtility.TestDecry(key, null);
             //如果授权密文为空或者序列号为空或授权验证失败 ，说明该产品为试用版
             if (string.IsNullOrEmpty(key) || !info.Equals(jiqima) || string.IsNullOrEmpty(AccountNo))
@@ -328,8 +384,105 @@ namespace AppCash
                 output[i - offset] = input[i];
             }
             return output;
-        }  
-    
+        }
+
+        public static string UrlEncode(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            byte[] byStr = System.Text.Encoding.UTF8.GetBytes(str); //默认是System.Text.Encoding.Default.GetBytes(str)
+            for (int i = 0; i < byStr.Length; i++)
+            {
+                sb.Append(@"%" + Convert.ToString(byStr[i], 16));
+            }
+
+            return (sb.ToString());
+        }
+        public static bool IsMobile(string source)
+        {
+
+            return Regex.IsMatch(source, @"^1[35]\d{9}$", RegexOptions.IgnoreCase) || Regex.IsMatch(source, @"^1[78]\d{9}$", RegexOptions.IgnoreCase);
+        }
+        /// <summary>
+        /// 修改元素值(未找到相应的键，会新建一个元素)
+        /// </summary>
+        /// <param name="AppKey">元素名</param>
+        /// <param name="AppValue">元素值</param>
+        public static void SetValue(string AppKey, string AppValue)
+        {
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(System.Windows.Forms.Application.ExecutablePath + ".config");
+
+            System.Xml.XmlNode xNode;
+            System.Xml.XmlElement xElem1;
+            System.Xml.XmlElement xElem2;
+            xNode = xDoc.SelectSingleNode("//appSettings");
+
+            xElem1 = (System.Xml.XmlElement)xNode.SelectSingleNode("//add[@key='" + AppKey + "']");
+            if (xElem1 != null) xElem1.SetAttribute("value", AppValue);
+            else
+            {
+                xElem2 = xDoc.CreateElement("add");
+                xElem2.SetAttribute("key", AppKey);
+                xElem2.SetAttribute("value", AppValue);
+                xNode.AppendChild(xElem2);
+            }
+            xDoc.Save(System.Windows.Forms.Application.ExecutablePath + ".config");
+        }
+        public static String GetValue(string AppKey)
+
+        {
+            String temp="";
+            String result = "";
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(System.Windows.Forms.Application.ExecutablePath + ".config");
+
+            System.Xml.XmlNode xNode;
+            System.Xml.XmlElement xElem1;
+
+            xNode = xDoc.SelectSingleNode("//appSettings");
+
+            xElem1 = (System.Xml.XmlElement)xNode.SelectSingleNode("//add[@key='" + AppKey + "']");
+            if (xElem1 != null) {
+                result = xElem1.GetAttribute("value");
+                
+            }
+
+            return result;
+        }
+
+        public static String isAIp(String ip)
+        {
+            if (!Regex.IsMatch(ip, @"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"))
+            {
+                return "0";
+            }
+            else
+            {
+                return "1";
+            }
+        }
+        //public static String getHostIp()
+        //{
+        //    String HostIp = "";
+
+
+        //    String ConnectionString = CommonUtility.GetValue("ConnectionString");
+        //    if (!String.IsNullOrEmpty(ConnectionString))
+        //    {
+        //        if (ConnectionString.IndexOf("//") > -1)
+        //        {
+        //            int i1 = ConnectionString.LastIndexOf("//");
+        //            int i2 = ConnectionString.LastIndexOf("/DB");
+        //            HostIp = ConnectionString.Substring(i1 + 2, i2 - i1 - 2);
+        //            //HostIp=ip.Substring(2,ip.Length-1);
+        //        }
+        //        else
+        //        {
+        //            HostIp = "";
+        //        }
+        //    }
+        //    return HostIp;
+        //}
 
     }
 }

@@ -289,7 +289,7 @@ namespace Dong.DAL
 			strSql.Append("select count(1) FROM Supplier ");
 			if(strWhere.Trim()!="")
 			{
-				strSql.Append(" where "+strWhere);
+				strSql.Append(" where 1=1 "+strWhere);
 			}
             object obj = DbHelperOleDb.GetSingle(strSql.ToString());
 			if (obj == null)

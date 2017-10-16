@@ -22,9 +22,9 @@ namespace AppCash
         {
             dGV.AutoGenerateColumns = false;
             dt = new DataTable();
-            //lblCode.Text = "B" + DateTime.Now.ToString("yyyyMMddHHmmss");
+            lblCode.Text = "P" + DateTime.Now.ToString("yyyyMMddHHmmss");
             //lblTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            //txtOper.Text = Dong.Model.GlobalsInfo.UserName;
+            txtOper.Text = Dong.Model.GlobalsInfo.UserName;
             dt.Columns.Add(new DataColumn("Id"));
             dt.Columns.Add(new DataColumn("GoodCode"));
             dt.Columns.Add(new DataColumn("GoodName"));
@@ -41,7 +41,49 @@ namespace AppCash
         /// <param name="e"></param>
         private void buttonX1_Click(object sender, EventArgs e)
         {
+             Dong.BLL.InGoods bInGoods = new Dong.BLL.InGoods();
+            Dong.Model.InGoods mInGoods = new Dong.Model.InGoods();
+            Dong.BLL.GoodsInfo bGoodsInfo = new Dong.BLL.GoodsInfo();
+            Dong.Model.GoodsInfo mGoodsInfo = new Dong.Model.GoodsInfo();
+            for (int i = 0; i < dGV.Rows.Count; i++)
+            {
+                //添加盘点信息
+                mGoodsInfo = bGoodsInfo.GetModel(dGV.Rows[i].Cells[1].Value.ToString());
+                mInGoods.PCode = lblCode.Text;
+                mInGoods.GoodsCode = dGV.Rows[i].Cells[1].Value.ToString();
+                mInGoods.Price = double.Parse(dGV.Rows[i].Cells[3].Value.ToString());
+                mInGoods.Counts = int.Parse(dGV.Rows[i].Cells[5].Value.ToString()) - int.Parse(dGV.Rows[i].Cells[4].Value.ToString());
+                mInGoods.IDate = DateTime.Now.Date;
+                mInGoods.Oper = txtOper.Text;
+                mInGoods.Supplier = mGoodsInfo.Supplier;
+                mInGoods.Remark = "盘点";
+                bInGoods.Add(mInGoods);
 
+                //修改商品信息
+                //进货价格
+                //double oldPrice1 = (double)mGoodsInfo.Price1;
+                //mGoodsInfo.Price1 = double.Parse(dGV.Rows[i].Cells[3].Value.ToString());
+                
+                
+
+                //库存数量=原数量+本次盘点增加量
+                int totalCount = (int)mGoodsInfo.Counts + (int)mInGoods.Counts;
+                //库存成本价=原单价*原数量+本次盘点增加价
+                //double totalPrice = (oldPrice1 * (int)mGoodsInfo.Counts) + (double)mInGoods.Price;
+                //商品数量=库存数量
+                mGoodsInfo.Counts = totalCount;
+                //商品成本价不变
+                //double cbPrice = totalPrice / totalCount;
+                //mGoodsInfo.Price2 = cbPrice;
+                bGoodsInfo.Update(mGoodsInfo);
+
+            }
+
+            //frmInput frm = (frmInput)this.Owner;
+            //this.frmPD_Load();
+            MessageBoxEx.Show("保存成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
+            //this.Close();
         }
 
         /// <summary>
@@ -100,14 +142,14 @@ namespace AppCash
             dr[3] = cb;
             dr[4] = kc;
             dr[5] = sl;
-            if (sl == "0")
-            {
-                dr[6] = 0;
-            }
-            else
-            {
+            //if (sl == "0")
+            //{
+            //    dr[6] = 0;
+            //}
+            //else
+            //{
                 dr[6] = (Int32.Parse(kc) - count) * (double.Parse(cb));
-            }
+            //}
             dt.Rows.Add(dr);
             BindGrid();
             //计算总亏损
@@ -177,6 +219,52 @@ namespace AppCash
                 txtJJ.Text = model.Price1 == null ? "" : model.Price1.ToString();
                 txtCB.Text = model.Price2 == null ? "" : model.Price2.ToString();
             }
+        }
+
+        private void panelEx3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOper_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            string jdkj = this.ActiveControl.Name;
+            switch (keyData)
+            {
+                   
+                case Keys.Escape:
+
+                    this.Close();
+                    return true;
+                case Keys.Enter:
+                    if (jdkj.Equals(txtCode.Name) )
+                    {
+                        btnSearch_Click(null, null);
+                    }
+                    return true;
+
+                default:
+                    return base.ProcessCmdKey(ref msg, keyData);
+            }
+        }
+
+        private void dGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

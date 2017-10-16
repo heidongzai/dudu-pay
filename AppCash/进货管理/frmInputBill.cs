@@ -19,6 +19,7 @@ namespace AppCash
 
         private void frmInputBill_Load(object sender, EventArgs e)
         {
+
             dGV.AutoGenerateColumns = false;
             dt = new DataTable();
             lblCode.Text = "B" + DateTime.Now.ToString("yyyyMMddHHmmss");
@@ -30,6 +31,7 @@ namespace AppCash
             dt.Columns.Add(new DataColumn("JJ"));
             dt.Columns.Add(new DataColumn("SL"));
             dt.Columns.Add(new DataColumn("JE"));
+            txtOper.Text = Dong.Model.GlobalsInfo.UserName;
         }
 
         /// <summary>
@@ -60,16 +62,22 @@ namespace AppCash
                 //修改商品信息
                 //进货价格
                 double oldPrice1 = (double)mGoodsInfo.Price1;
+                double oldPrice2 = (double)mGoodsInfo.Price2;
+                if (oldPrice2.Equals(0))
+                {
+                    oldPrice2 = oldPrice1;
+                }
                 mGoodsInfo.Price1 = double.Parse(dGV.Rows[i].Cells[3].Value.ToString());
                 
+                
+                //成本价
+                int totalCount = (int)mGoodsInfo.Counts + int.Parse(dGV.Rows[i].Cells[4].Value.ToString());
+                double totalPrice = (oldPrice2 * (int)mGoodsInfo.Counts) + (double.Parse(dGV.Rows[i].Cells[3].Value.ToString()) * int.Parse(dGV.Rows[i].Cells[4].Value.ToString()));
+                double cbPrice = totalPrice / totalCount;
+                mGoodsInfo.Price2 = cbPrice;
                 //数量
                 mGoodsInfo.Counts = mGoodsInfo.Counts + int.Parse(dGV.Rows[i].Cells[4].Value.ToString());
 
-                //成本价
-                int totalCount = (int)mGoodsInfo.Counts + int.Parse(dGV.Rows[i].Cells[4].Value.ToString());
-                double totalPrice = (oldPrice1 * (int)mGoodsInfo.Counts) + (double.Parse(dGV.Rows[i].Cells[3].Value.ToString()) * int.Parse(dGV.Rows[i].Cells[4].Value.ToString()));
-                double cbPrice = totalPrice / totalCount;
-                mGoodsInfo.Price2 = cbPrice;
                 bGoodsInfo.Update(mGoodsInfo);
 
             }
@@ -92,10 +100,11 @@ namespace AppCash
             string name = txtName.Text;
             //商品进价
             string jj = txtJJ.Text.Trim();
+            //商品成本
+            //string jj = txtCB.Text.Trim();
             //商品数量
 
             string sl = txtSL.Text.Trim();
-
 
             if (string.IsNullOrEmpty(jj))
             {
@@ -103,6 +112,7 @@ namespace AppCash
                 txtJJ.Focus();
                 return;
             }
+            
 
             if (string.IsNullOrEmpty(sl))
             {
@@ -115,7 +125,7 @@ namespace AppCash
             if (!double.TryParse(jj, out price))
             {
                 MessageBoxEx.Show("商品进价必须为数字!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtJJ.Focus();
+                txtCB.Focus();
                 return;
             }
 
@@ -191,6 +201,7 @@ namespace AppCash
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            string jdkj = this.ActiveControl.Name;
             switch (keyData)
             {
                 case Keys.Escape:
@@ -198,7 +209,9 @@ namespace AppCash
                     this.Close();
                     return true;
                 case Keys.Enter:
-                    btnSearch_Click(null, null);
+                    if (jdkj.Equals(txtCode)) {
+                        btnSearch_Click(null, null);
+                    }
                     return true;
                
                 default:
@@ -253,6 +266,46 @@ namespace AppCash
                 lblCount.Text = counts.ToString();
                 lblJG.Text = string.Format("{0:F2}", cash);
             }
+        }
+
+        private void txtCB_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelEx3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelX4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtOper_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtJJ_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSJ_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

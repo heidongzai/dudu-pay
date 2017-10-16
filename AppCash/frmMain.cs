@@ -85,11 +85,33 @@ namespace AppCash
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            this.Text = this.Text + " --【" + Dong.Model.GlobalsInfo.shopName + "】";
+            String ver = CommonUtility.ReadReader("ver.dll","0");
+            this.Text = "嘟嘟收银系统" +ver+ "--【" + Dong.Model.GlobalsInfo.shopName + "】";
             lblDate.Text = DateTime.Now.Date.ToString("yyyy年MM月dd日");
             lblShopName.Text = Dong.Model.GlobalsInfo.shopName;
             lblUser.Text = Dong.Model.GlobalsInfo.UserName;
             lblAddr.Text = Dong.Model.GlobalsInfo.shopAddr;
+
+
+            //当登录用户权限为营业员时，屏蔽高级别权限按钮
+            
+                if (Dong.Model.GlobalsInfo.role.Equals(1))
+                {
+                    ribbonBar2.Items.Remove("btnShop");
+                    ribbonBar2.Items.Remove("btnUsers");
+                    ribbonBar8.Items.Remove("btnJB");
+                    ribbonBar8.Items.Remove("btnBF");
+                    ribbonControl1.Items.Remove("ribbonTabItem4");
+                    ribbonBar3.Items.Remove("btnInput");
+                    ribbonBar3.Items.Remove("btnPD");
+                    ribbonBar3.Items.Remove("btnCategory");
+                    ribbonBar3.Items.Remove("btnUnit");
+                    ribbonBar2.Items.Remove("btnSupp");
+                }
+
+
+            
+            
         }
 
         private void btnShop_Click(object sender, EventArgs e)
@@ -136,7 +158,7 @@ namespace AppCash
 
         private void btnCategory_Click(object sender, EventArgs e)
         {
-            frmCategory frm = new frmCategory();
+            frmCategorytree frm = new frmCategorytree();
             openWindow(frm, frm.Name);
         }
 
@@ -154,8 +176,11 @@ namespace AppCash
 
         private void btnPD_Click(object sender, EventArgs e)
         {
-            frmPD frm = new frmPD();
-            openWindow(frm, frm.Name);
+            //frmPD frm = new frmPD();
+            //openWindow(frm, frm.Name);
+            frmPD frmAdd = new frmPD();
+            frmAdd.Owner = this;
+            frmAdd.ShowDialog();
         }
 
         private void btnGoodsSearch_Click(object sender, EventArgs e)
@@ -269,6 +294,45 @@ namespace AppCash
         }
 
         private void ribbonPanel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGY_Click(object sender, EventArgs e)
+        {
+            frmGY frm = new frmGY();
+            openWindow(frm, frm.Name);
+        }
+
+        private void lblUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSupp_Click_1(object sender, EventArgs e)
+        {
+            frmSup frm= new frmSup();
+            openWindow(frm, frm.Name);
+        }
+
+        private void ribbonTabItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonBar3_ItemClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonItem3_Click(object sender, EventArgs e)
+        {
+            frmDbBackup frm = new frmDbBackup();
+            openWindow(frm, frm.Name);
+            
+        }
+
+        private void ribbonPanel5_Click(object sender, EventArgs e)
         {
 
         }

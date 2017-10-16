@@ -361,3 +361,14 @@ D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmInput.resourc
 D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmInputDetail.resources
 D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.csproj.GenerateResource.Cache
 D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.exe.licenses
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmGY.resources
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmCategorytree.resources
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmCategorySelected.resources
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmHostConfig.resources
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmDbBackup.resources
+D:\winform\cash\cash\source\BN140\AppCash\bin\Debug\AppCash.exe.manifest
+D:\winform\cash\cash\source\BN140\AppCash\bin\Debug\AppCash.application
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.exe.manifest
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.application
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmUpdate.resources
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmNoInput.resources

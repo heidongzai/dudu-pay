@@ -71,8 +71,9 @@
             this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
+            this.panelEx1.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(489, 169);
+            this.panelEx1.Size = new System.Drawing.Size(734, 254);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -88,11 +89,13 @@
             this.cbRoles.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbRoles.FormattingEnabled = true;
             this.cbRoles.ItemHeight = 15;
-            this.cbRoles.Location = new System.Drawing.Point(316, 93);
+            this.cbRoles.Location = new System.Drawing.Point(474, 140);
+            this.cbRoles.Margin = new System.Windows.Forms.Padding(4);
             this.cbRoles.Name = "cbRoles";
-            this.cbRoles.Size = new System.Drawing.Size(150, 21);
+            this.cbRoles.Size = new System.Drawing.Size(223, 21);
             this.cbRoles.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbRoles.TabIndex = 7;
+            this.cbRoles.SelectedIndexChanged += new System.EventHandler(this.cbRoles_SelectedIndexChanged);
             // 
             // labelX3
             // 
@@ -100,9 +103,10 @@
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Location = new System.Drawing.Point(257, 95);
+            this.labelX3.Location = new System.Drawing.Point(386, 142);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(63, 23);
+            this.labelX3.Size = new System.Drawing.Size(94, 34);
             this.labelX3.TabIndex = 19;
             this.labelX3.Text = "员工角色:";
             // 
@@ -112,9 +116,10 @@
             this.cbSex.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbSex.FormattingEnabled = true;
             this.cbSex.ItemHeight = 15;
-            this.cbSex.Location = new System.Drawing.Point(316, 41);
+            this.cbSex.Location = new System.Drawing.Point(474, 62);
+            this.cbSex.Margin = new System.Windows.Forms.Padding(4);
             this.cbSex.Name = "cbSex";
-            this.cbSex.Size = new System.Drawing.Size(150, 21);
+            this.cbSex.Size = new System.Drawing.Size(223, 21);
             this.cbSex.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.cbSex.TabIndex = 4;
             // 
@@ -122,9 +127,10 @@
             // 
             this.btnExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExit.Location = new System.Drawing.Point(245, 134);
+            this.btnExit.Location = new System.Drawing.Point(368, 201);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(75, 23);
+            this.btnExit.Size = new System.Drawing.Size(112, 34);
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "取消";
@@ -134,9 +140,10 @@
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(146, 134);
+            this.btnSave.Location = new System.Drawing.Point(219, 201);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 34);
             this.btnSave.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "保存";
@@ -148,9 +155,10 @@
             // 
             // 
             this.tbPhone.Border.Class = "TextBoxBorder";
-            this.tbPhone.Location = new System.Drawing.Point(71, 93);
+            this.tbPhone.Location = new System.Drawing.Point(106, 140);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(4);
             this.tbPhone.Name = "tbPhone";
-            this.tbPhone.Size = new System.Drawing.Size(150, 21);
+            this.tbPhone.Size = new System.Drawing.Size(225, 28);
             this.tbPhone.TabIndex = 6;
             // 
             // labelX8
@@ -159,9 +167,10 @@
             // 
             // 
             this.labelX8.BackgroundStyle.Class = "";
-            this.labelX8.Location = new System.Drawing.Point(12, 93);
+            this.labelX8.Location = new System.Drawing.Point(18, 140);
+            this.labelX8.Margin = new System.Windows.Forms.Padding(4);
             this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(63, 23);
+            this.labelX8.Size = new System.Drawing.Size(94, 34);
             this.labelX8.TabIndex = 14;
             this.labelX8.Text = "联系电话:";
             // 
@@ -171,9 +180,10 @@
             // 
             // 
             this.tbCID.Border.Class = "TextBoxBorder";
-            this.tbCID.Location = new System.Drawing.Point(71, 66);
+            this.tbCID.Location = new System.Drawing.Point(106, 99);
+            this.tbCID.Margin = new System.Windows.Forms.Padding(4);
             this.tbCID.Name = "tbCID";
-            this.tbCID.Size = new System.Drawing.Size(395, 21);
+            this.tbCID.Size = new System.Drawing.Size(592, 28);
             this.tbCID.TabIndex = 5;
             // 
             // labelX7
@@ -182,9 +192,10 @@
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
-            this.labelX7.Location = new System.Drawing.Point(12, 66);
+            this.labelX7.Location = new System.Drawing.Point(18, 99);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(63, 23);
+            this.labelX7.Size = new System.Drawing.Size(94, 34);
             this.labelX7.TabIndex = 12;
             this.labelX7.Text = "身份证号:";
             // 
@@ -194,9 +205,10 @@
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.Location = new System.Drawing.Point(257, 39);
+            this.labelX6.Location = new System.Drawing.Point(386, 58);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(4);
             this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(63, 23);
+            this.labelX6.Size = new System.Drawing.Size(94, 34);
             this.labelX6.TabIndex = 10;
             this.labelX6.Text = "员工性别:";
             // 
@@ -206,10 +218,11 @@
             // 
             // 
             this.tbPwd.Border.Class = "TextBoxBorder";
-            this.tbPwd.Location = new System.Drawing.Point(71, 39);
+            this.tbPwd.Location = new System.Drawing.Point(106, 58);
+            this.tbPwd.Margin = new System.Windows.Forms.Padding(4);
             this.tbPwd.Name = "tbPwd";
             this.tbPwd.PasswordChar = '*';
-            this.tbPwd.Size = new System.Drawing.Size(150, 21);
+            this.tbPwd.Size = new System.Drawing.Size(225, 28);
             this.tbPwd.TabIndex = 3;
             // 
             // labelX5
@@ -218,9 +231,10 @@
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(12, 39);
+            this.labelX5.Location = new System.Drawing.Point(18, 58);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(63, 23);
+            this.labelX5.Size = new System.Drawing.Size(94, 34);
             this.labelX5.TabIndex = 8;
             this.labelX5.Text = "登录密码:";
             // 
@@ -230,9 +244,10 @@
             // 
             // 
             this.tbName.Border.Class = "TextBoxBorder";
-            this.tbName.Location = new System.Drawing.Point(316, 12);
+            this.tbName.Location = new System.Drawing.Point(474, 18);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(150, 21);
+            this.tbName.Size = new System.Drawing.Size(225, 28);
             this.tbName.TabIndex = 2;
             // 
             // labelX2
@@ -241,9 +256,10 @@
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(257, 12);
+            this.labelX2.Location = new System.Drawing.Point(386, 18);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(63, 23);
+            this.labelX2.Size = new System.Drawing.Size(94, 34);
             this.labelX2.TabIndex = 2;
             this.labelX2.Text = "员工姓名:";
             // 
@@ -254,9 +270,10 @@
             // 
             this.tbCode.Border.Class = "TextBoxBorder";
             this.tbCode.ForeColor = System.Drawing.Color.DarkBlue;
-            this.tbCode.Location = new System.Drawing.Point(71, 12);
+            this.tbCode.Location = new System.Drawing.Point(106, 18);
+            this.tbCode.Margin = new System.Windows.Forms.Padding(4);
             this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(150, 21);
+            this.tbCode.Size = new System.Drawing.Size(225, 28);
             this.tbCode.TabIndex = 1;
             // 
             // labelX1
@@ -265,20 +282,22 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Location = new System.Drawing.Point(12, 12);
+            this.labelX1.Location = new System.Drawing.Point(18, 18);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(63, 23);
+            this.labelX1.Size = new System.Drawing.Size(94, 34);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "员工工号:";
             // 
             // frmAddUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(489, 169);
+            this.ClientSize = new System.Drawing.Size(734, 254);
             this.Controls.Add(this.panelEx1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAddUsers";

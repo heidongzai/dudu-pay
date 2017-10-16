@@ -255,6 +255,7 @@ namespace Dong.DAL
 			{
 				strSql.Append(" where "+strWhere);
 			}
+            strSql.Append(" order by Code");
 			return DbHelperOleDb.Query(strSql.ToString());
 		}
 

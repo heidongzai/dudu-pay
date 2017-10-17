@@ -51,6 +51,7 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tbCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.buttonX2);
             this.panelEx1.Controls.Add(this.labelX6);
             this.panelEx1.Controls.Add(this.txtPrice1);
             this.panelEx1.Controls.Add(this.buttonX1);
@@ -83,7 +85,7 @@
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Margin = new System.Windows.Forms.Padding(4);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(734, 309);
+            this.panelEx1.Size = new System.Drawing.Size(734, 356);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -100,7 +102,7 @@
             // 
             // 
             this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.Location = new System.Drawing.Point(20, 193);
+            this.labelX6.Location = new System.Drawing.Point(20, 236);
             this.labelX6.Margin = new System.Windows.Forms.Padding(4);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(80, 34);
@@ -114,7 +116,7 @@
             // 
             this.txtPrice1.Border.Class = "TextBoxBorder";
             this.txtPrice1.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtPrice1.Location = new System.Drawing.Point(106, 192);
+            this.txtPrice1.Location = new System.Drawing.Point(106, 235);
             this.txtPrice1.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice1.Name = "txtPrice1";
             this.txtPrice1.Size = new System.Drawing.Size(225, 28);
@@ -124,7 +126,7 @@
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(260, 56);
+            this.buttonX1.Location = new System.Drawing.Point(260, 99);
             this.buttonX1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(69, 34);
@@ -140,7 +142,7 @@
             // 
             this.tbCategory.Border.Class = "TextBoxBorder";
             this.tbCategory.ForeColor = System.Drawing.Color.DarkBlue;
-            this.tbCategory.Location = new System.Drawing.Point(106, 62);
+            this.tbCategory.Location = new System.Drawing.Point(106, 105);
             this.tbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.tbCategory.Name = "tbCategory";
             this.tbCategory.ReadOnly = true;
@@ -153,7 +155,7 @@
             // 
             // 
             this.labelX9.BackgroundStyle.Class = "";
-            this.labelX9.Location = new System.Drawing.Point(384, 196);
+            this.labelX9.Location = new System.Drawing.Point(384, 239);
             this.labelX9.Margin = new System.Windows.Forms.Padding(4);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(80, 34);
@@ -167,7 +169,7 @@
             // 
             this.txtPrice2.Border.Class = "TextBoxBorder";
             this.txtPrice2.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtPrice2.Location = new System.Drawing.Point(472, 192);
+            this.txtPrice2.Location = new System.Drawing.Point(472, 235);
             this.txtPrice2.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice2.Name = "txtPrice2";
             this.txtPrice2.ReadOnly = true;
@@ -182,7 +184,7 @@
             // 
             this.txtPrice0.Border.Class = "TextBoxBorder";
             this.txtPrice0.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtPrice0.Location = new System.Drawing.Point(474, 147);
+            this.txtPrice0.Location = new System.Drawing.Point(474, 190);
             this.txtPrice0.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrice0.Name = "txtPrice0";
             this.txtPrice0.Size = new System.Drawing.Size(225, 28);
@@ -194,7 +196,7 @@
             this.ddlSupper.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ddlSupper.FormattingEnabled = true;
             this.ddlSupper.ItemHeight = 15;
-            this.ddlSupper.Location = new System.Drawing.Point(106, 147);
+            this.ddlSupper.Location = new System.Drawing.Point(106, 190);
             this.ddlSupper.Margin = new System.Windows.Forms.Padding(4);
             this.ddlSupper.Name = "ddlSupper";
             this.ddlSupper.Size = new System.Drawing.Size(223, 21);
@@ -207,7 +209,7 @@
             this.ddlUnit.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.ddlUnit.FormattingEnabled = true;
             this.ddlUnit.ItemHeight = 15;
-            this.ddlUnit.Location = new System.Drawing.Point(474, 62);
+            this.ddlUnit.Location = new System.Drawing.Point(474, 105);
             this.ddlUnit.Margin = new System.Windows.Forms.Padding(4);
             this.ddlUnit.Name = "ddlUnit";
             this.ddlUnit.Size = new System.Drawing.Size(223, 21);
@@ -218,7 +220,7 @@
             // 
             this.btnExit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnExit.Location = new System.Drawing.Point(368, 248);
+            this.btnExit.Location = new System.Drawing.Point(368, 291);
             this.btnExit.Margin = new System.Windows.Forms.Padding(4);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(112, 34);
@@ -231,7 +233,7 @@
             // 
             this.btnSave.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSave.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSave.Location = new System.Drawing.Point(219, 248);
+            this.btnSave.Location = new System.Drawing.Point(219, 291);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(112, 34);
@@ -246,7 +248,7 @@
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(386, 150);
+            this.labelX5.Location = new System.Drawing.Point(386, 193);
             this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(94, 34);
@@ -259,7 +261,7 @@
             // 
             // 
             this.labelX8.BackgroundStyle.Class = "";
-            this.labelX8.Location = new System.Drawing.Point(18, 150);
+            this.labelX8.Location = new System.Drawing.Point(18, 193);
             this.labelX8.Margin = new System.Windows.Forms.Padding(4);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(94, 34);
@@ -272,7 +274,7 @@
             // 
             // 
             this.tbFactory.Border.Class = "TextBoxBorder";
-            this.tbFactory.Location = new System.Drawing.Point(106, 106);
+            this.tbFactory.Location = new System.Drawing.Point(106, 149);
             this.tbFactory.Margin = new System.Windows.Forms.Padding(4);
             this.tbFactory.Name = "tbFactory";
             this.tbFactory.Size = new System.Drawing.Size(592, 28);
@@ -284,7 +286,7 @@
             // 
             // 
             this.labelX7.BackgroundStyle.Class = "";
-            this.labelX7.Location = new System.Drawing.Point(18, 106);
+            this.labelX7.Location = new System.Drawing.Point(18, 149);
             this.labelX7.Margin = new System.Windows.Forms.Padding(4);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(94, 34);
@@ -297,7 +299,7 @@
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Location = new System.Drawing.Point(386, 62);
+            this.labelX4.Location = new System.Drawing.Point(386, 105);
             this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(94, 34);
@@ -310,7 +312,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Location = new System.Drawing.Point(18, 62);
+            this.labelX3.Location = new System.Drawing.Point(18, 105);
             this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(94, 34);
@@ -323,10 +325,10 @@
             // 
             // 
             this.tbName.Border.Class = "TextBoxBorder";
-            this.tbName.Location = new System.Drawing.Point(474, 18);
+            this.tbName.Location = new System.Drawing.Point(106, 63);
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(225, 28);
+            this.tbName.Size = new System.Drawing.Size(398, 28);
             this.tbName.TabIndex = 2;
             this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
@@ -336,7 +338,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(386, 18);
+            this.labelX2.Location = new System.Drawing.Point(18, 63);
             this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(94, 34);
@@ -353,7 +355,7 @@
             this.tbCode.Location = new System.Drawing.Point(106, 18);
             this.tbCode.Margin = new System.Windows.Forms.Padding(4);
             this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(225, 28);
+            this.tbCode.Size = new System.Drawing.Size(398, 28);
             this.tbCode.TabIndex = 1;
             // 
             // labelX1
@@ -369,11 +371,24 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "商品编号:";
             // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(549, 18);
+            this.buttonX2.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(163, 34);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 28;
+            this.buttonX2.Text = "批量添加编号";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
             // frmAddGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 309);
+            this.ClientSize = new System.Drawing.Size(734, 356);
             this.Controls.Add(this.panelEx1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -413,5 +428,6 @@
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtPrice1;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
     }
 }

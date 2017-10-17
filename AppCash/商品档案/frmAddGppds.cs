@@ -25,7 +25,7 @@ namespace AppCash
 
         private void frmAddGoods_Load(object sender, EventArgs e)
         {
-            
+
             //绑定商品类别
             //Dong.BLL.Category catebll = new Dong.BLL.Category();
             //ddlCategory.DataSource = catebll.GetAllList().Tables[0];
@@ -48,6 +48,9 @@ namespace AppCash
             //验证商品重复性
             Dong.BLL.GoodsInfo bGoods = new Dong.BLL.GoodsInfo();
             Dong.Model.GoodsInfo mGoods = new Dong.Model.GoodsInfo();
+            string[] ss = null;
+            int num = 0;
+             string input = "B" + DateTime.Now.ToString("yyyyMMddHHmmss");
 
             //验证商品编号
 
@@ -59,14 +62,19 @@ namespace AppCash
             }
             else
             {
-                mGoods = bGoods.GetModel(tbCode.Text.Trim());
-                if (mGoods != null)
+                string a = tbCode.Text.Trim();
+                ss = a.Split(new char[1] { ',' });
+                if (a.IndexOf(",") == -1)
                 {
+                    mGoods = bGoods.GetModel(a);
+                    if (mGoods != null)
+                    {
 
-                    MessageBoxEx.Show("系统中已存在改商品编码，请重新输入!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    tbCode.Text = "";
-                    tbCode.Focus();
-                    return;
+                        MessageBoxEx.Show("系统中已存在改商品编码，请重新输入!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        tbCode.Text = "";
+                        tbCode.Focus();
+                        return;
+                    }
                 }
             }
 
@@ -112,70 +120,143 @@ namespace AppCash
                 txtPrice1.Focus();
                 return;
             }
-
-            //if (txtPrice2.Text.Trim() == "")
-            //{
-            //    MessageBoxEx.Show("请输入成本价!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    txtPrice2.Focus();
-            //    return;
-            //}
-            //double price2;
-            //if (!double.TryParse(txtPrice2.Text, out price2))
-            //{
-            //    MessageBoxEx.Show("成本价必须为数字!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             //   txtPrice2.Focus();
-            //    return;
-            //}
-
-            Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
-            Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
-            model.Code = tbCode.Text;
-            model.GoodsName = tbName.Text;
             if (!string.IsNullOrEmpty(categoryId) && !string.IsNullOrEmpty(categoryName) && !string.IsNullOrEmpty(this.tbCategory.Text))
             {
-                model.Category = Int32.Parse(categoryId);
-                model.CategoryName = categoryName;
+                
             }
             else
             {
                 MessageBoxEx.Show("请选择商品类别!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (ddlUnit.SelectedValue != null && !string.IsNullOrEmpty(ddlUnit.SelectedValue.ToString()))
-            {
-                model.Unit = Int32.Parse(ddlUnit.SelectedValue.ToString());
-                model.UnitName = ddlUnit.Text;
-            }
-            else
-            {
-                model.UnitName = "";
-            }
 
-            if (ddlSupper.SelectedValue != null && !string.IsNullOrEmpty(ddlSupper.SelectedValue.ToString()))
+            if (ss != null && ss.Length > 0)
             {
-                model.Supplier = Int32.Parse(ddlSupper.SelectedValue.ToString());
-                model.SupplierName = ddlSupper.Text;
-            }
-            else
-            {
-                model.SupplierName = "";
-            }
-            model.Factory = tbFactory.Text;
-            model.Counts = 0;
-            model.Price0 = price0;
-            model.Price1 = price1;
-            //model.Price2 = price2;
-            if (bll.Add(model))
-            {
-                MessageBoxEx.Show("添加成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                for (int i = 0; i < ss.Length; i++)
+                {
+                    if (string.IsNullOrEmpty(ss[i]))
+                    {
+                        continue;
+                    }
+                    mGoods =null;
+                    mGoods = bGoods.GetModel(ss[i]);
+                    if (mGoods != null)
+                    {
+
+                        continue;
+                    }
+
+                    Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
+                    Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
+                    model.Code = ss[i];
+                    model.GoodsName = tbName.Text;
+
+                    model.Category = Int32.Parse(categoryId);
+                    model.CategoryName = categoryName;
+
+                    if (ddlUnit.SelectedValue != null && !string.IsNullOrEmpty(ddlUnit.SelectedValue.ToString()))
+                    {
+                        model.Unit = Int32.Parse(ddlUnit.SelectedValue.ToString());
+                        model.UnitName = ddlUnit.Text;
+                    }
+                    else
+                    {
+                        model.UnitName = "";
+                    }
+
+                    if (ddlSupper.SelectedValue != null && !string.IsNullOrEmpty(ddlSupper.SelectedValue.ToString()))
+                    {
+                        model.Supplier = Int32.Parse(ddlSupper.SelectedValue.ToString());
+                        model.SupplierName = ddlSupper.Text;
+                    }
+                    else
+                    {
+                        model.SupplierName = "";
+                    }
+                    model.Factory = tbFactory.Text;
+                    model.Counts = 1;
+                    model.Price0 = price0;
+                    model.Price1 = price1;
+                    //model.Price2 = price2;
+                    if (bll.Add(model))
+                    {
+                        num++;
+                                               //添加进货信息
+                        Dong.BLL.InGoods bInGoods = new Dong.BLL.InGoods();
+                        Dong.Model.InGoods mInGoods = new Dong.Model.InGoods();
+
+                        mInGoods.PCode = input;
+                        mInGoods.GoodsCode =model.Code;
+                        mInGoods.Price = model.Price1;
+                        mInGoods.Counts = 1;
+                        mInGoods.IDate = DateTime.Now.Date;
+                        mInGoods.Oper = Dong.Model.GlobalsInfo.UserName;
+                        mInGoods.Supplier = model.Supplier;
+                        mInGoods.Remark = "";
+                        bInGoods.Add(mInGoods);
+
+                       
+                    }
+                  
+                }
+                MessageBoxEx.Show("共添加成功" + num + "条!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmGoods frm = (frmGoods)this.Owner;
                 frm.refreshData();
                 this.Close();
             }
             else
             {
-                MessageBoxEx.Show("保存失败!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
+                Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
+                model.Code = tbCode.Text;
+                model.GoodsName = tbName.Text;
+                if (!string.IsNullOrEmpty(categoryId) && !string.IsNullOrEmpty(categoryName) && !string.IsNullOrEmpty(this.tbCategory.Text))
+                {
+                    model.Category = Int32.Parse(categoryId);
+                    model.CategoryName = categoryName;
+                }
+                else
+                {
+                    MessageBoxEx.Show("请选择商品类别!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (ddlUnit.SelectedValue != null && !string.IsNullOrEmpty(ddlUnit.SelectedValue.ToString()))
+                {
+                    model.Unit = Int32.Parse(ddlUnit.SelectedValue.ToString());
+                    model.UnitName = ddlUnit.Text;
+                }
+                else
+                {
+                    model.UnitName = "";
+                }
+
+                if (ddlSupper.SelectedValue != null && !string.IsNullOrEmpty(ddlSupper.SelectedValue.ToString()))
+                {
+                    model.Supplier = Int32.Parse(ddlSupper.SelectedValue.ToString());
+                    model.SupplierName = ddlSupper.Text;
+                }
+                else
+                {
+                    model.SupplierName = "";
+                }
+                model.Factory = tbFactory.Text;
+                model.Counts = 0;
+                model.Price0 = price0;
+                model.Price1 = price1;
+                //model.Price2 = price2;
+                if (bll.Add(model))
+                {
+                    MessageBoxEx.Show("添加成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmGoods frm = (frmGoods)this.Owner;
+                    frm.refreshData();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBoxEx.Show("保存失败!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+
         }
 
         private void tbName_TextChanged(object sender, EventArgs e)
@@ -210,6 +291,18 @@ namespace AppCash
         private void txtPrice2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            frmNoInput frmNoInput = new frmNoInput();
+            frmNoInput.ShowDialog();
+            if (frmNoInput.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                //categoryId = frmChild.CategoryId;
+                //categoryName = frmChild.CategoryName;
+                this.tbCode.Text = frmNoInput.ItemIds;
+            }
         }
     }
 }

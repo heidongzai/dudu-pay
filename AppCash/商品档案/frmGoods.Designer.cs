@@ -70,6 +70,7 @@
             this.price2Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price3Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnReturnBack = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
@@ -79,6 +80,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.btnReturnBack);
             this.panelEx1.Controls.Add(this.buttonX1);
             this.panelEx1.Controls.Add(this.tbCategory);
             this.panelEx1.Controls.Add(this.labelX3);
@@ -176,10 +178,10 @@
             // 
             this.btnAll.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAll.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAll.Location = new System.Drawing.Point(885, 20);
+            this.btnAll.Location = new System.Drawing.Point(849, 20);
             this.btnAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(112, 34);
+            this.btnAll.Size = new System.Drawing.Size(91, 34);
             this.btnAll.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAll.TabIndex = 6;
             this.btnAll.Text = "显示全部";
@@ -190,10 +192,10 @@
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(1010, 20);
+            this.btnAdd.Location = new System.Drawing.Point(956, 20);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 34);
+            this.btnAdd.Size = new System.Drawing.Size(62, 34);
             this.btnAdd.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnAdd.TabIndex = 5;
             this.btnAdd.Text = "添加";
@@ -204,7 +206,7 @@
             this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDel.Location = new System.Drawing.Point(1095, 20);
+            this.btnDel.Location = new System.Drawing.Point(1034, 20);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(70, 34);
@@ -218,10 +220,10 @@
             this.btnEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEdit.Location = new System.Drawing.Point(1174, 20);
+            this.btnEdit.Location = new System.Drawing.Point(1114, 20);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(112, 34);
+            this.btnEdit.Size = new System.Drawing.Size(66, 34);
             this.btnEdit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "修改";
@@ -234,7 +236,7 @@
             this.btnSearch.Location = new System.Drawing.Point(763, 20);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(112, 34);
+            this.btnSearch.Size = new System.Drawing.Size(78, 34);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
@@ -494,6 +496,19 @@
             this.countCol.Name = "countCol";
             this.countCol.ReadOnly = true;
             // 
+            // btnReturnBack
+            // 
+            this.btnReturnBack.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnReturnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReturnBack.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnReturnBack.Location = new System.Drawing.Point(1197, 20);
+            this.btnReturnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturnBack.Name = "btnReturnBack";
+            this.btnReturnBack.Size = new System.Drawing.Size(92, 34);
+            this.btnReturnBack.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnReturnBack.TabIndex = 28;
+            this.btnReturnBack.Text = "进货退货";
+            // 
             // frmGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -554,5 +569,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn price2Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn price3Col;
         private System.Windows.Forms.DataGridViewTextBoxColumn countCol;
+        private DevComponents.DotNetBar.ButtonX btnReturnBack;
     }
 }

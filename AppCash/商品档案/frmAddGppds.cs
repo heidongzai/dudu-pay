@@ -92,6 +92,30 @@ namespace AppCash
             //    return;
             //}
 
+            if (txtInitNum.Text.Trim() == "")
+            {
+                MessageBoxEx.Show("请输入初始数量!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPrice0.Focus();
+                return;
+            }
+            int initNum;
+            if (!int.TryParse(txtInitNum.Text, out initNum))
+            {
+                MessageBoxEx.Show("初始数量必须为整数!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPrice0.Focus();
+                return;
+            }
+            else
+            {
+                if (initNum < 0)
+                {
+                    MessageBoxEx.Show("初始数量必须为正整数!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPrice0.Focus();
+                    return;
+                }
+            }
+
+
             if (txtPrice0.Text.Trim() == "")
             {
                 MessageBoxEx.Show("请输入零售价!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -130,7 +154,7 @@ namespace AppCash
                 return;
             }
 
-            if (ss != null && ss.Length > 0)
+            if (ss != null && ss.Length > 0&&initNum>0)
             {
                 for (int i = 0; i < ss.Length; i++)
                 {
@@ -174,7 +198,7 @@ namespace AppCash
                         model.SupplierName = "";
                     }
                     model.Factory = tbFactory.Text;
-                    model.Counts = 1;
+                    model.Counts = initNum;
                     model.Price0 = price0;
                     model.Price1 = price1;
                     //model.Price2 = price2;
@@ -188,7 +212,7 @@ namespace AppCash
                         mInGoods.PCode = input;
                         mInGoods.GoodsCode =model.Code;
                         mInGoods.Price = model.Price1;
-                        mInGoods.Counts = 1;
+                        mInGoods.Counts = initNum;
                         mInGoods.IDate = DateTime.Now.Date;
                         mInGoods.Oper = Dong.Model.GlobalsInfo.UserName;
                         mInGoods.Supplier = model.Supplier;
@@ -199,7 +223,7 @@ namespace AppCash
                     }
                   
                 }
-                MessageBoxEx.Show("共添加成功" + num + "条!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBoxEx.Show("共添加成功" + num + "种商品!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 frmGoods frm = (frmGoods)this.Owner;
                 frm.refreshData();
                 this.Close();
@@ -210,16 +234,7 @@ namespace AppCash
                 Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
                 model.Code = tbCode.Text;
                 model.GoodsName = tbName.Text;
-                if (!string.IsNullOrEmpty(categoryId) && !string.IsNullOrEmpty(categoryName) && !string.IsNullOrEmpty(this.tbCategory.Text))
-                {
-                    model.Category = Int32.Parse(categoryId);
-                    model.CategoryName = categoryName;
-                }
-                else
-                {
-                    MessageBoxEx.Show("请选择商品类别!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                
                 if (ddlUnit.SelectedValue != null && !string.IsNullOrEmpty(ddlUnit.SelectedValue.ToString()))
                 {
                     model.Unit = Int32.Parse(ddlUnit.SelectedValue.ToString());
@@ -246,6 +261,20 @@ namespace AppCash
                 //model.Price2 = price2;
                 if (bll.Add(model))
                 {
+                    //添加进货信息
+                    Dong.BLL.InGoods bInGoods = new Dong.BLL.InGoods();
+                    Dong.Model.InGoods mInGoods = new Dong.Model.InGoods();
+
+                    mInGoods.PCode = input;
+                    mInGoods.GoodsCode = model.Code;
+                    mInGoods.Price = model.Price1;
+                    mInGoods.Counts = initNum;
+                    mInGoods.IDate = DateTime.Now.Date;
+                    mInGoods.Oper = Dong.Model.GlobalsInfo.UserName;
+                    mInGoods.Supplier = model.Supplier;
+                    mInGoods.Remark = "";
+                    bInGoods.Add(mInGoods);
+
                     MessageBoxEx.Show("添加成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     frmGoods frm = (frmGoods)this.Owner;
                     frm.refreshData();

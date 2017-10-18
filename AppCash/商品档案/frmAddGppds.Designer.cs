@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddGoods));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtPrice1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
@@ -51,7 +52,8 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tbCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.txtInitNum = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +61,8 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.labelX10);
+            this.panelEx1.Controls.Add(this.txtInitNum);
             this.panelEx1.Controls.Add(this.buttonX2);
             this.panelEx1.Controls.Add(this.labelX6);
             this.panelEx1.Controls.Add(this.txtPrice1);
@@ -95,6 +99,19 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(549, 18);
+            this.buttonX2.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(163, 34);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 28;
+            this.buttonX2.Text = "批量添加编号";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // labelX6
             // 
@@ -248,7 +265,7 @@
             // 
             // 
             this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(386, 193);
+            this.labelX5.Location = new System.Drawing.Point(382, 193);
             this.labelX5.Margin = new System.Windows.Forms.Padding(4);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(94, 34);
@@ -299,7 +316,7 @@
             // 
             // 
             this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Location = new System.Drawing.Point(386, 105);
+            this.labelX4.Location = new System.Drawing.Point(371, 105);
             this.labelX4.Margin = new System.Windows.Forms.Padding(4);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(94, 34);
@@ -328,7 +345,7 @@
             this.tbName.Location = new System.Drawing.Point(106, 63);
             this.tbName.Margin = new System.Windows.Forms.Padding(4);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(398, 28);
+            this.tbName.Size = new System.Drawing.Size(225, 28);
             this.tbName.TabIndex = 2;
             this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
@@ -371,18 +388,31 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "商品编号:";
             // 
-            // buttonX2
+            // txtInitNum
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(549, 18);
-            this.buttonX2.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(163, 34);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 28;
-            this.buttonX2.Text = "批量添加编号";
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // 
+            // 
+            this.txtInitNum.Border.Class = "TextBoxBorder";
+            this.txtInitNum.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtInitNum.Location = new System.Drawing.Point(583, 63);
+            this.txtInitNum.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInitNum.Name = "txtInitNum";
+            this.txtInitNum.Size = new System.Drawing.Size(114, 28);
+            this.txtInitNum.TabIndex = 29;
+            // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.Class = "";
+            this.labelX10.Location = new System.Drawing.Point(377, 60);
+            this.labelX10.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(192, 31);
+            this.labelX10.TabIndex = 30;
+            this.labelX10.Text = "每个编号初始进货数:";
             // 
             // frmAddGoods
             // 
@@ -429,5 +459,7 @@
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtPrice1;
         private DevComponents.DotNetBar.ButtonX buttonX2;
+        private DevComponents.DotNetBar.LabelX labelX10;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtInitNum;
     }
 }

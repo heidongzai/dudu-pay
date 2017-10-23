@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGoods));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.btnReturnBack = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.tbCategory = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -70,7 +71,6 @@
             this.price2Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price3Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnReturnBack = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
@@ -107,6 +107,20 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // btnReturnBack
+            // 
+            this.btnReturnBack.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnReturnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnReturnBack.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnReturnBack.Location = new System.Drawing.Point(1202, 20);
+            this.btnReturnBack.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReturnBack.Name = "btnReturnBack";
+            this.btnReturnBack.Size = new System.Drawing.Size(92, 34);
+            this.btnReturnBack.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnReturnBack.TabIndex = 28;
+            this.btnReturnBack.Text = "进货退货";
+            this.btnReturnBack.Click += new System.EventHandler(this.btnReturnBack_Click);
             // 
             // buttonX1
             // 
@@ -178,7 +192,7 @@
             // 
             this.btnAll.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAll.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAll.Location = new System.Drawing.Point(849, 20);
+            this.btnAll.Location = new System.Drawing.Point(854, 20);
             this.btnAll.Margin = new System.Windows.Forms.Padding(4);
             this.btnAll.Name = "btnAll";
             this.btnAll.Size = new System.Drawing.Size(91, 34);
@@ -192,7 +206,7 @@
             this.btnAdd.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAdd.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnAdd.Location = new System.Drawing.Point(956, 20);
+            this.btnAdd.Location = new System.Drawing.Point(961, 20);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(62, 34);
@@ -206,7 +220,7 @@
             this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDel.Location = new System.Drawing.Point(1034, 20);
+            this.btnDel.Location = new System.Drawing.Point(1039, 20);
             this.btnDel.Margin = new System.Windows.Forms.Padding(4);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(70, 34);
@@ -220,7 +234,7 @@
             this.btnEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEdit.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnEdit.Location = new System.Drawing.Point(1114, 20);
+            this.btnEdit.Location = new System.Drawing.Point(1119, 20);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(66, 34);
@@ -233,7 +247,7 @@
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(763, 20);
+            this.btnSearch.Location = new System.Drawing.Point(768, 20);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(78, 34);
@@ -495,19 +509,6 @@
             this.countCol.HeaderText = "数量";
             this.countCol.Name = "countCol";
             this.countCol.ReadOnly = true;
-            // 
-            // btnReturnBack
-            // 
-            this.btnReturnBack.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnReturnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReturnBack.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnReturnBack.Location = new System.Drawing.Point(1197, 20);
-            this.btnReturnBack.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReturnBack.Name = "btnReturnBack";
-            this.btnReturnBack.Size = new System.Drawing.Size(92, 34);
-            this.btnReturnBack.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnReturnBack.TabIndex = 28;
-            this.btnReturnBack.Text = "进货退货";
             // 
             // frmGoods
             // 

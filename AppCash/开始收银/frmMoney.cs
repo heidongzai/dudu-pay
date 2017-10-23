@@ -214,7 +214,7 @@ namespace AppCash
                 DataGridView dgv = (DataGridView)frmP.Controls.Find("dGV", true)[0];
                 for (int i = 0; i < dgv.Rows.Count; i++)
                 {
-                    
+                    //Console.Write(i + "|" + dgv.Rows[i].Cells[0].Value.ToString());
                     //添加销售记录
                     double price = double.Parse(dgv.Rows[i].Cells[4].Value.ToString());
                     mSale.Pid = Dong.Model.GlobalsInfo.bill;
@@ -237,11 +237,9 @@ namespace AppCash
                     bGoods.UpdateCount(int.Parse(dgv.Rows[i].Cells[3].Value.ToString()), dgv.Rows[i].Cells[0].Value.ToString());
                 //}
 
+                }
                 frmP.ClearForm();
                 frmP.showPre();
-                    
-                
-            }
                 //更新vip积分
                 Dong.BLL.MemberInfo bMember = new Dong.BLL.MemberInfo();
                 Dong.Model.MemberInfo mMember = null;

@@ -25,6 +25,13 @@ namespace AppCash
 
         private void frmJinhuoReturnBack_Load(object sender, EventArgs e)
         {
+            Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
+            Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
+            model = bll.GetModelById(int.Parse(this.Tag.ToString()));
+            if(model!=null){
+                this.tbxItemName.Text=model.GoodsName;
+                this.keTuiShuLiang.Text=model.Counts.ToString();
+            }
             
 
 
@@ -32,55 +39,108 @@ namespace AppCash
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //验证商品编号
+            //验证退货总额
 
-            if (keTuiShuLiang.Text.Trim() == "")
+            if (this.tuiHuoZongE.Text.Trim() == "")
             {
-                MessageBoxEx.Show("请输入商品商品!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show("请输入退货总额!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 keTuiShuLiang.Focus();
                 return;
             }
 
-            //验证商品名称
+            //验证退货数量
             if (tuiHuoShuLiang.Text.Trim() == "")
             {
-                MessageBoxEx.Show("请输入商品名称!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBoxEx.Show("请输入退货数量!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tuiHuoShuLiang.Focus();
                 return;
             }
-            //if (tbFactory.Text.Trim() == "")
-            //{
-            //    MessageBoxEx.Show("请输入商品生产厂家!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    tbFactory.Focus();
-            //    return;
-            //}
-
-
-
-           
-
-            /*if (txtPrice2.Text.Trim() == "")
+            double price0;
+            if (!double.TryParse(tuiHuoZongE.Text, out price0))
             {
-                MessageBoxEx.Show("请输入成本价!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPrice2.Focus();
+                MessageBoxEx.Show("退货总额为数字!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tuiHuoZongE.Focus();
                 return;
             }
-            double price2;
-            if (!double.TryParse(txtPrice2.Text, out price2))
+
+            int tuihuoNum;
+            if (!int.TryParse(tuiHuoShuLiang.Text, out tuihuoNum))
             {
-                MessageBoxEx.Show("成本价必须为数字!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPrice2.Focus();
+
+                MessageBoxEx.Show("退货数量为整数!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tuiHuoShuLiang.Focus();
                 return;
-            }*/
+            }
+            if(price0<=0){
+                 MessageBoxEx.Show("退货总额为正数!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tuiHuoShuLiang.Focus();
+                return;
+            }
+            if(tuihuoNum<1){
+                 MessageBoxEx.Show("退货数量为正整数!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tuiHuoShuLiang.Focus();
+                return;
+            }
+            
 
             Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
             Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
-            model = bll.GetModel(keTuiShuLiang.Text);
-            model.Id = int.Parse(this.Tag.ToString());
-            model.Code = keTuiShuLiang.Text;
-            model.GoodsName = tuiHuoShuLiang.Text;
-           
+            model = bll.GetModelById(int.Parse(this.Tag.ToString()));
+            if (model == null)
+            {
+                MessageBoxEx.Show("该商品不存在!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tuiHuoShuLiang.Focus();
+                return;
+            }
+            if(tuihuoNum>model.Counts){
+                 MessageBoxEx.Show("退货数量不能超过库存数量!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tuiHuoShuLiang.Focus();
+                return;
+            }
+            if(price0>model.Price2*model.Counts){
+                 MessageBoxEx.Show("退货总额不能超过库存成本总额!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.tuiHuoZongE.Focus();
+                return;
+            }
             
+
+            //添加进货信息
+            Dong.BLL.InGoods bInGoods = new Dong.BLL.InGoods();
+            Dong.Model.InGoods mInGoods = new Dong.Model.InGoods();
+            string input = "B" + DateTime.Now.ToString("yyyyMMddHHmmss");
+
+            if (model.Counts == tuihuoNum)
+            {
+                
+                mInGoods.Price = 0-model.Price2 * model.Counts;
+                mInGoods.Counts = 0 - tuihuoNum;
+                model.Counts = 0;
+                model.Price2 = 0;
+            }
+            else
+            {
+                mInGoods.Price = 0 - price0;
+                mInGoods.Counts = 0 - tuihuoNum;
+                model.Price2 = (model.Price2 * model.Counts - price0) / (model.Counts - tuihuoNum);
+                model.Counts = model.Counts - tuihuoNum;
+                
+                
+            }
+            mInGoods.PCode = input;
+            mInGoods.GoodsCode = model.Code;
+            
+            mInGoods.IDate = DateTime.Now.Date;
+            mInGoods.Oper = Dong.Model.GlobalsInfo.UserName;
+            mInGoods.Supplier = model.Supplier;
+            mInGoods.Remark = "进货退货";
+            if( bll.Update(model)){
+                if(bInGoods.Add(mInGoods)){
+                    MessageBoxEx.Show("操作成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    frmGoods frm = (frmGoods)this.Owner;
+                    frm.refreshData();
+                    this.Close();
+                }
+            }
         }
 
         private void buttonX1_Click(object sender, EventArgs e)

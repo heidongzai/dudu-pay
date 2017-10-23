@@ -210,7 +210,10 @@ namespace AppCash
         {
 
         }
-
+        public void refreshData()
+        {
+            fillGVList(strSql, intPageSize, intPage);
+        }
         private void panelEx1_Click(object sender, EventArgs e)
         {
 
@@ -256,6 +259,24 @@ namespace AppCash
                 categoryId = frmChild.CategoryId;
                 categoryName = frmChild.CategoryName;
                 this.tbCategory.Text = categoryName;
+            }
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            string id = gvList.SelectedRows[0].Cells[0].Value.ToString();
+            if (id != "")
+            {
+
+                frmXiaoshouReturnBack frmBack = new frmXiaoshouReturnBack();
+                frmBack.Owner = this;
+                frmBack.Tag = id.ToString();
+                frmBack.ShowDialog();
+
+            }
+            else
+            {
+                MessageBoxEx.Show("请选择要退货的行!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -217,8 +217,29 @@ namespace Dong.DAL
 				return null;
 			}
 		}
+        public Dong.Model.SaleInfo GetModelById(int Id)
+		{
 
 
+			StringBuilder strSql=new StringBuilder();
+			strSql.Append("select Id,Pid,GoodsCode,Counts,Price,IDate,Oper,Cash,Weixin,Alipay,Mark1,Mark2,Mark3,PriceSum,VipCode from SaleInfo ");
+            strSql.Append(" where Id=@Id ");
+			OleDbParameter[] parameters = {
+					new OleDbParameter("@Id", OleDbType.Integer,4)};
+			parameters[0].Value = Id;
+
+			Dong.Model.SaleInfo model=new Dong.Model.SaleInfo();
+			DataSet ds=DbHelperOleDb.Query(strSql.ToString(),parameters);
+			if(ds.Tables[0].Rows.Count>0)
+			{
+				return DataRowToModel(ds.Tables[0].Rows[0]);
+			}
+			else
+			{
+				return null;
+			}
+		}
+        
 		/// <summary>
 		/// 得到一个对象实体
 		/// </summary>
@@ -249,7 +270,7 @@ namespace Dong.DAL
 				}
                 if (row["PriceSum"] != null && row["PriceSum"].ToString() != "")
                 {
-                    model.Price = double.Parse(row["PriceSum"].ToString());
+                    model.PriceSum = double.Parse(row["PriceSum"].ToString());
                 }
                 if (row["VipCode"] != null && row["VipCode"].ToString() != "")
                 {
@@ -408,6 +429,7 @@ namespace Dong.DAL
                 return null;
             }
         }
+
 		#endregion  ExtensionMethod
 	}
 }

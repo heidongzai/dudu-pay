@@ -336,6 +336,12 @@ namespace AppCash
         {
 
         }
+
+        private void buttonItem3_Click_1(object sender, EventArgs e)
+        {
+            frmChengben frm = new frmChengben();
+            openWindow(frm, frm.Name);
+        }
          
     }
     

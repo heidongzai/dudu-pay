@@ -201,7 +201,7 @@ namespace AppCash
                     model.Counts = initNum;
                     model.Price0 = price0;
                     model.Price1 = price1;
-                    //model.Price2 = price2;
+                    model.Price2 = price1;
                     if (bll.Add(model))
                     {
                         num++;

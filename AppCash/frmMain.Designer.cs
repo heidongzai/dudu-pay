@@ -48,6 +48,7 @@
             this.btnReportToDay = new DevComponents.DotNetBar.ButtonItem();
             this.btnReportDay = new DevComponents.DotNetBar.ButtonItem();
             this.btnReportMonth = new DevComponents.DotNetBar.ButtonItem();
+            this.buttonItem3 = new DevComponents.DotNetBar.ButtonItem();
             this.ribbonPanel5 = new DevComponents.DotNetBar.RibbonPanel();
             this.ribbonBar8 = new DevComponents.DotNetBar.RibbonBar();
             this.btnJB = new DevComponents.DotNetBar.ButtonItem();
@@ -308,11 +309,12 @@
             this.ribbonBar7.Items.AddRange(new DevComponents.DotNetBar.BaseItem[] {
             this.btnReportToDay,
             this.btnReportDay,
-            this.btnReportMonth});
+            this.btnReportMonth,
+            this.buttonItem3});
             this.ribbonBar7.Location = new System.Drawing.Point(4, 0);
             this.ribbonBar7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.ribbonBar7.Name = "ribbonBar7";
-            this.ribbonBar7.Size = new System.Drawing.Size(311, 97);
+            this.ribbonBar7.Size = new System.Drawing.Size(396, 97);
             this.ribbonBar7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.ribbonBar7.TabIndex = 1;
             this.ribbonBar7.Text = "ribbonBar7";
@@ -355,6 +357,16 @@
             this.btnReportMonth.SubItemsExpandWidth = 14;
             this.btnReportMonth.Text = "营收月报";
             this.btnReportMonth.Click += new System.EventHandler(this.btnReportMonth_Click);
+            // 
+            // buttonItem3
+            // 
+            this.buttonItem3.Image = global::AppCash.Properties.Resources.Instagram;
+            this.buttonItem3.ImageListSizeSelection = DevComponents.DotNetBar.eButtonImageListSelection.Medium;
+            this.buttonItem3.ImagePosition = DevComponents.DotNetBar.eImagePosition.Top;
+            this.buttonItem3.Name = "buttonItem3";
+            this.buttonItem3.SubItemsExpandWidth = 14;
+            this.buttonItem3.Text = "库存成本";
+            this.buttonItem3.Click += new System.EventHandler(this.buttonItem3_Click_1);
             // 
             // ribbonPanel5
             // 
@@ -767,5 +779,6 @@
         private DevComponents.DotNetBar.ButtonItem btnGY;
         private DevComponents.DotNetBar.ButtonItem btnSupp;
         private DevComponents.DotNetBar.ButtonItem btnBF;
+        private DevComponents.DotNetBar.ButtonItem buttonItem3;
     }
 }

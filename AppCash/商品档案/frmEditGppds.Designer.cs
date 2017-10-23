@@ -344,6 +344,7 @@
             this.labelX2.Size = new System.Drawing.Size(94, 34);
             this.labelX2.TabIndex = 2;
             this.labelX2.Text = "商品名称:";
+            this.labelX2.Click += new System.EventHandler(this.labelX2_Click);
             // 
             // tbCode
             // 

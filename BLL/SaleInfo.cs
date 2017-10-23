@@ -52,6 +52,11 @@ namespace Dong.BLL
         {
             return dal.Update(model);
         }
+        public Dong.Model.SaleInfo GetModelById(int id)
+        {
+
+            return dal.GetModelById(id);
+        }
 
         /// <summary>
         /// 删除一条数据

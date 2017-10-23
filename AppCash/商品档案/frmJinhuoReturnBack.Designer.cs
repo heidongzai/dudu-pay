@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditGoods));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJinhuoReturnBack));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.tbxItemName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.tuiHuoZongE = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
@@ -38,7 +39,6 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.keTuiShuLiang = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.tbxItemName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,20 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // tbxItemName
+            // 
+            // 
+            // 
+            // 
+            this.tbxItemName.Border.Class = "TextBoxBorder";
+            this.tbxItemName.Enabled = false;
+            this.tbxItemName.ForeColor = System.Drawing.Color.DarkBlue;
+            this.tbxItemName.Location = new System.Drawing.Point(150, 19);
+            this.tbxItemName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbxItemName.Name = "tbxItemName";
+            this.tbxItemName.Size = new System.Drawing.Size(225, 28);
+            this.tbxItemName.TabIndex = 30;
             // 
             // btnSave
             // 
@@ -166,28 +180,14 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Location = new System.Drawing.Point(15, 72);
+            this.labelX1.Location = new System.Drawing.Point(17, 65);
             this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(94, 34);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "可退数量:";
             // 
-            // tbxItemName
-            // 
-            // 
-            // 
-            // 
-            this.tbxItemName.Border.Class = "TextBoxBorder";
-            this.tbxItemName.Enabled = false;
-            this.tbxItemName.ForeColor = System.Drawing.Color.DarkBlue;
-            this.tbxItemName.Location = new System.Drawing.Point(150, 19);
-            this.tbxItemName.Margin = new System.Windows.Forms.Padding(4);
-            this.tbxItemName.Name = "tbxItemName";
-            this.tbxItemName.Size = new System.Drawing.Size(225, 28);
-            this.tbxItemName.TabIndex = 30;
-            // 
-            // frmEditGoods
+            // frmJinhuoReturnBack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,7 +198,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmEditGoods";
+            this.Name = "frmJinhuoReturnBack";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "进货退货";
             this.Load += new System.EventHandler(this.frmJinhuoReturnBack_Load);

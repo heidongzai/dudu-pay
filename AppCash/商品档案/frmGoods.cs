@@ -322,5 +322,24 @@ namespace AppCash
 
         }
 
+        private void btnReturnBack_Click(object sender, EventArgs e)
+        {
+
+            string id = gvList.SelectedRows[0].Cells[0].Value.ToString();
+            if (id != "")
+            {
+
+                frmJinhuoReturnBack frmBack = new frmJinhuoReturnBack();
+                frmBack.Owner = this;
+                frmBack.Tag = id.ToString();
+                frmBack.ShowDialog();
+                
+            }
+            else
+            {
+                MessageBoxEx.Show("请选择要退货的行!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

@@ -189,6 +189,21 @@ namespace Dong.BLL
         {
             return dal.UpdateCount(counts, code);
         }
+
+        public DataTable getChengBenList()
+        {
+            DataTable dt = new DataTable();
+            dt = Maticsoft.DBUtility.DbHelperOleDb.Query("SELECT Code ,GoodName,CategoryName,Counts,Price2 ,Price2*Counts as CostsAll FROM GoodsInfo where 1=1 and Counts>0").Tables[0];
+
+            return dt;
+        }
+        public DataTable getChengBen()
+        {
+            DataTable dt = new DataTable();
+            dt = Maticsoft.DBUtility.DbHelperOleDb.Query("SELECT sum(Price2*Counts) as Counts from GoodsINfo where 1=1 and Counts>0").Tables[0];
+
+            return dt;
+        }
 		#endregion  ExtensionMethod
 	}
 }

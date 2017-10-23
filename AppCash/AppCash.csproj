@@ -204,6 +204,18 @@
     <Compile Include="商品查询\frmGoodsSearch.Designer.cs">
       <DependentUpon>frmGoodsSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="商品档案\frmTiaojia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品档案\frmTiaojia.Designer.cs">
+      <DependentUpon>frmTiaojia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="商品档案\frmJinhuoReturnBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品档案\frmJinhuoReturnBack.Designer.cs">
+      <DependentUpon>frmJinhuoReturnBack.cs</DependentUpon>
+    </Compile>
     <Compile Include="商品档案\frmNoInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -264,6 +276,12 @@
     <Compile Include="商品类别\frmCategory.Designer.cs">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="商品零售报表\frmXiaoshouReturnBack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品零售报表\frmXiaoshouReturnBack.Designer.cs">
+      <DependentUpon>frmXiaoshouReturnBack.cs</DependentUpon>
+    </Compile>
     <Compile Include="商品零售报表\frmReport1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +293,12 @@
     </Compile>
     <Compile Include="关于\frmGY.Designer.cs">
       <DependentUpon>frmGY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="成本统计\frmChengBen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="成本统计\frmChengBen.Designer.cs">
+      <DependentUpon>frmChengBen.cs</DependentUpon>
     </Compile>
     <Compile Include="数据备份\frmDbBackup.cs">
       <SubType>Form</SubType>
@@ -433,6 +457,12 @@
     <EmbeddedResource Include="商品查询\frmGoodsSearch.resx">
       <DependentUpon>frmGoodsSearch.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="商品档案\frmTiaojia.resx">
+      <DependentUpon>frmTiaojia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品档案\frmJinhuoReturnBack.resx">
+      <DependentUpon>frmJinhuoReturnBack.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="商品档案\frmNoInput.resx">
       <DependentUpon>frmNoInput.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,11 +493,17 @@
     <EmbeddedResource Include="商品类别\frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="商品零售报表\frmXiaoshouReturnBack.resx">
+      <DependentUpon>frmXiaoshouReturnBack.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="商品零售报表\frmReport1.resx">
       <DependentUpon>frmReport1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="关于\frmGY.resx">
       <DependentUpon>frmGY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="成本统计\frmChengBen.resx">
+      <DependentUpon>frmChengBen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="数据备份\frmDbBackup.resx">
       <DependentUpon>frmDbBackup.cs</DependentUpon>

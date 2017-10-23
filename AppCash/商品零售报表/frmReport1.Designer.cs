@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.tbCode = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.tbCategory = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -69,8 +71,7 @@
             this.lbl = new DevComponents.DotNetBar.LabelItem();
             this.cbPageSize = new DevComponents.DotNetBar.ComboBoxItem();
             this.labelItem2 = new DevComponents.DotNetBar.LabelItem();
-            this.tbCode = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEnd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtStart)).BeginInit();
@@ -82,6 +83,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.buttonX2);
             this.panelEx1.Controls.Add(this.tbCode);
             this.panelEx1.Controls.Add(this.labelX5);
             this.panelEx1.Controls.Add(this.buttonX1);
@@ -108,6 +110,31 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 1;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // tbCode
+            // 
+            // 
+            // 
+            // 
+            this.tbCode.Border.Class = "TextBoxBorder";
+            this.tbCode.Location = new System.Drawing.Point(524, 21);
+            this.tbCode.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCode.Name = "tbCode";
+            this.tbCode.Size = new System.Drawing.Size(153, 28);
+            this.tbCode.TabIndex = 32;
+            // 
+            // labelX5
+            // 
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.Class = "";
+            this.labelX5.Location = new System.Drawing.Point(475, 21);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(61, 32);
+            this.labelX5.TabIndex = 31;
+            this.labelX5.Text = "条码:";
             // 
             // buttonX1
             // 
@@ -157,7 +184,7 @@
             this.txtEnd.BackgroundStyle.Class = "DateTimeInputBackground";
             this.txtEnd.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.txtEnd.ButtonDropDown.Visible = true;
-            this.txtEnd.Location = new System.Drawing.Point(975, 16);
+            this.txtEnd.Location = new System.Drawing.Point(975, 22);
             this.txtEnd.Margin = new System.Windows.Forms.Padding(4);
             // 
             // 
@@ -202,7 +229,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Location = new System.Drawing.Point(954, 28);
+            this.labelX3.Location = new System.Drawing.Point(954, 31);
             this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(30, 30);
@@ -217,7 +244,7 @@
             this.txtStart.BackgroundStyle.Class = "DateTimeInputBackground";
             this.txtStart.ButtonDropDown.Shortcut = DevComponents.DotNetBar.eShortcut.AltDown;
             this.txtStart.ButtonDropDown.Visible = true;
-            this.txtStart.Location = new System.Drawing.Point(794, 18);
+            this.txtStart.Location = new System.Drawing.Point(794, 21);
             this.txtStart.Margin = new System.Windows.Forms.Padding(4);
             // 
             // 
@@ -262,7 +289,7 @@
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(692, 18);
+            this.labelX2.Location = new System.Drawing.Point(692, 21);
             this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(94, 34);
@@ -287,10 +314,10 @@
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSearch.Location = new System.Drawing.Point(1269, 20);
+            this.btnSearch.Location = new System.Drawing.Point(1196, 18);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(112, 34);
+            this.btnSearch.Size = new System.Drawing.Size(84, 34);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "搜索";
@@ -554,30 +581,19 @@
             this.labelItem2.Name = "labelItem2";
             this.labelItem2.Text = "条";
             // 
-            // tbCode
+            // buttonX2
             // 
-            // 
-            // 
-            // 
-            this.tbCode.Border.Class = "TextBoxBorder";
-            this.tbCode.Location = new System.Drawing.Point(524, 18);
-            this.tbCode.Margin = new System.Windows.Forms.Padding(4);
-            this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(153, 28);
-            this.tbCode.TabIndex = 32;
-            // 
-            // labelX5
-            // 
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(475, 18);
-            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(61, 32);
-            this.labelX5.TabIndex = 31;
-            this.labelX5.Text = "条码:";
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(1300, 19);
+            this.buttonX2.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(101, 34);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 33;
+            this.buttonX2.Text = "销售退货";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // frmReport1
             // 
@@ -642,5 +658,6 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.Controls.TextBoxX tbCode;
         private DevComponents.DotNetBar.LabelX labelX5;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
     }
 }

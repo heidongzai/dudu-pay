@@ -52,6 +52,7 @@ namespace AppCash
                 txtPrice0.Text = model.Price0 == null ? "" : model.Price0.ToString();
                 txtPrice1.Text = model.Price1 == null ? "" : model.Price1.ToString();
                 txtPrice2.Text = model.Price2 == null ? "" : model.Price2.ToString();
+                this.categoryId = model.Category.ToString();
                 this.tbCategory.Text = model.CategoryName;
             }
 
@@ -112,7 +113,9 @@ namespace AppCash
                 return;
             }
 
-            /*if (txtPrice2.Text.Trim() == "")
+            /**/
+            if (txtPrice2.ReadOnly == false) { 
+            if (txtPrice2.Text.Trim() == "")
             {
                 MessageBoxEx.Show("请输入成本价!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPrice2.Focus();
@@ -124,8 +127,8 @@ namespace AppCash
                 MessageBoxEx.Show("成本价必须为数字!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPrice2.Focus();
                 return;
-            }*/
-
+            }
+            }
             Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
             Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
             model = bll.GetModel(tbCode.Text);
@@ -214,6 +217,16 @@ namespace AppCash
         private void labelX2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void labelX4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            this.txtPrice2.ReadOnly = false;
         }
 
 

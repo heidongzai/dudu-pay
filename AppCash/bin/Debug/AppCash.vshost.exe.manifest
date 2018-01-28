@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppCash.exe" size="5499904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppCash.exe" size="5604352">
       <assemblyIdentity name="AppCash" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>v4Csf+4uPfQZANwb7zc+GzIAn9Y=</dsig:DigestValue>
+        <dsig:DigestValue>Pgw3PmJK10Muxji3GjhGLr2iPq4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

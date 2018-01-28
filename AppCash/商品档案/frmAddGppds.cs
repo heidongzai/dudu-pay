@@ -314,6 +314,7 @@ namespace AppCash
                 categoryId = frmChild.CategoryId;
                 categoryName = frmChild.CategoryName;
                 this.tbCategory.Text = categoryName;
+                this.tbName.Text = categoryName;
             }
         }
 

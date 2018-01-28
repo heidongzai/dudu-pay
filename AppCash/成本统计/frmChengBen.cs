@@ -72,8 +72,15 @@ namespace AppCash
             int Counts = 0;
             double Price2 = 0;
             double CostsAll = 0;
+            String sum_ = dt1.Rows[0][0].ToString();
+            double CostsAllSum = 0;
+            if (!string.IsNullOrEmpty(sum_))
+            {
+                try { 
+                CostsAllSum = double.Parse(sum_);}catch(Exception e){
 
-            double CostsAllSum = double.Parse(dt1.Rows[0][0].ToString());
+                }
+            }
            
             foreach (DataRow dr in dt.Rows)
             {

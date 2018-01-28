@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmJinhuoReturnBack));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXiaoshouReturnBack));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.tbxItemName = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
@@ -173,6 +173,7 @@
             this.keTuiShuLiang.Name = "keTuiShuLiang";
             this.keTuiShuLiang.Size = new System.Drawing.Size(225, 28);
             this.keTuiShuLiang.TabIndex = 1;
+            //this.keTuiShuLiang.TextChanged += new System.EventHandler(this.keTuiShuLiang_TextChanged);
             // 
             // labelX1
             // 
@@ -187,7 +188,7 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "可退数量:";
             // 
-            // frmJinhuoReturnBack
+            // frmXiaoshouReturnBack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,7 +199,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmJinhuoReturnBack";
+            this.Name = "frmXiaoshouReturnBack";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "销售退货";
             this.Load += new System.EventHandler(this.frmXiaoshouReturnBack_Load);

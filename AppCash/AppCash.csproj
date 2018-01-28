@@ -204,6 +204,12 @@
     <Compile Include="商品查询\frmGoodsSearch.Designer.cs">
       <DependentUpon>frmGoodsSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="商品档案\frmJinhuoTiaojia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="商品档案\frmJinhuoTiaojia.Designer.cs">
+      <DependentUpon>frmJinhuoTiaojia.cs</DependentUpon>
+    </Compile>
     <Compile Include="商品档案\frmTiaojia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -456,6 +462,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="商品查询\frmGoodsSearch.resx">
       <DependentUpon>frmGoodsSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="商品档案\frmJinhuoTiaojia.resx">
+      <DependentUpon>frmJinhuoTiaojia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="商品档案\frmTiaojia.resx">
       <DependentUpon>frmTiaojia.cs</DependentUpon>

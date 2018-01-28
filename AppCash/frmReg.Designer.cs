@@ -35,6 +35,8 @@
             this.btnReg = new DevComponents.DotNetBar.ButtonX();
             this.btnExit = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.miyao = new System.Windows.Forms.TextBox();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tbAccountNo = new System.Windows.Forms.TextBox();
             this.galleryContainer2 = new DevComponents.DotNetBar.GalleryContainer();
             this.labelItem1 = new DevComponents.DotNetBar.LabelItem();
@@ -94,6 +96,8 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.miyao);
+            this.panelEx1.Controls.Add(this.labelX2);
             this.panelEx1.Controls.Add(this.tbAccountNo);
             this.panelEx1.Controls.Add(this.btnExit);
             this.panelEx1.Controls.Add(this.btnReg);
@@ -112,6 +116,28 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // miyao
+            // 
+            this.miyao.Location = new System.Drawing.Point(171, 170);
+            this.miyao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.miyao.Name = "miyao";
+            this.miyao.Size = new System.Drawing.Size(365, 28);
+            this.miyao.TabIndex = 10;
+            this.miyao.TextChanged += new System.EventHandler(this.miyao_TextChanged);
+            // 
+            // labelX2
+            // 
+            // 
+            // 
+            // 
+            this.labelX2.BackgroundStyle.Class = "";
+            this.labelX2.Location = new System.Drawing.Point(26, 163);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(144, 35);
+            this.labelX2.TabIndex = 9;
+            this.labelX2.Text = "请输入密钥:";
             // 
             // tbAccountNo
             // 
@@ -195,6 +221,8 @@
         private DevComponents.DotNetBar.GalleryContainer galleryContainer3;
         private DevComponents.DotNetBar.LabelItem labelItem2;
         private System.Windows.Forms.TextBox tbAccountNo;
+        private System.Windows.Forms.TextBox miyao;
+        private DevComponents.DotNetBar.LabelX labelX2;
 
     }
 }

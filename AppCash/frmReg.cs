@@ -45,16 +45,20 @@ namespace AppCash
                 //string jiqima = "cpuid_" + Computer.Instance().CpuID + "_macAddress_" + Computer.Instance().MacAddress ;
                 string jiqima = "cpuid_" + Computer.Instance().CpuID + "_diskId_" + Computer.Instance().DiskID;
                 //将机器码和软件序列号(账户标志)发送给远程进行加密
-                string requestString = "http://www.taiyuanecho.xyz/dudu-pay-web-gateway/microPay/rsaAuthrize?jiqima=" + jiqima + "&userNo=" + tbAccountNo.Text;
+                //string requestString = "http://www.taiyuanecho.xyz/dudu-pay-web-gateway/microPay/rsaAuthrize?jiqima=" + jiqima + "&userNo=" + tbAccountNo.Text;
                 string key = null;
                 try
                 {
-                    key = AppCash.CommonUtility.GetInfo(requestString);
+                    //key = AppCash.CommonUtility.GetInfo(requestString);
+                    key = CommonUtility.getMD5(tbAccountNo.Text);
+                    
+                    
                 }
                 catch (Exception e1)
                 {
                     Console.WriteLine(e1.Message);
-                    MessageBox.Show("请求失败，请检查网络连接或联系软件管理员!");
+                    //MessageBox.Show("请求失败，请检查网络连接或联系软件管理员!");
+                    MessageBox.Show("注册失败!");
 
 
                 }
@@ -63,7 +67,7 @@ namespace AppCash
                     MessageBox.Show("注册失败!");
                     return;
                 }
-                int i=key.IndexOf("fail");
+                /*int i=key.IndexOf("fail");
                 if (i >= 0)
                 {
                     if (key.Length >= 4) {
@@ -74,13 +78,14 @@ namespace AppCash
                         MessageBox.Show("注册失败!");
                     }
                     return;
-                }
+                }*/
                 
                 
 
 
-                string info = CommonUtility.TestDecry(key, null);
-                if (jiqima == info)
+                //string info = CommonUtility.TestDecry(key, null);
+                //if (jiqima == info)
+                if (key.Equals(miyao.Text))
                 {
                     //将用户编号保存到库中
                     //mAccountNo.ValueStr = tbAccountNo.Text;
@@ -91,7 +96,12 @@ namespace AppCash
                     MessageBox.Show("注册成功!系统将关闭，请重新登录!");
                         Application.Exit();
                     return;
-                    
+
+                }
+                else
+                {
+                    MessageBox.Show("注册失败!");
+                    return;
                 }
 
             }
@@ -116,6 +126,8 @@ namespace AppCash
             
 
             Dong.Model.GlobalsInfo.shopAddr = mShop.Addr;
+            tbAccountNo.Text = CommonUtility.getJiqima();
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -140,6 +152,11 @@ namespace AppCash
         }
 
         private void panelEx1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void miyao_TextChanged(object sender, EventArgs e)
         {
 
         }

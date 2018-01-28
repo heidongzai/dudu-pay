@@ -34,6 +34,29 @@ namespace AppCash
             gvList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             gvList.AutoGenerateColumns = false;
             fillGVList("", intPageSize, 1);         //填充数据
+            //提取供应商列表
+
+            DataSet ds = new DataSet();
+            Dong.BLL.Supplier supplier = new Dong.BLL.Supplier();
+            
+            ds = supplier.GetAllList();
+            //cbSupplier.Items.Insert(0, "请选择");
+            //foreach (DataRow row in ds.Tables[0].Rows)
+            //{
+            //    cbSupplier.Items.Add(row["Id"].ToString(), row["name"].ToString());
+            //}
+
+            DataRow dr = ds.Tables[0].NewRow();
+            dr["Id"] = -1;
+            dr["Name"] = "请选择";
+
+            ds.Tables[0].Rows.InsertAt(dr,0);
+
+            cbSupplier.ValueMember = "Id";
+            cbSupplier.DisplayMember = "Name";
+            cbSupplier.DataSource = ds.Tables[0];
+            
+            cbSupplier.SelectedIndex = 0; 
 
             //分页
             //初始页面显示条数选择框
@@ -93,6 +116,51 @@ namespace AppCash
             {
                 
                 strSql += " and  Category =" + categoryId + " ";
+            }
+            if (null!=cbSupplier.SelectedValue)
+            {
+                try
+                {
+                    int i = (int)cbSupplier.SelectedValue;
+
+                    if (i != -1)
+                    {
+                        strSql += " and  Supplier =" + cbSupplier.SelectedValue + " ";
+                    }
+                }
+                catch (Exception e2)
+                {
+
+                }
+            }
+            
+            if (!string.IsNullOrEmpty(tbKuCunMin.Text)) {
+                int minNum ;
+                if ( !int.TryParse(tbKuCunMin.Text, out minNum))
+                {
+                    MessageBoxEx.Show("库存数量必须为整数!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbKuCunMin.Focus();
+                    return;
+                }
+                else
+                {
+                    strSql += " and  Counts >=" + minNum + " ";
+                }
+            }
+            
+            if (!string.IsNullOrEmpty(tbKuCunMin.Text)) {
+                int maxNum ;
+                if ( !int.TryParse(tbKuCunMax.Text, out maxNum))
+                {
+                    MessageBoxEx.Show("库存数量必须为整数!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbKuCunMax.Focus();
+                    return;
+                }
+                {
+                   
+                        strSql += " and  Counts <=" + maxNum + " ";
+                   
+                }
             }
             intPage = 1;
             fillGVList(strSql, intPageSize, 1);
@@ -156,12 +224,24 @@ namespace AppCash
         #region ------单条删除记录------
         private void btnDel_Click(object sender, EventArgs e)
         {
-            //删除会员
+            //删除商品
             string id = gvList.SelectedRows[0].Cells[0].Value.ToString();
             if (id != "")
             {
                 if (MessageBoxEx.Show("确定删除该记录？", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
+
+                    String strSql2 = "1=1 and PCode=";
+                    Dong.BLL.InGoods bl = new Dong.BLL.InGoods();
+                    DataSet ds = new DataSet();
+                    ds = bl.GetList(strSql2);
+
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+
+                    }
+
+
                     Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
                     bll.Delete(int.Parse(id));
                     this.gvList.Rows[0].Selected = true;
@@ -338,6 +418,30 @@ namespace AppCash
             else
             {
                 MessageBoxEx.Show("请选择要退货的行!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cbUserid_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTiaojia_Click(object sender, EventArgs e)
+        {
+
+            string id = gvList.SelectedRows[0].Cells[0].Value.ToString();
+            if (id != "")
+            {
+
+                frmJinhuoTiaojia frmTiaojia = new frmJinhuoTiaojia();
+                frmTiaojia.Owner = this;
+                frmTiaojia.Tag = id.ToString();
+                frmTiaojia.ShowDialog();
+
+            }
+            else
+            {
+                MessageBoxEx.Show("请选择要调价的行!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

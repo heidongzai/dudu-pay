@@ -376,3 +376,4 @@ D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmJinhuoReturnB
 D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmXiaoshouReturnBack.resources
 D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmChengben.resources
 D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmTiaojia.resources
+D:\winform\cash\cash\source\BN140\AppCash\obj\x86\Debug\AppCash.frmJinhuoTiaojia.resources

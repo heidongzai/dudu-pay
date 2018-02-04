@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAddGoods));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.txtInitNum = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtPrice1 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -52,8 +54,6 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tbCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtInitNum = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +99,33 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // labelX10
+            // 
+            // 
+            // 
+            // 
+            this.labelX10.BackgroundStyle.Class = "";
+            this.labelX10.Location = new System.Drawing.Point(377, 60);
+            this.labelX10.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(192, 31);
+            this.labelX10.TabIndex = 30;
+            this.labelX10.Text = "每个编号初始进货数:";
+            // 
+            // txtInitNum
+            // 
+            // 
+            // 
+            // 
+            this.txtInitNum.Border.Class = "TextBoxBorder";
+            this.txtInitNum.ForeColor = System.Drawing.Color.DarkBlue;
+            this.txtInitNum.Location = new System.Drawing.Point(583, 63);
+            this.txtInitNum.Margin = new System.Windows.Forms.Padding(4);
+            this.txtInitNum.Name = "txtInitNum";
+            this.txtInitNum.Size = new System.Drawing.Size(114, 28);
+            this.txtInitNum.TabIndex = 29;
+            this.txtInitNum.Text = "1";
             // 
             // buttonX2
             // 
@@ -387,32 +414,6 @@
             this.labelX1.Size = new System.Drawing.Size(94, 34);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "商品编号:";
-            // 
-            // txtInitNum
-            // 
-            // 
-            // 
-            // 
-            this.txtInitNum.Border.Class = "TextBoxBorder";
-            this.txtInitNum.ForeColor = System.Drawing.Color.DarkBlue;
-            this.txtInitNum.Location = new System.Drawing.Point(583, 63);
-            this.txtInitNum.Margin = new System.Windows.Forms.Padding(4);
-            this.txtInitNum.Name = "txtInitNum";
-            this.txtInitNum.Size = new System.Drawing.Size(114, 28);
-            this.txtInitNum.TabIndex = 29;
-            // 
-            // labelX10
-            // 
-            // 
-            // 
-            // 
-            this.labelX10.BackgroundStyle.Class = "";
-            this.labelX10.Location = new System.Drawing.Point(377, 60);
-            this.labelX10.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(192, 31);
-            this.labelX10.TabIndex = 30;
-            this.labelX10.Text = "每个编号初始进货数:";
             // 
             // frmAddGoods
             // 

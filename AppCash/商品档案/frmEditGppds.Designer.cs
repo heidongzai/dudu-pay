@@ -51,6 +51,7 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.tbCode = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.buttonX2);
             this.panelEx1.Controls.Add(this.labelX6);
             this.panelEx1.Controls.Add(this.txtPrice1);
             this.panelEx1.Controls.Add(this.buttonX1);
@@ -174,7 +176,7 @@
             this.txtPrice2.Name = "txtPrice2";
             this.txtPrice2.ReadOnly = true;
             this.txtPrice2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtPrice2.Size = new System.Drawing.Size(225, 28);
+            this.txtPrice2.Size = new System.Drawing.Size(129, 28);
             this.txtPrice2.TabIndex = 9;
             this.txtPrice2.TextChanged += new System.EventHandler(this.txtPrice2_TextChanged);
             // 
@@ -306,6 +308,7 @@
             this.labelX4.Size = new System.Drawing.Size(94, 34);
             this.labelX4.TabIndex = 6;
             this.labelX4.Text = "商品单位:";
+            this.labelX4.Click += new System.EventHandler(this.labelX4_Click);
             // 
             // labelX3
             // 
@@ -373,6 +376,19 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "商品编号:";
             // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(609, 192);
+            this.buttonX2.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(112, 34);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 30;
+            this.buttonX2.Text = "重置成本价";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
             // frmEditGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -417,5 +433,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX tbCategory;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.Controls.TextBoxX txtPrice1;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
     }
 }

@@ -17,25 +17,25 @@ namespace AppCash
             
             
             try { 
-                if (checkUpdateLoad())
-                {
+                //if (checkUpdateLoad())
+                //{
                     
-                    Environment.Exit(0);
+                   // Environment.Exit(0);
                     
                     //return;
-                }
-                else
-                {
+                //}
+               // else
+                //{
                     Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
+                    //Application.SetCompatibleTextRenderingDefault(false);
 
                     Application.Run(new frmLogin());
-                }  
+                //}  
                 }
             catch (Exception e)
             {
                 Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
+                //Application.SetCompatibleTextRenderingDefault(false);
 
                 Application.Run(new frmLogin());
             }

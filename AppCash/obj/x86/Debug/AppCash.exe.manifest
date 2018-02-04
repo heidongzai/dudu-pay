@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppCash.exe" size="5499904">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppCash.exe" size="5606400">
       <assemblyIdentity name="AppCash" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>v4Csf+4uPfQZANwb7zc+GzIAn9Y=</dsig:DigestValue>
+        <dsig:DigestValue>grHNXfbLWwknVeOD+vPV1sK8Eio=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -66,7 +66,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>VKvmaV+rR1vdBUnTSU3PSXyBTM8=</dsig:DigestValue>
+        <dsig:DigestValue>tq+VcqopPqLUt8IgRbuYn4BVb/U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -90,7 +90,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+/xtvYJPjWrrnxT1o4vW6MFzeL4=</dsig:DigestValue>
+        <dsig:DigestValue>CiB8y5PKGx69tVDNLfgh4m40M0E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

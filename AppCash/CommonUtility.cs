@@ -311,11 +311,16 @@ namespace AppCash
             //获取授权密文s
             string key = CommonUtility.ReadReader("duduCasherDB/hlx.dll","2");
 
+
+            //key = AppCash.CommonUtility.GetInfo(requestString);
+            string miyao = CommonUtility.getMD5(CommonUtility.getJiqima());
+
             //string jiqima = "cpuid_" + Computer.Instance().CpuID + "_macAddress_" + Computer.Instance().MacAddress  ;
-            string jiqima = "cpuid_" + Computer.Instance().CpuID + "_diskId_" + Computer.Instance().DiskID;
-            string info = CommonUtility.TestDecry(key, null);
+            //string jiqima = "cpuid_" + Computer.Instance().CpuID + "_diskId_" + Computer.Instance().DiskID;
+            //string info = CommonUtility.TestDecry(key, null);
             //如果授权密文为空或者序列号为空或授权验证失败 ，说明该产品为试用版
-            if (string.IsNullOrEmpty(key) || !info.Equals(jiqima) || string.IsNullOrEmpty(AccountNo))
+            //if (string.IsNullOrEmpty(key) || !info.Equals(jiqima) || string.IsNullOrEmpty(AccountNo))
+            if (string.IsNullOrEmpty(key) || !miyao.Equals(key) || string.IsNullOrEmpty(AccountNo))
             {
                 return "0";
             }
@@ -460,6 +465,29 @@ namespace AppCash
             {
                 return "1";
             }
+        }
+
+        public static String getMD5(String source)
+        {
+
+            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
+
+
+            byte[] message;
+            message = Encoding.Default.GetBytes(source);
+
+            //方法1
+            //  使用ComputeHash方法,适合用于计算简单的字符串的md5值时
+            md5.ComputeHash(message);
+            String rel=Convert.ToBase64String(md5.Hash);
+            Console.WriteLine("密钥："+rel);
+            return rel;
+        }
+
+        public static String getJiqima(){
+            string jiqima = "cpuid_" + Computer.Instance().CpuID + "_diskId_" + Computer.Instance().DiskID;
+            return jiqima;
+
         }
         //public static String getHostIp()
         //{

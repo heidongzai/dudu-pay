@@ -30,7 +30,14 @@ namespace AppCash
             //    mShop = dl[0];
             //}
             string AccountNo = CommonUtility.ReadReader("duduCasherDB/an.dll", "2");
-            tbAccountNo.Text = AccountNo;
+            if (string.IsNullOrEmpty(AccountNo))
+            {
+
+                tbAccountNo.Text = CommonUtility.getJiqima();
+            }
+            else {
+                tbAccountNo.Text = AccountNo;
+            }
             //tbId.Text = mShop.Id+"";
 
 
@@ -42,8 +49,8 @@ namespace AppCash
                 this.tbAccountNo.Visible = false;
                 this.labelX1.Visible = false;
                 this.labelX2.Visible = true;
-                this.buttonX1.Visible = true;
-                this.buttonX2.Visible = true;
+                //this.buttonX1.Visible = true;
+                //this.buttonX2.Visible = true;
                 this.btnSave.Visible = false;
             }
 
@@ -75,18 +82,20 @@ namespace AppCash
                 string mAccountNo=CommonUtility.ReadReader("duduCasherDB/an.dll",  "2");
               //  string jiqima = "cpuid:" + Computer.Instance().CpuID + "|diskId:" + Computer.Instance().DiskID + "|macAddress:" + Computer.Instance().MacAddress + "|LoginUserName:" + Computer.Instance().LoginUserName + "|IpAddress:" + Computer.Instance().IpAddress;
                 //string jiqima = "cpuid_" + Computer.Instance().CpuID + "_macAddress_" + Computer.Instance().MacAddress;
-                string jiqima = "cpuid_" + Computer.Instance().CpuID + "_diskId_" + Computer.Instance().DiskID;
+                //string jiqima = "cpuid_" + Computer.Instance().CpuID + "_diskId_" + Computer.Instance().DiskID;
                 //将机器码和软件序列号(账户标志)发送给远程进行加密
-                string requestString = "http://www.taiyuanecho.xyz/dudu-pay-web-gateway/microPay/rsaAuthrize?jiqima=" + jiqima + "&userNo=" + tbAccountNo.Text;
+                //string requestString = "http://www.taiyuanecho.xyz/dudu-pay-web-gateway/microPay/rsaAuthrize?jiqima=" + jiqima + "&userNo=" + tbAccountNo.Text;
                 string key = null;
                 try
                 {
-                    key = AppCash.CommonUtility.GetInfo(requestString);
+                    key = CommonUtility.getMD5(CommonUtility.getJiqima());
+                    //key = AppCash.CommonUtility.GetInfo(requestString);
                 }
                 catch (Exception e1)
                 {
                     Console.WriteLine(e1.Message);
-                    MessageBox.Show("请求失败，请检查网络连接或联系软件管理员!");
+                    //MessageBox.Show("请求失败，请检查网络连接或联系软件管理员!");
+                    MessageBox.Show("注册失败!");
 
 
                 }
@@ -95,7 +104,7 @@ namespace AppCash
                     MessageBox.Show("注册失败!");
                     return;
                 }
-                int i = key.IndexOf("fail");
+                /*int i = key.IndexOf("fail");
                 if (i >= 0)
                 {
                     if (key.Length >= 4)
@@ -107,12 +116,13 @@ namespace AppCash
                         MessageBox.Show("注册失败!");
                     }
                     return;
-                }
+                }*/
 
                
 
-                string info = CommonUtility.TestDecry(key, null);
-                if (jiqima == info)
+                //string info = CommonUtility.TestDecry(key, null);
+                //if (jiqima == info)
+                if (key.Equals(miyao.Text))
                 {
                     //将用户编号保存到库中
                     //mAccountNo.ValueStr = tbAccountNo.Text;
@@ -123,6 +133,11 @@ namespace AppCash
                     Application.Exit();
                     //刷新窗体
                     frmShop_Load(this, null);
+                }
+                else
+                {
+                    MessageBox.Show("注册失败!");
+                    return;
                 }
 
             }

@@ -52,7 +52,9 @@ namespace AppCash
                 txtPrice0.Text = model.Price0 == null ? "" : model.Price0.ToString();
                 txtPrice1.Text = model.Price1 == null ? "" : model.Price1.ToString();
                 txtPrice2.Text = model.Price2 == null ? "" : model.Price2.ToString();
+                this.categoryId = model.Category.ToString();
                 this.tbCategory.Text = model.CategoryName;
+                this.categoryName = model.CategoryName.ToString();
             }
 
 
@@ -112,20 +114,23 @@ namespace AppCash
                 return;
             }
 
-            /*if (txtPrice2.Text.Trim() == "")
+            /**/
+            double price2=0;
+            if (txtPrice2.ReadOnly == false) { 
+            if (txtPrice2.Text.Trim() == "")
             {
                 MessageBoxEx.Show("请输入成本价!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPrice2.Focus();
                 return;
             }
-            double price2;
+            
             if (!double.TryParse(txtPrice2.Text, out price2))
             {
                 MessageBoxEx.Show("成本价必须为数字!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtPrice2.Focus();
                 return;
-            }*/
-
+            }
+            }
             Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
             Dong.Model.GoodsInfo model = new Dong.Model.GoodsInfo();
             model = bll.GetModel(tbCode.Text);
@@ -164,7 +169,9 @@ namespace AppCash
             model.Counts = model.Counts;
             model.Price0 = price0;
             model.Price1 = price1;
-            //model.Price2 = price2;
+            if (!price2.Equals(0)) {
+                model.Price2 = price2;
+            }
             if (bll.Update(model))
             {
                 MessageBoxEx.Show("修改成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -214,6 +221,16 @@ namespace AppCash
         private void labelX2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void labelX4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            this.txtPrice2.ReadOnly = false;
         }
 
 

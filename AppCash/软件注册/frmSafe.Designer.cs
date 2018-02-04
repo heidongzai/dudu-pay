@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSafe));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.miyao = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.btnSave = new DevComponents.DotNetBar.ButtonX();
             this.tbAccountNo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,8 +43,8 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.panelEx1.Controls.Add(this.buttonX2);
-            this.panelEx1.Controls.Add(this.buttonX1);
+            this.panelEx1.Controls.Add(this.miyao);
+            this.panelEx1.Controls.Add(this.labelX3);
             this.panelEx1.Controls.Add(this.labelX2);
             this.panelEx1.Controls.Add(this.btnSave);
             this.panelEx1.Controls.Add(this.tbAccountNo);
@@ -64,13 +64,38 @@
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
             // 
+            // miyao
+            // 
+            // 
+            // 
+            // 
+            this.miyao.Border.Class = "TextBoxBorder";
+            this.miyao.Location = new System.Drawing.Point(168, 147);
+            this.miyao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.miyao.Name = "miyao";
+            this.miyao.Size = new System.Drawing.Size(386, 28);
+            this.miyao.TabIndex = 9;
+            // 
+            // labelX3
+            // 
+            // 
+            // 
+            // 
+            this.labelX3.BackgroundStyle.Class = "";
+            this.labelX3.Location = new System.Drawing.Point(42, 147);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(126, 35);
+            this.labelX3.TabIndex = 8;
+            this.labelX3.Text = "密钥:";
+            // 
             // labelX2
             // 
             // 
             // 
             // 
             this.labelX2.BackgroundStyle.Class = "";
-            this.labelX2.Location = new System.Drawing.Point(319, 140);
+            this.labelX2.Location = new System.Drawing.Point(307, 220);
             this.labelX2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(299, 35);
@@ -101,6 +126,7 @@
             this.tbAccountNo.Location = new System.Drawing.Point(168, 102);
             this.tbAccountNo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbAccountNo.Name = "tbAccountNo";
+            this.tbAccountNo.ReadOnly = true;
             this.tbAccountNo.Size = new System.Drawing.Size(386, 28);
             this.tbAccountNo.TabIndex = 1;
             this.tbAccountNo.TextChanged += new System.EventHandler(this.tbShopName_TextChanged);
@@ -117,34 +143,6 @@
             this.labelX1.Size = new System.Drawing.Size(126, 35);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "软件序列号:";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(153, 196);
-            this.buttonX1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(198, 35);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 8;
-            this.buttonX1.Text = "解绑和当前设备绑定";
-            this.buttonX1.Visible = false;
-            this.buttonX1.Click += new System.EventHandler(this.buttonX1_Click);
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(486, 196);
-            this.buttonX2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(198, 35);
-            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX2.TabIndex = 9;
-            this.buttonX2.Text = "注销账号";
-            this.buttonX2.Visible = false;
-            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
             // 
             // frmSafe
             // 
@@ -169,7 +167,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX tbAccountNo;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.Controls.TextBoxX miyao;
+        private DevComponents.DotNetBar.LabelX labelX3;
     }
 }

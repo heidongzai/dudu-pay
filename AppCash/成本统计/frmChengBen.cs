@@ -63,8 +63,10 @@ namespace AppCash
             Dong.BLL.GoodsInfo bll = new Dong.BLL.GoodsInfo();
             DataTable dt = new DataTable();
             DataTable dt1 = new DataTable();
+            DataTable dt2 = new DataTable();
             dt = bll.getChengBenList();
             dt1 = bll.getChengBen();
+            dt2 = bll.getKCZS();
             gvList.DataSource = dt;
             String Code;
             String GoodName;
@@ -73,6 +75,8 @@ namespace AppCash
             double Price2 = 0;
             double CostsAll = 0;
             String sum_ = dt1.Rows[0][0].ToString();
+            String kczs = dt2.Rows[0][0].ToString();
+           
             double CostsAllSum = 0;
             if (!string.IsNullOrEmpty(sum_))
             {
@@ -94,6 +98,7 @@ namespace AppCash
             }
 
             lblCBZE.Text = string.Format("{0:F2}", CostsAllSum);
+            lblZSL.Text = kczs;
             
         }
         #endregion

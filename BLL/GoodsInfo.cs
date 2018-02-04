@@ -204,6 +204,13 @@ namespace Dong.BLL
 
             return dt;
         }
+        public DataTable getKCZS()
+        {
+            DataTable dt = new DataTable();
+            dt = Maticsoft.DBUtility.DbHelperOleDb.Query("SELECT sum(Counts) as Counts from GoodsINfo where 1=1 and Counts>0").Tables[0];
+
+            return dt;
+        }
 		#endregion  ExtensionMethod
 	}
 }

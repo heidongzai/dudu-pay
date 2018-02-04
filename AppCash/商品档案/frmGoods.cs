@@ -13,6 +13,8 @@ namespace AppCash
     {
         private string categoryId="";
         private string categoryName = "";
+        private string bigCategoryId = "";
+        private string bigCategoryName = "";
         #region ------初始化变量------
         private string strSql = "";                 //查询条件
         private int intPage = 1;                    //当前页码
@@ -98,13 +100,7 @@ namespace AppCash
         private void btnSearch_Click(object sender, EventArgs e)
         {
             strSql = "";
-            if (tbKey.Text.Trim() != "")
-            {
-                string key = Maticsoft.Common.StringPlus.GetText(tbKey.Text);
-                strSql = " and  GoodName like '%" + key + "%'";
-               
 
-            }
             if (tbCode.Text.Trim() != "")
             {
                 string key = Maticsoft.Common.StringPlus.GetText(tbCode.Text);
@@ -116,6 +112,12 @@ namespace AppCash
             {
                 
                 strSql += " and  Category =" + categoryId + " ";
+            }
+
+            if (!string.IsNullOrEmpty(bigCategoryId))
+            {
+                strSql += " and  Category in("+bigCategoryId+" "+ getAllChilds(bigCategoryId) + ")";
+                
             }
             if (null!=cbSupplier.SelectedValue)
             {
@@ -174,7 +176,7 @@ namespace AppCash
             {
               
                 case Keys.Enter:
-                    if (jdkj.Equals(tbCode.Name) || jdkj.Equals(tbKey.Name))
+                    if (jdkj.Equals(tbCode.Name) || jdkj.Equals(tbBigCategory.Name))
                     {
                         btnSearch_Click(null, null);
                     }
@@ -374,6 +376,34 @@ namespace AppCash
 
         #endregion
 
+        private String getAllChilds(String parCate)
+        {
+
+            return getAllChildsFun("", parCate);
+            
+        }
+        private String getAllChildsFun(String childs,String parCate)
+        {
+
+
+            String sons="";
+            Dong.BLL.Category bLL = new Dong.BLL.Category();
+            List<Dong.Model.Category> bModelList = new List<Dong.Model.Category>();
+            bModelList=bLL.GetModelList(" pid=" + parCate + " ");
+
+            if (bModelList==null)
+            {
+                return childs;
+            }
+            else {
+                foreach (Dong.Model.Category b in bModelList) {
+                    sons += "," + b.Id;
+                    childs = getAllChildsFun(childs, b.Id.ToString());
+                }
+                return sons + childs; ;
+            }
+
+        }
         private void tbCode_TextChanged(object sender, EventArgs e)
         {
 
@@ -443,6 +473,24 @@ namespace AppCash
             {
                 MessageBoxEx.Show("请选择要调价的行!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            //点击弹出方法
+            frmCategorySelected frmChild = new frmCategorySelected();
+            frmChild.ShowDialog();
+            if (frmChild.DialogResult == System.Windows.Forms.DialogResult.OK)
+            {
+                bigCategoryId = frmChild.CategoryId;
+                bigCategoryName = frmChild.CategoryName;
+                this.tbBigCategory.Text = bigCategoryName;
+            }
+        }
+
+        private void tbKuCunMin_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

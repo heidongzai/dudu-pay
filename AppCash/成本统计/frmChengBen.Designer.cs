@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChengben));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.btnRefresh = new DevComponents.DotNetBar.ButtonX();
             this.lblCBZE = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.gvList = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -42,7 +43,8 @@
             this.Cash = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Weixin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alipay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnRefresh = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.lblZSL = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +53,8 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.lblZSL);
+            this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Controls.Add(this.btnRefresh);
             this.panelEx1.Controls.Add(this.lblCBZE);
             this.panelEx1.Controls.Add(this.labelX2);
@@ -68,6 +72,20 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnRefresh.Location = new System.Drawing.Point(1193, 30);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(112, 34);
+            this.btnRefresh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnRefresh.TabIndex = 15;
+            this.btnRefresh.Text = "刷新";
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // lblCBZE
             // 
@@ -189,19 +207,31 @@
             this.Alipay.Name = "Alipay";
             this.Alipay.ReadOnly = true;
             // 
-            // btnRefresh
+            // labelX1
             // 
-            this.btnRefresh.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnRefresh.Location = new System.Drawing.Point(1193, 30);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(112, 34);
-            this.btnRefresh.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnRefresh.TabIndex = 15;
-            this.btnRefresh.Text = "刷新";
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // 
+            // 
+            this.labelX1.BackgroundStyle.Class = "";
+            this.labelX1.Location = new System.Drawing.Point(413, 32);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(94, 32);
+            this.labelX1.TabIndex = 16;
+            this.labelX1.Text = "总数量：";
+            // 
+            // lblZSL
+            // 
+            // 
+            // 
+            // 
+            this.lblZSL.BackgroundStyle.Class = "";
+            this.lblZSL.Font = new System.Drawing.Font("宋体", 15F);
+            this.lblZSL.Location = new System.Drawing.Point(551, 19);
+            this.lblZSL.Margin = new System.Windows.Forms.Padding(4);
+            this.lblZSL.Name = "lblZSL";
+            this.lblZSL.Size = new System.Drawing.Size(217, 50);
+            this.lblZSL.TabIndex = 17;
             // 
             // frmChengben
             // 
@@ -234,5 +264,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Weixin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alipay;
         private DevComponents.DotNetBar.ButtonX btnRefresh;
+        private DevComponents.DotNetBar.LabelX labelX1;
+        private DevComponents.DotNetBar.LabelX lblZSL;
     }
 }

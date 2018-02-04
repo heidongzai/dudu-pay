@@ -54,6 +54,7 @@ namespace AppCash
                 txtPrice2.Text = model.Price2 == null ? "" : model.Price2.ToString();
                 this.categoryId = model.Category.ToString();
                 this.tbCategory.Text = model.CategoryName;
+                this.categoryName = model.CategoryName.ToString();
             }
 
 
@@ -114,6 +115,7 @@ namespace AppCash
             }
 
             /**/
+            double price2=0;
             if (txtPrice2.ReadOnly == false) { 
             if (txtPrice2.Text.Trim() == "")
             {
@@ -121,7 +123,7 @@ namespace AppCash
                 txtPrice2.Focus();
                 return;
             }
-            double price2;
+            
             if (!double.TryParse(txtPrice2.Text, out price2))
             {
                 MessageBoxEx.Show("成本价必须为数字!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -167,7 +169,9 @@ namespace AppCash
             model.Counts = model.Counts;
             model.Price0 = price0;
             model.Price1 = price1;
-            //model.Price2 = price2;
+            if (!price2.Equals(0)) {
+                model.Price2 = price2;
+            }
             if (bll.Update(model))
             {
                 MessageBoxEx.Show("修改成功!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);

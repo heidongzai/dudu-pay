@@ -33,6 +33,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGoods));
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
+            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
+            this.btnTiaojia = new DevComponents.DotNetBar.ButtonX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.tbKuCunMax = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.tbKuCunMin = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.cbSupplier = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btnReturnBack = new DevComponents.DotNetBar.ButtonX();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.tbCategory = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -41,9 +49,10 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.btnAll = new DevComponents.DotNetBar.ButtonX();
             this.btnAdd = new DevComponents.DotNetBar.ButtonX();
+            this.btnDel = new DevComponents.DotNetBar.ButtonX();
             this.btnEdit = new DevComponents.DotNetBar.ButtonX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
-            this.tbKey = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.tbBigCategory = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.bar1 = new DevComponents.DotNetBar.Bar();
             this.btnFirst = new DevComponents.DotNetBar.ButtonItem();
@@ -70,14 +79,6 @@
             this.price2Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price3Col = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cbSupplier = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.tbKuCunMin = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.tbKuCunMax = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.btnDel = new DevComponents.DotNetBar.ButtonX();
-            this.btnTiaojia = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvList)).BeginInit();
@@ -87,6 +88,7 @@
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.panelEx1.Controls.Add(this.buttonX2);
             this.panelEx1.Controls.Add(this.btnTiaojia);
             this.panelEx1.Controls.Add(this.labelX6);
             this.panelEx1.Controls.Add(this.tbKuCunMax);
@@ -105,7 +107,7 @@
             this.panelEx1.Controls.Add(this.btnDel);
             this.panelEx1.Controls.Add(this.btnEdit);
             this.panelEx1.Controls.Add(this.btnSearch);
-            this.panelEx1.Controls.Add(this.tbKey);
+            this.panelEx1.Controls.Add(this.tbBigCategory);
             this.panelEx1.Controls.Add(this.labelX1);
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
@@ -121,6 +123,113 @@
             this.panelEx1.Style.GradientAngle = 90;
             this.panelEx1.TabIndex = 0;
             this.panelEx1.Click += new System.EventHandler(this.panelEx1_Click);
+            // 
+            // buttonX2
+            // 
+            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX2.Location = new System.Drawing.Point(318, 19);
+            this.buttonX2.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonX2.Name = "buttonX2";
+            this.buttonX2.Size = new System.Drawing.Size(60, 34);
+            this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonX2.TabIndex = 36;
+            this.buttonX2.Text = "选择";
+            this.buttonX2.Click += new System.EventHandler(this.buttonX2_Click);
+            // 
+            // btnTiaojia
+            // 
+            this.btnTiaojia.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnTiaojia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTiaojia.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnTiaojia.Location = new System.Drawing.Point(1215, 18);
+            this.btnTiaojia.Margin = new System.Windows.Forms.Padding(4);
+            this.btnTiaojia.Name = "btnTiaojia";
+            this.btnTiaojia.Size = new System.Drawing.Size(92, 34);
+            this.btnTiaojia.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnTiaojia.TabIndex = 35;
+            this.btnTiaojia.Text = "进货调价";
+            this.btnTiaojia.Visible = false;
+            this.btnTiaojia.Click += new System.EventHandler(this.btnTiaojia_Click);
+            // 
+            // labelX6
+            // 
+            // 
+            // 
+            // 
+            this.labelX6.BackgroundStyle.Class = "";
+            this.labelX6.Location = new System.Drawing.Point(918, 23);
+            this.labelX6.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(26, 32);
+            this.labelX6.TabIndex = 34;
+            this.labelX6.Text = "——";
+            // 
+            // tbKuCunMax
+            // 
+            // 
+            // 
+            // 
+            this.tbKuCunMax.Border.Class = "TextBoxBorder";
+            this.tbKuCunMax.Location = new System.Drawing.Point(949, 21);
+            this.tbKuCunMax.Margin = new System.Windows.Forms.Padding(4);
+            this.tbKuCunMax.Name = "tbKuCunMax";
+            this.tbKuCunMax.Size = new System.Drawing.Size(55, 28);
+            this.tbKuCunMax.TabIndex = 33;
+            // 
+            // labelX5
+            // 
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.Class = "";
+            this.labelX5.Location = new System.Drawing.Point(813, 21);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(49, 32);
+            this.labelX5.TabIndex = 32;
+            this.labelX5.Text = "库存";
+            // 
+            // tbKuCunMin
+            // 
+            // 
+            // 
+            // 
+            this.tbKuCunMin.Border.Class = "TextBoxBorder";
+            this.tbKuCunMin.Location = new System.Drawing.Point(861, 21);
+            this.tbKuCunMin.Margin = new System.Windows.Forms.Padding(4);
+            this.tbKuCunMin.Name = "tbKuCunMin";
+            this.tbKuCunMin.Size = new System.Drawing.Size(62, 28);
+            this.tbKuCunMin.TabIndex = 31;
+            this.tbKuCunMin.TextChanged += new System.EventHandler(this.tbKuCunMin_TextChanged);
+            // 
+            // labelX4
+            // 
+            // 
+            // 
+            // 
+            this.labelX4.BackgroundStyle.Class = "";
+            this.labelX4.Location = new System.Drawing.Point(603, 21);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(64, 32);
+            this.labelX4.TabIndex = 30;
+            this.labelX4.Text = "供应商";
+            // 
+            // cbSupplier
+            // 
+            this.cbSupplier.DisplayMember = "Text";
+            this.cbSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSupplier.FormattingEnabled = true;
+            this.cbSupplier.ItemHeight = 15;
+            this.cbSupplier.Location = new System.Drawing.Point(673, 23);
+            this.cbSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbSupplier.MaxDropDownItems = 100;
+            this.cbSupplier.Name = "cbSupplier";
+            this.cbSupplier.Size = new System.Drawing.Size(139, 21);
+            this.cbSupplier.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.cbSupplier.TabIndex = 29;
+            this.cbSupplier.SelectedIndexChanged += new System.EventHandler(this.cbUserid_SelectedIndexChanged);
             // 
             // btnReturnBack
             // 
@@ -140,7 +249,7 @@
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(491, 19);
+            this.buttonX1.Location = new System.Drawing.Point(532, 19);
             this.buttonX1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(60, 34);
@@ -156,7 +265,7 @@
             // 
             this.tbCategory.Border.Class = "TextBoxBorder";
             this.tbCategory.ForeColor = System.Drawing.Color.DarkBlue;
-            this.tbCategory.Location = new System.Drawing.Point(399, 20);
+            this.tbCategory.Location = new System.Drawing.Point(440, 20);
             this.tbCategory.Margin = new System.Windows.Forms.Padding(4);
             this.tbCategory.Name = "tbCategory";
             this.tbCategory.ReadOnly = true;
@@ -169,7 +278,7 @@
             // 
             // 
             this.labelX3.BackgroundStyle.Class = "";
-            this.labelX3.Location = new System.Drawing.Point(356, 18);
+            this.labelX3.Location = new System.Drawing.Point(397, 18);
             this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(66, 32);
@@ -185,7 +294,7 @@
             this.tbCode.Location = new System.Drawing.Point(55, 20);
             this.tbCode.Margin = new System.Windows.Forms.Padding(4);
             this.tbCode.Name = "tbCode";
-            this.tbCode.Size = new System.Drawing.Size(147, 28);
+            this.tbCode.Size = new System.Drawing.Size(119, 28);
             this.tbCode.TabIndex = 8;
             this.tbCode.TextChanged += new System.EventHandler(this.tbCode_TextChanged);
             // 
@@ -230,6 +339,21 @@
             this.btnAdd.Text = "添加";
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnDel
+            // 
+            this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDel.Location = new System.Drawing.Point(1039, 18);
+            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(70, 34);
+            this.btnDel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnDel.TabIndex = 4;
+            this.btnDel.Text = "删除";
+            this.btnDel.Visible = false;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // btnEdit
             // 
             this.btnEdit.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -258,17 +382,18 @@
             this.btnSearch.Text = "搜索";
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // tbKey
+            // tbBigCategory
             // 
             // 
             // 
             // 
-            this.tbKey.Border.Class = "TextBoxBorder";
-            this.tbKey.Location = new System.Drawing.Point(252, 20);
-            this.tbKey.Margin = new System.Windows.Forms.Padding(4);
-            this.tbKey.Name = "tbKey";
-            this.tbKey.Size = new System.Drawing.Size(92, 28);
-            this.tbKey.TabIndex = 1;
+            this.tbBigCategory.Border.Class = "TextBoxBorder";
+            this.tbBigCategory.Location = new System.Drawing.Point(218, 20);
+            this.tbBigCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.tbBigCategory.Name = "tbBigCategory";
+            this.tbBigCategory.ReadOnly = true;
+            this.tbBigCategory.Size = new System.Drawing.Size(92, 28);
+            this.tbBigCategory.TabIndex = 1;
             // 
             // labelX1
             // 
@@ -276,12 +401,12 @@
             // 
             // 
             this.labelX1.BackgroundStyle.Class = "";
-            this.labelX1.Location = new System.Drawing.Point(210, 20);
+            this.labelX1.Location = new System.Drawing.Point(176, 20);
             this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(57, 32);
             this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "名称";
+            this.labelX1.Text = "大类";
             // 
             // bar1
             // 
@@ -512,114 +637,6 @@
             this.countCol.Name = "countCol";
             this.countCol.ReadOnly = true;
             // 
-            // cbSupplier
-            // 
-            this.cbSupplier.DisplayMember = "Text";
-            this.cbSupplier.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSupplier.FormattingEnabled = true;
-            this.cbSupplier.ItemHeight = 15;
-            this.cbSupplier.Location = new System.Drawing.Point(636, 23);
-            this.cbSupplier.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.cbSupplier.MaxDropDownItems = 100;
-            this.cbSupplier.Name = "cbSupplier";
-            this.cbSupplier.Size = new System.Drawing.Size(176, 21);
-            this.cbSupplier.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.cbSupplier.TabIndex = 29;
-            this.cbSupplier.SelectedIndexChanged += new System.EventHandler(this.cbUserid_SelectedIndexChanged);
-            // 
-            // labelX4
-            // 
-            // 
-            // 
-            // 
-            this.labelX4.BackgroundStyle.Class = "";
-            this.labelX4.Location = new System.Drawing.Point(567, 21);
-            this.labelX4.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(64, 32);
-            this.labelX4.TabIndex = 30;
-            this.labelX4.Text = "供应商";
-            // 
-            // tbKuCunMin
-            // 
-            // 
-            // 
-            // 
-            this.tbKuCunMin.Border.Class = "TextBoxBorder";
-            this.tbKuCunMin.Location = new System.Drawing.Point(861, 21);
-            this.tbKuCunMin.Margin = new System.Windows.Forms.Padding(4);
-            this.tbKuCunMin.Name = "tbKuCunMin";
-            this.tbKuCunMin.Size = new System.Drawing.Size(62, 28);
-            this.tbKuCunMin.TabIndex = 31;
-            // 
-            // labelX5
-            // 
-            // 
-            // 
-            // 
-            this.labelX5.BackgroundStyle.Class = "";
-            this.labelX5.Location = new System.Drawing.Point(813, 21);
-            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(49, 32);
-            this.labelX5.TabIndex = 32;
-            this.labelX5.Text = "库存";
-            // 
-            // tbKuCunMax
-            // 
-            // 
-            // 
-            // 
-            this.tbKuCunMax.Border.Class = "TextBoxBorder";
-            this.tbKuCunMax.Location = new System.Drawing.Point(949, 21);
-            this.tbKuCunMax.Margin = new System.Windows.Forms.Padding(4);
-            this.tbKuCunMax.Name = "tbKuCunMax";
-            this.tbKuCunMax.Size = new System.Drawing.Size(55, 28);
-            this.tbKuCunMax.TabIndex = 33;
-            // 
-            // labelX6
-            // 
-            // 
-            // 
-            // 
-            this.labelX6.BackgroundStyle.Class = "";
-            this.labelX6.Location = new System.Drawing.Point(918, 23);
-            this.labelX6.Margin = new System.Windows.Forms.Padding(4);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(26, 32);
-            this.labelX6.TabIndex = 34;
-            this.labelX6.Text = "——";
-            // 
-            // btnDel
-            // 
-            this.btnDel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDel.Location = new System.Drawing.Point(1039, 18);
-            this.btnDel.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(70, 34);
-            this.btnDel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnDel.TabIndex = 4;
-            this.btnDel.Text = "删除";
-            this.btnDel.Visible = false;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnTiaojia
-            // 
-            this.btnTiaojia.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTiaojia.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTiaojia.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTiaojia.Location = new System.Drawing.Point(1215, 18);
-            this.btnTiaojia.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTiaojia.Name = "btnTiaojia";
-            this.btnTiaojia.Size = new System.Drawing.Size(92, 34);
-            this.btnTiaojia.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnTiaojia.TabIndex = 35;
-            this.btnTiaojia.Text = "进货调价";
-            this.btnTiaojia.Visible = false;
-            this.btnTiaojia.Click += new System.EventHandler(this.btnTiaojia_Click);
-            // 
             // frmGoods
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -643,7 +660,7 @@
         #endregion
 
         private DevComponents.DotNetBar.PanelEx panelEx1;
-        private DevComponents.DotNetBar.Controls.TextBoxX tbKey;
+        private DevComponents.DotNetBar.Controls.TextBoxX tbBigCategory;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.ButtonX btnSearch;
         private DevComponents.DotNetBar.ButtonX btnAdd;
@@ -688,5 +705,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX tbKuCunMin;
         private DevComponents.DotNetBar.ButtonX btnDel;
         private DevComponents.DotNetBar.ButtonX btnTiaojia;
+        private DevComponents.DotNetBar.ButtonX buttonX2;
     }
 }

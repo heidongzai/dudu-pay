@@ -107,7 +107,7 @@ namespace AppCash
                 tuiHuoShuLiang.Focus();
                 return;
             }
-            if(price0>model.Price){
+            if(price0>model.PriceSum){
                  MessageBoxEx.Show("退货总额不能超过销售总额!", "提示", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.tuiHuoZongE.Focus();
                 return;
